@@ -1,0 +1,25 @@
+@import "../app/variables.module.scss";
+
+.button {
+	padding: 10px 20px;
+	border-radius: 25px;
+	border: none;
+	-webkit-box-shadow: 0px 2px 4px 1px $shadow-color;
+	-moz-box-shadow: 0px 2px 4px 1px $shadow-color;
+	box-shadow: 0px 2px 4px 1px $shadow-color;
+	font-weight: bold;
+
+	&--primary {
+		background-color: $button-primary-background-color;
+		color: $button-text-color;
+	}
+
+	&--secondary {
+		color: $button-text-color;
+	}
+
+	&--disabled {
+		background-color: $button-disabled-background-color;
+		color: $button-disabled-text-color;
+	}
+}
