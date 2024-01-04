@@ -11,15 +11,15 @@
 
 	&--primary {
 		background-color: $button-primary-background-color;
-		color: $button-text-color;
+		color: $button-primary-text-color;
 	}
 
 	&--secondary {
-		color: $button-text-color;
+		color: $button-secondary-text-color;
 	}
 
 	&--disabled {
 		background-color: $button-disabled-background-color;
-		color: $button-disabled-text-color;
+		color: $button-secondary-text-color;
 	}
 }

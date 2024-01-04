@@ -1,9 +1,39 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
+@import "./variables.module.scss";
 
+.main {
+	@include flex-center;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: $padding-280px;
+	color: $text-color;
+
+	&_links {
+		margin: 4rem 1rem 1rem 1rem;
+		@include flex-center;
+		gap: 2rem;
+		color: $text-gray-color;
+		font-weight: bold;
+
+		.link {
+			border-bottom: 1px solid $text-gray-color;
+		}
+	}
+
+	&_form {
+		background-color: $background-color-light;
+		width: 100vw;
+		overflow: hidden;
+		margin: 3.5rem 1rem 1rem 1rem;
+		padding: 4rem;
+		border-radius: 70% 70% 0% 0% / 12% 12% 88% 88%;
+		@include flex-center;
+		flex-direction: column;
+		gap: 2rem;
+
+		&_item {
+			display: flex;
+			flex-direction: column;
+      gap: .5rem;
+		}
+	}
+}

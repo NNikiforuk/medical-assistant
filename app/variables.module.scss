@@ -1,14 +1,27 @@
-$background-color: #ECEDF0;
+//General
+$background-color: #BFD5F5;
+$background-color-light: #d9dff1;
 $text-color: #404049;
+$text-gray-color: rgb(145, 142, 142);
 
-$button-text-color: #30303e;
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+}
+
+//Button
+$button-primary-text-color: #d9dff1;
+$button-secondary-text-color: #30303e;
 $button-primary-background-color: #619DE4;
 $button-disabled-background-color: rgb(174, 169, 169);
-$button-disabled-text-color: #30303e;
-
 $shadow-color: rgb(204, 197, 197);
 
+//Input
 $input-border-color: gray;
 $input-border-error-color: rgb(229, 57, 57);
 $input-error-color: rgb(229, 57, 57);
 $input-error-fontSize: 12px;
+
+//Page wrapper
+$padding-280px: 4rem 2rem;
+
