@@ -1,9 +1,46 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
+@import "../app/variables.module.scss";
 
+.main {
+	@include flex-align-center;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: $padding-280px;
+
+	&_logo {
+		font-weight: bold;
+		margin: 5rem 0;
+	}
+
+	&_links {
+		@include flex-align-center;
+		gap: 4rem;
+
+		.link {
+			font-weight: bold;
+
+			a {
+				text-decoration: none;
+				color: $text-gray-color;
+			}
+		}
+	}
+
+	&_form_container {
+		margin: 4rem 0 2rem 0;
+	}
+
+	&_ps {
+		font-size: $fontSize_smaller;
+		margin-top: 2rem;
+		color: $text-gray-color;
+		@include flex-align-center;
+		gap: 4px;
+
+		.link {
+			a {
+				text-decoration: none;
+				color: $text-blue-color;
+			}
+		}
+	}
+}

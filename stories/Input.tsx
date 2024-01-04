@@ -1,4 +1,6 @@
-import { useState } from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import "../styles/input.scss";
 
 type Props = {
@@ -9,6 +11,11 @@ type Props = {
 
 const Input = ({ variant, label, msg }: Props) => {
 	const [inputValue, setInputValue] = useState("");
+	const [mounted, setMounted] = useState(false);
+
+	//Hydration error with lastPass
+	useEffect(() => setMounted(true), []);
+	if (!mounted) return null;
 
 	const mode =
 		variant === "email"
@@ -27,6 +34,11 @@ const Input = ({ variant, label, msg }: Props) => {
 					value={inputValue}
 					onChange={(e) => setInputValue(e.target.value)}
 					className={`input ${mode}`}
+					type={
+						variant === "password" || variant === "errorPassword"
+							? "password"
+							: "email"
+					}
 				/>
 			</label>
 			{msg && (
