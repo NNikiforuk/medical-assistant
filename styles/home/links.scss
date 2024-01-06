@@ -11,5 +11,10 @@
 			text-decoration: none;
 			color: $text-gray-color;
 		}
+
+		.active {
+			color: $text-color;
+			border-bottom: 1px solid $text-color;
+		}
 	}
 }

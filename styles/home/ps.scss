@@ -1,0 +1,16 @@
+@import "../../styles/general/variables.scss";
+
+.ps {
+	font-size: $fontSize_smaller;
+	margin-top: 2rem;
+	color: $text-gray-color;
+	@include flex-align-center;
+	gap: 4px;
+
+	.link {
+		a {
+			text-decoration: none;
+			color: $text-blue-color;
+		}
+	}
+}

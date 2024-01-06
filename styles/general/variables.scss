@@ -2,19 +2,26 @@
 $background-color: #c6dcf9;
 $text-color: #404049;
 $text-gray-color: gray;
-$text-blue-color: #619DE4;
+$text-blue-color: #619de4;
 $shadow-color: rgb(204, 197, 197);
 $padding-280px: 2rem;
-$fontSize_smaller: .7rem;
+$fontSize_smaller: 0.7rem;
 
 @mixin flex-align-center {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
+}
+
+@mixin home-wrapper-280px {
+	@include flex-align-center;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: $padding-280px;
 }
 
 //Button
 $button-text-color: rgb(236, 230, 230);
-$button-primary-background-color: #619DE4;
+$button-primary-background-color: #619de4;
 $button-disabled-background-color: rgb(174, 169, 169);
 $button-disabled-text-color: #30303e;
 $button-secondary-text-color: gray;
@@ -27,4 +34,3 @@ $input-error-fontSize: 12px;
 
 //Page wrapper
 $padding-280px: 4rem 2rem;
-
