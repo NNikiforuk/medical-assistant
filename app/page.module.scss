@@ -1,29 +1,10 @@
-@import "../app/variables.module.scss";
+@import "../styles/general/variables.scss";
 
 .main {
 	@include flex-align-center;
 	flex-direction: column;
 	justify-content: space-between;
 	padding: $padding-280px;
-
-	&_logo {
-		font-weight: bold;
-		margin: 5rem 0;
-	}
-
-	&_links {
-		@include flex-align-center;
-		gap: 4rem;
-
-		.link {
-			font-weight: bold;
-
-			a {
-				text-decoration: none;
-				color: $text-gray-color;
-			}
-		}
-	}
 
 	&_form_container {
 		margin: 4rem 0 2rem 0;

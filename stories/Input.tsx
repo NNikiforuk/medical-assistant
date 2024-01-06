@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../styles/input.scss";
+import "../styles/general/input.scss";
 
 type Props = {
 	variant: string;

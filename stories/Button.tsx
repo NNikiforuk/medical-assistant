@@ -1,4 +1,4 @@
-import "../styles/button.scss";
+import "../styles/general/button.scss";
 
 type Props = {
 	variant: string;
