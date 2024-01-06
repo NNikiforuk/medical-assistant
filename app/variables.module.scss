@@ -1,20 +1,22 @@
 //General
-$background-color: #BFD5F5;
-$background-color-light: #d9dff1;
+$background-color: #c6dcf9;
 $text-color: #404049;
-$text-gray-color: rgb(145, 142, 142);
+$text-gray-color: gray;
+$text-blue-color: #619DE4;
+$shadow-color: rgb(204, 197, 197);
+$padding-280px: 2rem;
+$fontSize_smaller: .7rem;
 
-@mixin flex-center() {
+@mixin flex-align-center {
     display: flex;
     align-items: center;
 }
 
 //Button
-$button-primary-text-color: #d9dff1;
-$button-secondary-text-color: #30303e;
+$button-text-color: rgb(236, 230, 230);
 $button-primary-background-color: #619DE4;
 $button-disabled-background-color: rgb(174, 169, 169);
-$shadow-color: rgb(204, 197, 197);
+$button-disabled-text-color: #30303e;
 
 //Input
 $input-border-color: gray;

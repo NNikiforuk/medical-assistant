@@ -1,31 +1,33 @@
-"use client";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 import styles from "./page.module.scss";
+import Input from "@/stories/Input";
+import Button from "@/stories/Button";
 
 export default function Home() {
-	const [mounted, setMounted] = useState(false);
-
-	//Hydration error with LastPass
-	useEffect(() => setMounted(true), []);
-	if (!mounted) return null;
-
 	return (
 		<main className={styles.main}>
 			<div className={styles.main_logo}>LOGO</div>
 			<div className={styles.main_links}>
-				<div className={styles.link}>SING IN</div>
-				<div className={styles.link}>SIGN UP</div>
+				<div className={styles.link}>
+					<Link href={""}>SIGN IN</Link>
+				</div>
+				<div className={styles.link}>
+					<Link href={""}>SIGN UP</Link>
+				</div>
 			</div>
-			<form className={styles.main_form}>
-				<div className={styles.main_form_item}>
-					<label>Email</label>
-					<input type="text" name="username" required />
+			<div className={styles.main_form_container}>
+				<Input variant="email" label="Email" msg={false} />
+				<Input variant="password" label="Password" msg={false} />
+			</div>
+			<div className={styles.main_btn}>
+				<Button variant="primary" label="Sign in" />
+			</div>
+			<div className={styles.main_ps}>
+				<div className={styles.text}>Don’t have an account?</div>
+				<div className={styles.link}>
+					<Link href={""}>Sign up</Link>
 				</div>
-				<div className={styles.main_form_item}>
-					<label>Password</label>
-					<input type="password" name="password" required />
-				</div>
-			</form>
+			</div>
 		</main>
 	);
 }

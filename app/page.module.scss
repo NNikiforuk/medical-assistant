@@ -1,39 +1,46 @@
-@import "./variables.module.scss";
+@import "../app/variables.module.scss";
 
 .main {
-	@include flex-center;
-	justify-content: space-between;
+	@include flex-align-center;
 	flex-direction: column;
+	justify-content: space-between;
 	padding: $padding-280px;
-	color: $text-color;
+
+	&_logo {
+		font-weight: bold;
+		margin: 5rem 0;
+	}
 
 	&_links {
-		margin: 4rem 1rem 1rem 1rem;
-		@include flex-center;
-		gap: 2rem;
-		color: $text-gray-color;
-		font-weight: bold;
+		@include flex-align-center;
+		gap: 4rem;
 
 		.link {
-			border-bottom: 1px solid $text-gray-color;
+			font-weight: bold;
+
+			a {
+				text-decoration: none;
+				color: $text-gray-color;
+			}
 		}
 	}
 
-	&_form {
-		background-color: $background-color-light;
-		width: 100vw;
-		overflow: hidden;
-		margin: 3.5rem 1rem 1rem 1rem;
-		padding: 4rem;
-		border-radius: 70% 70% 0% 0% / 12% 12% 88% 88%;
-		@include flex-center;
-		flex-direction: column;
-		gap: 2rem;
+	&_form_container {
+		margin: 4rem 0 2rem 0;
+	}
 
-		&_item {
-			display: flex;
-			flex-direction: column;
-      gap: .5rem;
+	&_ps {
+		font-size: $fontSize_smaller;
+		margin-top: 2rem;
+		color: $text-gray-color;
+		@include flex-align-center;
+		gap: 4px;
+
+		.link {
+			a {
+				text-decoration: none;
+				color: $text-blue-color;
+			}
 		}
 	}
 }
