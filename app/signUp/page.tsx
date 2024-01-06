@@ -8,7 +8,7 @@ import styles from "./page.module.scss";
 import Form from "@/components/home/Form";
 import PS from "@/components/home/PS";
 
-const page = () => {
+const SignUp = () => {
 	const pathname = usePathname();
 
 	return (
@@ -24,4 +24,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default SignUp;

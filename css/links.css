@@ -1,0 +1,16 @@
+.links {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.links .link {
+  font-weight: bold;
+}
+.links .link a {
+  text-decoration: none;
+  color: gray;
+}
+.links .link .active {
+  color: #404049;
+  border-bottom: 1px solid #404049;
+}/*# sourceMappingURL=links.css.map */

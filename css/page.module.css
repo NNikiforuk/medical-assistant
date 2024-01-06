@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+}
+.main_form_container {
+  margin: 4rem 0 2rem 0;
+}
+.main_ps {
+  font-size: 0.7rem;
+  margin-top: 2rem;
+  color: gray;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.main_ps .link a {
+  text-decoration: none;
+  color: #619de4;
+}/*# sourceMappingURL=page.module.css.map */

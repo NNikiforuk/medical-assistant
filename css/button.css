@@ -1,0 +1,18 @@
+.button {
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0px 2px 4px 1px rgb(204, 197, 197);
+  font-weight: bold;
+}
+.button--primary {
+  background-color: #619de4;
+  color: rgb(236, 230, 230);
+}
+.button--secondary {
+  color: gray;
+}
+.button--disabled {
+  background-color: rgb(174, 169, 169);
+  color: gray;
+}/*# sourceMappingURL=button.css.map */

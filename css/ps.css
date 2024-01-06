@@ -1,0 +1,12 @@
+.ps {
+  font-size: 0.7rem;
+  margin-top: 2rem;
+  color: gray;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.ps .link a {
+  text-decoration: none;
+  color: #619de4;
+}/*# sourceMappingURL=ps.css.map */
