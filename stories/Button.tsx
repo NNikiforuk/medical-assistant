@@ -14,7 +14,7 @@ const Button = ({ variant, label }: Props) => {
 			: "button--disabled";
 
 	return (
-		<button type="button" className={`button ${mode}`}>
+		<button type="submit" className={`button ${mode}`}>
 			{label}
 		</button>
 	);

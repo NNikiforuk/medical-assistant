@@ -28,19 +28,20 @@ const Input = ({ variant, label, msg }: Props) => {
 
 	return (
 		<div className="form_input">
-			<label>
-				{label}
-				<input
-					value={inputValue}
-					onChange={(e) => setInputValue(e.target.value)}
-					className={`input ${mode}`}
-					type={
-						variant === "password" || variant === "errorPassword"
-							? "password"
-							: "email"
-					}
-				/>
-			</label>
+			<label htmlFor={label}>{label}</label>
+			<input
+				required
+				name={label}
+				value={inputValue}
+				onChange={(e) => setInputValue(e.target.value)}
+				className={`input ${mode}`}
+				type={
+					variant === "password" || variant === "errorPassword"
+						? "password"
+						: "email"
+				}
+			/>
+
 			{msg && (
 				<div className="form_input_errorMsg">
 					{variant === "errorEmail" ? "Niepoprawny mail" : "Niepoprawne hasło"}

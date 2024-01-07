@@ -8,6 +8,7 @@
 	-moz-box-shadow: 0px 2px 4px 1px $shadow-color;
 	box-shadow: 0px 2px 4px 1px $shadow-color;
 	font-weight: bold;
+	cursor: pointer;
 
 	&--primary {
 		background-color: $button-primary-background-color;
