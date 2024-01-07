@@ -2,23 +2,26 @@
 
 .main {
 	@include home-wrapper-280px;
+	max-height: 100vh;
 
-	&_form_container {
-		margin: 4rem 0 2rem 0;
+	&_upper {
+		@include flex-align-center;
+		flex-direction: column;
+		height: 40%;
 	}
 
-	&_ps {
-		font-size: $fontSize_smaller;
-		margin-top: 2rem;
-		color: $text-gray-color;
+	&_shape_container {
+		background-color: $background-color-light;
+		margin-top: 4rem;
 		@include flex-align-center;
-		gap: 4px;
-
-		.link {
-			a {
-				text-decoration: none;
-				color: $text-blue-color;
-			}
-		}
+		flex-direction: column;
+		width: 100vw;
+		height: 60%;
+		border-top-right-radius: 50px;
+		border-top-left-radius: 50px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 0;
 	}
 }

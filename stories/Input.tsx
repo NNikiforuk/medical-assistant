@@ -27,7 +27,7 @@ const Input = ({ variant, label, msg }: Props) => {
 			: "password";
 
 	return (
-		<form className="form_input">
+		<div className="form_input">
 			<label>
 				{label}
 				<input
@@ -46,7 +46,7 @@ const Input = ({ variant, label, msg }: Props) => {
 					{variant === "errorEmail" ? "Niepoprawny mail" : "Niepoprawne hasło"}
 				</div>
 			)}
-		</form>
+		</div>
 	);
 };
 

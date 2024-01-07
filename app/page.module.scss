@@ -2,4 +2,5 @@
 
 .main {
 	@include home-wrapper-280px;
+	max-height: 100vh;
 }

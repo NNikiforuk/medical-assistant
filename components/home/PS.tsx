@@ -1,12 +1,20 @@
 import Link from "next/link";
 import "../../styles/home/ps.scss";
 
-const PS = () => {
+const PS = ({
+	text,
+	link,
+	href,
+}: {
+	text: string;
+	link: string;
+	href: string;
+}) => {
 	return (
 		<div className="ps">
-			<div className="text">Don’t have an account?</div>
+			<div className="text">{text}</div>
 			<div className="link">
-				<Link href={"/signup"}>Sign up</Link>
+				<Link href={href}>{link}</Link>
 			</div>
 		</div>
 	);
