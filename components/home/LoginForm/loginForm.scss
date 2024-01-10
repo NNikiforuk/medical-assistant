@@ -1,0 +1,10 @@
+@import "../../../styles/variables.scss";
+
+.home__login__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 10px;
+}
