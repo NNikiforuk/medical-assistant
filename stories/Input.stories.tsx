@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Input from "./Input";
+import Input from "../components/common/Input/Input";
 
 const meta: Meta<typeof Input> = {
 	component: Input,
@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Email: Story = {
 	args: {
-		variant: "email",
+		type: "email",
 		label: "Email",
 		msg: false,
 	},
@@ -20,7 +20,7 @@ export const Email: Story = {
 
 export const ErrorEmail: Story = {
 	args: {
-		variant: "errorEmail",
+		type: "email",
 		label: "Email",
 		msg: true,
 	},
@@ -28,7 +28,7 @@ export const ErrorEmail: Story = {
 
 export const Password: Story = {
 	args: {
-		variant: "password",
+		type: "password",
 		label: "Password",
 		msg: false,
 	},
@@ -36,7 +36,7 @@ export const Password: Story = {
 
 export const ErrorPassword: Story = {
 	args: {
-		variant: "errorPassword",
+		type: "password",
 		label: "Password",
 		msg: true,
 	},

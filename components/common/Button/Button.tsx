@@ -8,13 +8,13 @@ type ButtonProps = {
 };
 
 const Button = ({ variant, label, isDisabled = false, type }: ButtonProps) => {
-	const mode =
-		variant === "primary"
-			? "button--primary"
-			: "button--secondary"
-
 	return (
-		<button type={type} className={`button ${mode} ${isDisabled && "button--disabled"}`}>
+		<button
+			type={type}
+			className={`button button${
+				variant === "primary" ? "--primary" : "--secondary"
+			} ${isDisabled && "button--disabled"}`}
+		>
 			{label}
 		</button>
 	);

@@ -21,7 +21,6 @@
 
 	&--disabled {
 		background-color: $button-disabled-background-color;
-		color: $button-secondary-text-color;
+		color: $button-disabled-text-color;
 	}
 }
-

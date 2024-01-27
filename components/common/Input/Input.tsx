@@ -14,7 +14,7 @@ type InputProps = {
 
 const Input = ({
 	type,
-	isError = false,
+	isError = true,
 	label,
 	msg,
 	value,
@@ -26,8 +26,6 @@ const Input = ({
 	useEffect(() => setMounted(true), []);
 	if (!mounted) return null;
 
-	const mode = type === "email" ? "email" : "password";
-
 	return (
 		<div className="input__wrapper">
 			<label htmlFor={label}>{label}</label>
@@ -36,8 +34,8 @@ const Input = ({
 				name={label}
 				value={value}
 				onChange={onChange}
-				className={`input__${mode}`}
-				type={mode}
+				className={`input__${type === "email" ? "email" : "password"}`}
+				type={type === "email" ? "email" : "password"}
 			/>
 
 			{msg && isError && (
