@@ -4,8 +4,10 @@ import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
 import { FormEvent, useState } from "react";
 import "../Login&RegistrationForm/login&registrationForm.scss";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+	const router = useRouter();
 	const [email, setEmail] = useState<string>("");
 	const [invalidEmail, setInvalidEmail] = useState<boolean>(false);
 	const [password, setPassword] = useState<string>("");
@@ -29,10 +31,9 @@ const LoginForm = () => {
 		const responseData = await response.json();
 
 		if (responseData === "success") {
-			//rerouting
-			console.log("success");
 			setInvalidEmail(false);
 			setInvalidPassword(false);
+			router.push("/dashboard")
 		} else if (responseData === "Invalid password") {
 			setInvalidPassword(true);
 		} else if (responseData === "Invalid email") {
