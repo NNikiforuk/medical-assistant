@@ -23,6 +23,7 @@ export const ErrorEmail: Story = {
 		type: "email",
 		label: "Email",
 		msg: true,
+		isError: true,
 	},
 };
 
@@ -39,5 +40,6 @@ export const ErrorPassword: Story = {
 		type: "password",
 		label: "Password",
 		msg: true,
+		isError: true,
 	},
 };
