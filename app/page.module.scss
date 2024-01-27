@@ -1,5 +1,33 @@
-@import "../styles/general/variables.scss";
+@import "../styles/variables.scss";
 
-.main {
-	@include home-wrapper-280px;
+.home {
+	max-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+
+	&__additional__info {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+		font-size: $fontSize-280px-smaller;
+
+		.additional__info {
+			&__text {
+				color: $text-gray-color;
+				margin-right: 5px;
+			}
+
+			&__link {
+				a {
+					text-decoration: none;
+					color: $text-blue-color;
+					font-weight: bold;
+				}
+			}
+		}
+	}
 }

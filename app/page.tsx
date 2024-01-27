@@ -1,25 +1,34 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import styles from "./page.module.scss";
-import Button from "@/stories/Button";
-import Links from "../components/home/Links";
-import Logo from "../components/general/Logo";
-import Form from "@/components/home/Form";
-import PS from "@/components/home/PS";
+import Logo from "@/components/common/Logo/Logo";
+import Header from "@/components/home/Header/Header";
+import { useSearchParams } from "next/navigation";
+import LoginForm from "@/components/home/LoginForm/LoginForm";
+import RegistrationForm from "@/components/home/RegistrationForm/RegistrationForm";
+import Link from "next/link";
 
 export default function Home() {
-	const pathname = usePathname();
+	const searchParams = useSearchParams();
+	const isRegistrationPage = searchParams.get("signup") !== null;
 
 	return (
-		<main className={styles.main}>
+		<main className="styles.home">
 			<Logo />
-			<Links pathname={pathname} />
-			<Form />
-			<div className={styles.main_btn}>
-				<Button variant="primary" label="Sign in" />
+			<Header isRegistrationPage={isRegistrationPage} />
+			{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
+			<div className={styles.home__additional__info}>
+				<div className={styles.additional__info__text}>
+					{isRegistrationPage
+						? "I already have an account"
+						: "You don't have an account?"}
+				</div>
+				<div className={styles.additional__info__link}>
+					<Link href={isRegistrationPage ? "/" : "/?signup"}>
+						{isRegistrationPage ? "Sign in" : "Sign up"}
+					</Link>
+				</div>
 			</div>
-			<PS />
 		</main>
 	);
 }
