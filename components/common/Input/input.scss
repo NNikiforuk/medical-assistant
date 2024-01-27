@@ -11,11 +11,16 @@
 		border-radius: 15px;
 		border: $input-border-color 0.5px solid;
 		background-color: $input-background-color;
+
+	}
+	.input__error {
+		border: 1px solid $input-error-color;
 	}
 
-	.input__error {
+	.input__message {
 		color: $input-error-color;
 		font-size: $fontSize-280px-smaller;
+		text-align: center;
 	}
 }
 
@@ -28,6 +33,10 @@
 			margin-top: 20px;
 			padding: 20px 40px;
 		}
+
+		.input__message{
+			font-size: $fontSize-1024px-smaller;
+		}
 	}
 }
 
@@ -38,6 +47,10 @@
 		.input__error {
 			font-size: $fontSize-1200px;
 			padding: 10px 20px;
+		}
+
+		.input__message {
+			font-size: $fontSize-1200px-smaller;
 		}
 	}
 }

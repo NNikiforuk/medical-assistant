@@ -7,19 +7,11 @@ type InputProps = {
 	type: "password" | "email";
 	isError: boolean;
 	label: string;
-	msg: boolean;
 	value: string;
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({
-	type,
-	isError = true,
-	label,
-	msg,
-	value,
-	onChange,
-}: InputProps) => {
+const Input = ({ type, isError, label, value, onChange }: InputProps) => {
 	const [mounted, setMounted] = useState(false);
 
 	//Hydration error with lastPass
@@ -35,13 +27,13 @@ const Input = ({
 				name={type}
 				value={value}
 				onChange={onChange}
-				className={`input__${type === "email" ? "email" : "password"}`}
+				className={`input__${type === "email" ? "email" : "password"} ${isError && "input__error"}`}
 				type={type}
 			/>
 
-			{msg && isError && (
-				<div className="input__error">
-					{type === "email" ? "Niepoprawny mail" : "Niepoprawne hasło"}
+			{isError && (
+				<div className="input__message">
+					{type === "email" ? "Invalid e-mail" : "Invalid password"}
 				</div>
 			)}
 		</div>

@@ -14,7 +14,7 @@ export const Email: Story = {
 	args: {
 		type: "email",
 		label: "Email",
-		msg: false,
+		isError: false,
 	},
 };
 
@@ -22,7 +22,6 @@ export const ErrorEmail: Story = {
 	args: {
 		type: "email",
 		label: "Email",
-		msg: true,
 		isError: true,
 	},
 };
@@ -31,7 +30,7 @@ export const Password: Story = {
 	args: {
 		type: "password",
 		label: "Password",
-		msg: false,
+		isError: false,
 	},
 };
 
@@ -39,7 +38,6 @@ export const ErrorPassword: Story = {
 	args: {
 		type: "password",
 		label: "Password",
-		msg: true,
 		isError: true,
 	},
 };

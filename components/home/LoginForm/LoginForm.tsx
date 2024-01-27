@@ -7,7 +7,9 @@ import "../Login&RegistrationForm/login&registrationForm.scss";
 
 const LoginForm = () => {
 	const [email, setEmail] = useState<string>("");
+	const [invalidEmail, setInvalidEmail] = useState<boolean>(false);
 	const [password, setPassword] = useState<string>("");
+	const [invalidPassword, setInvalidPassword] = useState<boolean>(false);
 
 	const handleLogin = async (e: FormEvent) => {
 		e.preventDefault();
@@ -17,16 +19,28 @@ const LoginForm = () => {
 			password: password,
 		};
 
-		await fetch("/api", {
+		const response = await fetch("/api", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(data),
-		})
-			.then((response) => response.json())
-			.then((data) => console.log(data))
-			.catch((error) => console.error("Error:", error));
+		});
+		const responseData = await response.json();
+
+		if (responseData === "success") {
+			//rerouting
+			console.log("success");
+			setInvalidEmail(false);
+			setInvalidPassword(false);
+		} else if (responseData === "Invalid password") {
+			setInvalidPassword(true);
+		} else if (responseData === "Invalid email") {
+			setInvalidEmail(true);
+		} else {
+			setInvalidEmail(true);
+			setInvalidPassword(true);
+		}
 	};
 
 	return (
@@ -36,16 +50,14 @@ const LoginForm = () => {
 				onChange={(e) => setEmail(e.target.value)}
 				type="email"
 				label="Email"
-				msg={false}
-				isError={false}
+				isError={invalidEmail ? true : false}
 			/>
 			<Input
 				value={password}
 				onChange={(e) => setPassword(e.target.value)}
 				type="password"
 				label="Password"
-				msg={false}
-				isError={false}
+				isError={invalidPassword ? true : false}
 			/>
 
 			<Button type="submit" variant="primary" label="Sign in" />

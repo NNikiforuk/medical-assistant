@@ -18,12 +18,17 @@ export async function POST(request: NextRequest, response: NextResponse) {
 		const doesUserExists = users.find(
 			(user) => user.email === email && user.password === password
 		);
+		const existingEmail = users.find((user) => user.email === email);
+		const existingPassword = users.find((user) => user.password === password);
 
-		if (doesUserExists) {
-			return Response.json("Login succesful");
-		} else {
+		if (existingEmail && existingPassword) {
+			return Response.json("success");
+		} else if (existingEmail && !existingPassword) {
+			return Response.json("Invalid password");
+		} else if (!existingEmail && existingPassword) {
+			return Response.json("Invalid email");
 		}
-		return Response.json("Invalid credentials");
+		return Response.json("Invalid email and password");
 	} catch (error) {
 		console.error("Error in POST request:", error);
 	}
