@@ -3,7 +3,8 @@
 .input__wrapper {
 	color: $text-color;
 
-	.input__email, .input__password {
+	.input__email,
+	.input__password {
 		padding: 10px 20px;
 		display: flex;
 		margin: 10px 0;
@@ -15,5 +16,28 @@
 	.input__error {
 		color: $input-error-color;
 		font-size: $fontSize-280px-smaller;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.input__wrapper {
+		.input__email,
+		.input__password,
+		.input__error {
+			font-size: $fontSize-1024px;
+			margin-top: 20px;
+			padding: 20px 40px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.input__wrapper {
+		.input__email,
+		.input__password,
+		.input__error {
+			font-size: $fontSize-1200px;
+			padding: 10px 20px;
+		}
 	}
 }

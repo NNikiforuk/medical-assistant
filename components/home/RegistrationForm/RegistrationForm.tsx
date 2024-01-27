@@ -3,9 +3,7 @@
 import Button from "@/components/common/Button/Button"
 import Input from "@/components/common/Input/Input"
 import { useState } from "react";
-import "./registerForm.scss";
-
-
+import "../Login&RegistrationForm/login&registrationForm.scss";
 
 const RegistrationForm = () => {
 const [email, setEmail] = useState<string>("");
@@ -18,7 +16,7 @@ const handleRegistration = () => {
 
 
 return (
-	<form className="home__login__form">
+	<form className="home__form">
 		<Input
 			value={email}
 			onChange={(e) => setEmail(e.target.value)}

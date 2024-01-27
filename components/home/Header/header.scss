@@ -18,3 +18,21 @@
 		border-bottom: 1px solid $text-color;
 	}
 }
+
+@media only screen and (min-width: 1024px) {
+	.home__header {
+		font-size: $fontSize-1024px-capitals;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.home__header {
+		font-size: $fontSize-1200px-capitals;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.home__header {
+		font-size: $fontSize-1200px-capitals;
+	}
+}

@@ -37,6 +37,5 @@
     "sass": "^1.69.5",
     "storybook": "^7.6.7",
     "typescript": "^5"
-  },
-  "packageManager": "yarn@4.0.2"
+  }
 }

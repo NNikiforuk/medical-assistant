@@ -1,7 +1,30 @@
+@import "../../../styles/variables.scss";
+
 .home__logo {
 	font-weight: bold;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-top: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+	.home__logo {
+		margin-top: 200px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.home__logo {
+		font-size: 36px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.home__logo {
+		font-size: 24px;
+		margin-top: 0;
+		justify-content: flex-start;
+		padding: 20px;
+	}
 }
