@@ -2,17 +2,32 @@
 
 import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import "../Login&RegistrationForm/login&registrationForm.scss";
 
 const LoginForm = () => {
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 
-	const handleLogin = () => {
-	//
-	}
+	const handleLogin = async (e: FormEvent) => {
+		e.preventDefault();
 
+		const data = {
+			email: email,
+			password: password,
+		};
+
+		await fetch("/api", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		})
+			.then((response) => response.json())
+			.then((data) => console.log(data))
+			.catch((error) => console.error("Error:", error));
+	};
 
 	return (
 		<form className="home__form" onSubmit={handleLogin}>

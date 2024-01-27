@@ -1,11 +1,11 @@
 import { sql } from "@vercel/postgres";
-import { usersTypes } from "@/data/types";
+import { UserType } from "@/data/types";
 
 export async function fetchUsers() {
 	try {
 		console.log("Fetching users...");
 
-		const data = await sql<usersTypes>`SELECT * FROM users`;
+		const data = await sql<UserType>`SELECT * FROM users`;
 
 		console.log("Data fetch completed");
 
