@@ -28,14 +28,15 @@ const Input = ({
 
 	return (
 		<div className="input__wrapper">
-			<label htmlFor={label}>{label}</label>
+			<label htmlFor={type}>{label}</label>
 			<input
+				id={type}
 				required
-				name={label}
+				name={type}
 				value={value}
 				onChange={onChange}
 				className={`input__${type === "email" ? "email" : "password"}`}
-				type={type === "email" ? "email" : "password"}
+				type={type}
 			/>
 
 			{msg && isError && (
