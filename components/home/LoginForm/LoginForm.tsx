@@ -3,7 +3,7 @@
 import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
 import { FormEvent, useState } from "react";
-import "../Login&RegistrationForm/login&registrationForm.scss";
+import "../LoginRegistrationForm/loginRegistrationForm.scss";
 import { useRouter } from "next/navigation";
 
 const LoginForm = () => {

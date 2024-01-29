@@ -3,7 +3,7 @@
 import Button from "@/components/common/Button/Button"
 import Input from "@/components/common/Input/Input"
 import { useState } from "react";
-import "../Login&RegistrationForm/login&registrationForm.scss";
+import "../LoginRegistrationForm/loginRegistrationForm.scss";
 
 const RegistrationForm = () => {
 const [email, setEmail] = useState<string>("");
@@ -22,7 +22,6 @@ return (
 			onChange={(e) => setEmail(e.target.value)}
 			type="email"
 			label="Email"
-			msg={false}
 			isError={false}
 		/>
 		<Input
@@ -30,7 +29,6 @@ return (
 			onChange={(e) => setPassword(e.target.value)}
 			type="password"
 			label="Password"
-			msg={false}
 			isError={false}
 		/>
 

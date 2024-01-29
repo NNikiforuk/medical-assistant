@@ -18,6 +18,11 @@ const Input = ({ type, isError, label, value, onChange }: InputProps) => {
 	useEffect(() => setMounted(true), []);
 	if (!mounted) return null;
 
+
+	// <button type="{type}" classname="{`button" button${="" variant="==" "primary"="" ?="" "--primary"="" :="" "--secondary"="" }="" ${isdisabled="" &&="" "button--disabled"}`}="">
+	// 		{label}
+	// 	</button>
+
 	return (
 		<div className="input__wrapper">
 			<label htmlFor={type}>{label}</label>
