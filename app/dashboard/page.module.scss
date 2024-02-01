@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.dashboard {
+	&__header {
+		background-color: $background-color-dark;
+        padding: 30px;
+        color: $background-color;
+
+        &__date {
+            color: $background-color-light;
+            margin-top: 10px;
+            font-size: $fontSize-280px-smaller;
+        }
+	}
+
+}
