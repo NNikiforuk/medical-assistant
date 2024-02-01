@@ -1,0 +1,43 @@
+@import "../../../styles/variables.scss";
+
+.card {
+	background-color: $background-color-white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 200px;
+	margin: 50px auto;
+	border-radius: 20px;
+	color: $text-gray-color;
+	font-size: $fontSize-280px-smaller;
+
+	&__header {
+		background-color: $background-color-yellow;
+		width: 100%;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__main {
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		font-weight: bold;
+
+		&__btn {
+			padding: 20px;
+		}
+
+		&__checked {
+			padding: 20px;
+			color: $green-color;
+		}
+	}
+}
+
