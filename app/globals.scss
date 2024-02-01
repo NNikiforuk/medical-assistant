@@ -13,3 +13,21 @@ body {
 h1 {
 	font-size: $fontSize-280px-h1;
 }
+
+@media only screen and (min-width: 768px) {
+	h1 {
+		font-size: $fontSize-768px-h1;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	h1 {
+		font-size: $fontSize-1024px-h1;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	h1 {
+		font-size: $fontSize-1200px-h1;
+	}
+}
