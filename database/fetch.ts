@@ -19,7 +19,7 @@ export async function fetchUsers() {
 export async function fetchUserById(id: string) {
 	try {
 		const data =
-			await sql<UserType>`SELECT * FROM USERS WHERE id::text='${id}'`;
+			await sql<UserType>`SELECT * FROM USERS WHERE id::text = ${id}`;
 
 		return data.rows[0];
 	} catch (error) {

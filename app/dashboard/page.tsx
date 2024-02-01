@@ -2,7 +2,6 @@ import styles from "./page.module.scss";
 import Layout from "@/components/dashboard/Layout";
 import { cookies } from "next/headers";
 import { fetchUserById } from "@/database/fetch";
-import { useEffect } from "react";
 
 const Dashboard = async () => {
 	const cookieStore = cookies();
@@ -12,7 +11,7 @@ const Dashboard = async () => {
 	return (
 		<div className={styles.dashboard}>
 			<header className={styles.dashboard__header}>
-				<h1 className={styles.dashboard__header__title}>Welcome ${user.name}!</h1>
+				<h1 className={styles.dashboard__header__title}>Welcome {user.name}!</h1>
 				<div className={styles.dashboard__header__date}>
 					{new Date().toDateString()}
 				</div>
