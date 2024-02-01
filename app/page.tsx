@@ -13,7 +13,7 @@ export default function Home() {
 	const isRegistrationPage = searchParams.get("signup") !== null;
 
 	return (
-		<main className="styles.home">
+		<main className={styles.home}>
 			<Logo />
 			<Header isRegistrationPage={isRegistrationPage} />
 			{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
