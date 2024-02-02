@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../../components/common/Button/Button";
 import "./card.scss";
 import { IoPartlySunnyOutline } from "react-icons/io5";
@@ -18,8 +18,12 @@ type CardProps = {
 const Card = ({ isTaken, hour, name, dosage }: CardProps) => {
 	const [taken, setTaken] = useState<boolean>(false);
 
+	useEffect(() => {
+		setTaken(isTaken);
+	}, [isTaken]);
+
 	const handleClick = () => {
-		setTaken(!taken);
+		setTaken(!isTaken);
 	};
 
 	return (

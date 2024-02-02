@@ -11,6 +11,9 @@
 	border-radius: 20px;
 	color: $text-gray-color;
 	font-size: $fontSize-280px-smaller;
+	-webkit-box-shadow: 0px 2px 4px 1px $shadow-color;
+	-moz-box-shadow: 0px 2px 4px 1px $shadow-color;
+	box-shadow: 0px 2px 4px 1px $shadow-color;
 
 	&__header {
 		background-color: $background-color-yellow;
