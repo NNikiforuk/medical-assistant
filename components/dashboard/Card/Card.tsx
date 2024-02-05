@@ -16,14 +16,17 @@ type CardProps = {
 };
 
 const Card = ({ isTaken, hour, name, dosage }: CardProps) => {
-	const [taken, setTaken] = useState<boolean>(false);
+	const [taken, setTaken] = useState<boolean>(isTaken);
+	const morning = "06:00";
+	const noon = "12:00";
+	const evening = "18:00";
 
 	useEffect(() => {
 		setTaken(isTaken);
 	}, [isTaken]);
 
 	const handleClick = () => {
-		setTaken(!isTaken);
+		setTaken(!taken);
 	};
 
 	return (
@@ -31,7 +34,13 @@ const Card = ({ isTaken, hour, name, dosage }: CardProps) => {
 			<div className="card__header">
 				<div className="card__header__hour">{hour}</div>
 				<div className="card__header__icon">
-					<IoPartlySunnyOutline />
+					{hour >= morning && hour < noon ? (
+						<IoPartlySunnyOutline />
+					) : hour >= noon && hour < evening ? (
+						<IoSunnyOutline />
+					) : (
+						<MdOutlineNightsStay />
+					)}
 				</div>
 			</div>
 			<div className="card__main">
@@ -39,7 +48,7 @@ const Card = ({ isTaken, hour, name, dosage }: CardProps) => {
 				<div className="card__main__dosage">{dosage}</div>
 			</div>
 			{taken ? (
-				<div className="card__main__checked">
+				<div className="card__main__checked" onClick={handleClick}>
 					<FaCheck />
 				</div>
 			) : (

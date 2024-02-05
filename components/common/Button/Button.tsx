@@ -2,7 +2,7 @@ import "./button.scss";
 
 type ButtonProps = {
 	variant: "primary" | "secondary";
-	label: string;
+	label: string | React.ReactNode;
 	isDisabled?: boolean;
 	type: "button" | "submit";
 };
