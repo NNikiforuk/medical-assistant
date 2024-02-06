@@ -1,104 +1,52 @@
 @import "../../styles/variables.scss";
 
-.dashboard {
-	&__header {
-		background-color: $background-color-dark;
-		padding: 30px;
-		color: $text-blue-color-light;
+.dashboard .header {
+	background-color: $background-color-dark;
+	padding: 30px;
+	color: $text-blue-color-light;
 
-		&__title__date {
-			padding: 5px 0 10px 0;
-		}
+	&__date {
+		padding: 5px 0 10px 0;
+	}
 
-		&__add__medicine {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 5px;
-			margin-top: 20px;
-			padding: 10px 20px;
-			border-radius: 15px;
-			background-color: $background-color;
-			color: $text-blue-color-dark;
-
-			&__icon {
-				display: flex;
-				font-size: $fontSize-280px-icon;
-			}
-		}
+	&__btn {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
 	}
 }
 
 @media only screen and (min-width: 768px) {
-	.dashboard__header {
-		padding: 30px;
+	.dashboard .header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
 
-		&__title__date {
+		&__date {
 			font-size: $fontSize-768px-smaller;
 			margin-bottom: 40px;
-		}
-
-		&__add__medicine {
-			gap: 10px;
-			padding: 10px 20px;
-			max-width: 300px;
-			margin: 0 auto;
-			border-radius: 20px;
-
-			&__icon {
-				font-size: $fontSize-768px-icon;
-			}
-
-			&__desc {
-				font-size: $fontSize-768px;
-			}
 		}
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.dashboard__header {
+	.dashboard .header {
 		padding: 50px;
 
-		&__title__date {
+		&__date {
 			font-size: $fontSize-1024px-smaller;
 		}
 
-		&__add__medicine {
-			max-width: 450px;
-
-			&__icon {
-				font-size: $fontSize-1024px-icon;
-			}
-
-			&__desc {
-				font-size: $fontSize-1024px;
-			}
+		&__btn {
+			margin-top: 0;
 		}
 	}
 }
 
 @media only screen and (min-width: 1200px) {
-	.dashboard__header {
-		padding: 30px;
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-
-		&__title__date {
+	.dashboard .header {
+		&__date {
 			font-size: $fontSize-1200px-smaller;
-		}
-
-		&__add__medicine {
-			margin: 0;
-
-			&__icon {
-				font-size: $fontSize-1200px-icon;
-			}
-
-			&__desc {
-				font-size: $fontSize-1200px;
-			}
 		}
 	}
 }

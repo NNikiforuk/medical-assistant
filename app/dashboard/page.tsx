@@ -3,6 +3,7 @@ import Layout from "@/components/dashboard/Layout";
 import { cookies } from "next/headers";
 import { fetchUserById } from "@/database/fetch";
 import { IoMdAddCircle } from "react-icons/io";
+import Button from "@/components/common/Button/Button";
 
 const Dashboard = async () => {
 	const cookieStore = cookies();
@@ -11,22 +12,15 @@ const Dashboard = async () => {
 
 	return (
 		<div className={styles.dashboard}>
-			<header className={styles.dashboard__header}>
-				<div className={styles.dashboard__header__title}>
-					<h1 className={styles.dashboard__header__title__h1}>
-						Welcome {user.name}!
-					</h1>
-					<div className={styles.dashboard__header__title__date}>
+			<header className={styles.header}>
+				<div className={styles.header__title}>
+					<h1>Welcome {user.name}!</h1>
+					<div className={styles.header__date}>
 						{new Date().toDateString()}
 					</div>
 				</div>
-				<div className={styles.dashboard__header__add__medicine}>
-					<div className={styles.dashboard__header__add__medicine__icon}>
-						<IoMdAddCircle />
-					</div>
-					<div className={styles.dashboard__header__add__medicine__desc}>
-						Add medicine
-					</div>
+				<div className={styles.header__btn}>
+					<Button type="button" variant="secondary" label="Add medicine" />
 				</div>
 			</header>
 			<Layout>main</Layout>
