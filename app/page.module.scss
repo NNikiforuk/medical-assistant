@@ -13,7 +13,7 @@
 		justify-content: center;
 		align-items: center;
 		margin-top: 20px;
-		font-size: $fontSize-280px-smaller;
+		font-size: $font-size-xs;
 
 		.additional__info {
 			&__text {
@@ -32,15 +32,15 @@
 	}
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
 	.home__additional__info {
-		margin-top: 40px;
-		font-size: $fontSize-1024px-smaller;
+		font-size: $font-size-s;
+		margin-top: 30px;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.home__additional__info {
-		font-size: $fontSize-1200px-smaller;
+		font-size: $font-size-xs;
 	}
 }

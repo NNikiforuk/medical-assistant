@@ -19,20 +19,20 @@
 	}
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
 	.home__header {
-		font-size: $fontSize-1024px-capitals;
+		font-size: $font-size-s;
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.home__header {
-		font-size: $fontSize-1200px-capitals;
+		font-size: $font-size-m;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.home__header {
-		font-size: $fontSize-1200px-capitals;
+		font-size: $font-size-xs;
 	}
 }

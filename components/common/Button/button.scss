@@ -22,14 +22,21 @@
 	}
 }
 
+@media only screen and (min-width: 768px) {
+	.button {
+		font-size: $font-size-s;
+		padding: 15px 30px;
+	}
+}
+
 @media only screen and (min-width: 1024px) {
-	button {
-		font-size: $fontSize-1024px-button;
+	.button {
+		font-size: $font-size-m;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
-	button {
-		font-size: $fontSize-1200px;
+	.button {
+		font-size: $font-size-xs;
 	}
 }

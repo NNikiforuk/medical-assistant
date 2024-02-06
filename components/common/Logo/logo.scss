@@ -11,18 +11,20 @@
 @media only screen and (min-width: 768px) {
 	.logo {
 		margin-top: 200px;
+		font-size: $font-size-s;
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.logo {
-		font-size: 36px;
+		margin-top: 200px;
+		font-size: $font-size-m;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.logo {
-		font-size: 24px;
+		font-size: $font-size-s;
 		margin-top: 0;
 		justify-content: flex-start;
 		padding: 20px;

@@ -2,7 +2,6 @@ import styles from "./page.module.scss";
 import Layout from "@/components/dashboard/Layout";
 import { cookies } from "next/headers";
 import { fetchUserById } from "@/database/fetch";
-import { IoMdAddCircle } from "react-icons/io";
 import Button from "@/components/common/Button/Button";
 
 const Dashboard = async () => {

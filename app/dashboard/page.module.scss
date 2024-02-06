@@ -23,8 +23,12 @@
 		justify-content: space-between;
 
 		&__date {
-			font-size: $fontSize-768px-smaller;
+			font-size: $font-size-s;
 			margin-bottom: 40px;
+		}
+
+		&__btn {
+			margin-top: 0;
 		}
 	}
 }
@@ -34,7 +38,7 @@
 		padding: 50px;
 
 		&__date {
-			font-size: $fontSize-1024px-smaller;
+			font-size: $font-size-s;
 		}
 
 		&__btn {
@@ -46,7 +50,7 @@
 @media only screen and (min-width: 1200px) {
 	.dashboard .header {
 		&__date {
-			font-size: $fontSize-1200px-smaller;
+			font-size: $font-size-xs;
 		}
 	}
 }

@@ -1,4 +1,4 @@
-//Common
+//Colors
 $background-color: #c6dcf9;
 $background-color-light: #e7ecfa;
 $background-color-dark: #4279c0;
@@ -11,24 +11,13 @@ $text-blue-color-dark: #4279c0;
 $shadow-color: #ccc5c5;
 
 //Font size
-$fontSize-280px-smaller: 14px;
-$fontSize-280px-h1: 22px;
-$fontSize-280px-icon: 26px;
-$fontSize-768px-h1: 32px;
-$fontSize-768px-smaller: 20px;
-$fontSize-768px-icon: 46px;
-$fontSize-768px: 26px;
-$fontSize-1024px-capitals: 36px;
-$fontSize-1024px: 32px;
-$fontSize-1024px-h1: 40px;
-$fontSize-1024px-smaller: 26px;
-$fontSize-1024px-button: 26px;
-$fontSize-1024px-icon: 62px;
-$fontSize-1200px-capitals: 24px;
-$fontSize-1200px: 18px;
-$fontSize-1200px-smaller: 16px;
-$fontSize-1200px-h1: 22px;
-$fontSize-1200px-icon: 38px;
+$font-size-xs: 14px;
+$font-size-s: 24px;
+$font-size-m: 28px;
+
+$font-size-xs-h1: 22px;
+$font-size-s-h1: 32px;
+$font-size-m-h1: 40px;
 
 //Button
 $button-text-color: #ece6e6;
@@ -41,5 +30,4 @@ $button-secondary-text-color: #619de4;
 $input-border-color: #808080;
 $input-border-error-color: #e53939;
 $input-error-color: #e53939;
-$input-error-fontSize: 12px;
 $input-background-color: #ece6e6;

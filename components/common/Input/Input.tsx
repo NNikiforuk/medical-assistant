@@ -25,14 +25,14 @@ const Input = ({ type, isError, label, value, onChange }: InputProps) => {
 
 	return (
 		<div className="input__wrapper">
-			<label htmlFor={type}>{label}</label>
+			<label className="label" htmlFor={type}>{label}</label>
 			<input
 				id={type}
 				required
 				name={type}
 				value={value}
 				onChange={onChange}
-				className={`input__${type === "email" ? "email" : "password"} ${isError && "input__error"}`}
+				className={`input ${isError && "input--error"}`}
 				type={type}
 			/>
 
