@@ -12,7 +12,7 @@ const Dashboard = async () => {
 	return (
 		<div className={styles.dashboard}>
 			<header className={styles.dashboard__header}>
-				<div className={styles.dashboard__title}>
+				<div className={styles.dashboard__header__title}>
 					<h1 className={styles.dashboard__header__title__h1}>
 						Welcome {user.name}!
 					</h1>

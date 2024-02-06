@@ -2,6 +2,7 @@ import { fetchUsers } from "@/database/fetch";
 import { NextRequest, NextResponse } from "next/server";
 import { serialize } from "cookie";
 
+//User authentication (login)
 export async function POST(request: NextRequest, response: NextResponse) {
 	try {
 		const users = await fetchUsers();
@@ -9,7 +10,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
 		const { email, password } = data;
 		const user = users.find((user) => user.email === email);
 
-		if (user === undefined) {
+		if (!user) {
 			return Response.json("Invalid email");
 		}
 

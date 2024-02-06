@@ -4,14 +4,10 @@
 	&__header {
 		background-color: $background-color-dark;
 		padding: 30px;
-		color: $background-color;
+		color: $text-blue-color-light;
 
-		&__title {
-			&__date {
-				color: $background-color-light;
-				margin: 10px 0 10px 0;
-				font-size: $fontSize-280px-smaller;
-			}
+		&__title__date {
+			padding: 5px 0 10px 0;
 		}
 
 		&__add__medicine {
@@ -23,7 +19,7 @@
 			padding: 10px 20px;
 			border-radius: 15px;
 			background-color: $background-color;
-			color: $background-color-dark;
+			color: $text-blue-color-dark;
 
 			&__icon {
 				display: flex;
@@ -34,86 +30,74 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.dashboard {
-		&__header {
-			padding: 30px;
+	.dashboard__header {
+		padding: 30px;
 
-			&__title {
-				&__date {
-					font-size: $fontSize-768px-smaller;
-					margin-bottom: 40px;
-				}
+		&__title__date {
+			font-size: $fontSize-768px-smaller;
+			margin-bottom: 40px;
+		}
+
+		&__add__medicine {
+			gap: 10px;
+			padding: 10px 20px;
+			max-width: 300px;
+			margin: 0 auto;
+			border-radius: 20px;
+
+			&__icon {
+				font-size: $fontSize-768px-icon;
 			}
 
-			&__add__medicine {
-				gap: 10px;
-				padding: 10px 20px;
-				max-width: 300px;
-				margin: 0 auto;
-				border-radius: 20px;
-
-				&__icon {
-					font-size: $fontSize-768px-icon;
-				}
-
-				&__desc {
-					font-size: $fontSize-768px;
-				}
+			&__desc {
+				font-size: $fontSize-768px;
 			}
 		}
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.dashboard {
-		&__header {
-			padding: 50px;
+	.dashboard__header {
+		padding: 50px;
 
-			&__title {
-				&__date {
-					font-size: $fontSize-1024px-smaller;
-				}
+		&__title__date {
+			font-size: $fontSize-1024px-smaller;
+		}
+
+		&__add__medicine {
+			max-width: 450px;
+
+			&__icon {
+				font-size: $fontSize-1024px-icon;
 			}
 
-			&__add__medicine {
-				max-width: 450px;
-
-				&__icon {
-					font-size: $fontSize-1024px-icon;
-				}
-
-				&__desc {
-					font-size: $fontSize-1024px;
-				}
+			&__desc {
+				font-size: $fontSize-1024px;
 			}
 		}
 	}
 }
 
 @media only screen and (min-width: 1200px) {
-	.dashboard {
-		&__header {
-			padding: 30px;
-			display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
+	.dashboard__header {
+		padding: 30px;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
 
-			&__title {
-				&__date {
-					font-size: $fontSize-1200px-smaller;
-				}
+		&__title__date {
+			font-size: $fontSize-1200px-smaller;
+		}
+
+		&__add__medicine {
+			margin: 0;
+
+			&__icon {
+				font-size: $fontSize-1200px-icon;
 			}
 
-			&__add__medicine {
-                margin: 0;
-
-				&__icon {
-					font-size: $fontSize-1200px-icon;
-				}
-
-				&__desc {
-					font-size: $fontSize-1200px;
-				}
+			&__desc {
+				font-size: $fontSize-1200px;
 			}
 		}
 	}
