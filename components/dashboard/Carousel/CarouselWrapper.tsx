@@ -9,11 +9,11 @@ const responsive = {
 		breakpoint: { max: 5000, min: 2000 },
 		items: 12,
 	},
-	iPadPro1024px: {
+	smallDesktop1024px: {
 		breakpoint: { max: 1199, min: 1024 },
 		items: 4,
 	},
-	iPadMini768px: {
+	tablet768px: {
 		breakpoint: { max: 1023, min: 768 },
 		items: 4,
 	},

@@ -10,14 +10,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Taken: Story = {
+export const Primary: Story = {
 	args: {
-		isTaken: true,
-	},
-};
-
-export const Todo: Story = {
-	args: {
-		isTaken: false,
+		hour: "08:00",
+		name: "Ketonal",
+		dosage: "120mg",
 	},
 };

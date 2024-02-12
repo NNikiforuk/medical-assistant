@@ -5,11 +5,19 @@ type ButtonProps = {
 	label: string | React.ReactNode;
 	isDisabled?: boolean;
 	type: "button" | "submit";
+	onClick?: () => void;
 };
 
-const Button = ({ variant, label, isDisabled = false, type }: ButtonProps) => {
+const Button = ({
+	variant,
+	label,
+	isDisabled = false,
+	type,
+	onClick,
+}: ButtonProps) => {
 	return (
 		<button
+			onClick={onClick}
 			type={type}
 			className={`button button${
 				variant === "primary" ? "--primary" : "--secondary"
@@ -21,5 +29,3 @@ const Button = ({ variant, label, isDisabled = false, type }: ButtonProps) => {
 };
 
 export default Button;
-
-

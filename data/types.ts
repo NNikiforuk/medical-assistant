@@ -3,3 +3,9 @@ export type UserType = {
 	email: string;
 	password: string;
 };
+
+export type CardProps = {
+	hour: string;
+	name: string;
+	dosage: string;
+};
