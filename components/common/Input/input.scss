@@ -24,7 +24,11 @@
 
 @media only screen and (min-width: 768px) {
 	.input__wrapper {
-		font-size: $font-size-s;
+		.input,
+		.input--error,
+		.label {
+			font-size: $font-size-s;
+		}
 	}
 }
 
