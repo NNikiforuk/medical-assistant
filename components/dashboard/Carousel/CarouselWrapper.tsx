@@ -7,7 +7,7 @@ import "./carouselWrapper.scss";
 const responsive = {
 	desktop: {
 		breakpoint: { max: 5000, min: 2000 },
-		items: 12,
+		items: 8,
 	},
 	smallDesktop1024px: {
 		breakpoint: { max: 1199, min: 1024 },
@@ -22,14 +22,18 @@ const responsive = {
 		items: 3,
 	},
 	mobile: {
-		breakpoint: { max: 374, min: 0 },
+		breakpoint: { max: 374, min: 320 },
 		items: 2,
 	},
 };
 
 const CarouselWrapper = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<Carousel itemClass="carousel__item" className="carousel" responsive={responsive}>
+		<Carousel
+			itemClass="carousel__item"
+			className="carousel"
+			responsive={responsive}
+		>
 			{children}
 		</Carousel>
 	);

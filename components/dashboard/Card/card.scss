@@ -52,5 +52,9 @@
 		max-width: 160px;
 		height: 150px;
 		font-size: $fontSize-1200px-smaller;
+
+		.main {
+			padding: 8px;
+		}
 	}
 }
