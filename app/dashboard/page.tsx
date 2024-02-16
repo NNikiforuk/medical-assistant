@@ -5,11 +5,19 @@ import { fetchUserById } from "@/database/fetch";
 import Button from "@/components/common/Button/Button";
 import Card from "@/components/dashboard/Card/Card";
 import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
+import Link from "next/link";
+import Modal from "@/components/dashboard/Modal/Modal";
+import { useState } from "react";
 
-const Dashboard = async () => {
+type SearchParamProps = {
+	searchParams: Record<string, string> | null | undefined;
+};
+
+const Dashboard = async ({ searchParams }: SearchParamProps) => {
 	const cookieStore = cookies();
 	const cookieSession = cookieStore.get("session");
 	const user = await fetchUserById(cookieSession?.value ?? "");
+	const add = searchParams?.add;
 
 	return (
 		<div className={styles.dashboard}>
@@ -19,11 +27,18 @@ const Dashboard = async () => {
 					<div className={styles.header__date}>{new Date().toDateString()}</div>
 				</div>
 				<div className={styles.header__btn}>
-					<Button type="button" variant="secondary" label="Add medicine" />
+					<Link href="/dashboard/?add=true">
+						<Button
+							type="button"
+							variant="secondary"
+							label="Add medicine"
+						></Button>
+					</Link>
 				</div>
 			</header>
 			<Layout>
 				<main className={styles.main}>
+					{add && <Modal />}
 					<h2>Your medicines</h2>
 					<CarouselWrapper>
 						<Card hour="08:00" name="Ketonal" dosage="120mg" />
