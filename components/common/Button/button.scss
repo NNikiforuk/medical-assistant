@@ -4,9 +4,6 @@
 	padding: 8px 10px;
 	border-radius: 25px;
 	border: none;
-	-webkit-box-shadow: 0px 2px 4px 1px $shadow-color;
-	-moz-box-shadow: 0px 2px 4px 1px $shadow-color;
-	box-shadow: 0px 2px 4px 1px $shadow-color;
 	font-weight: bold;
 	cursor: pointer;
 
@@ -25,8 +22,22 @@
 	}
 }
 
+
+@media only screen and (min-width: 768px) {
+	.button {
+		font-size: $font-size-s;
+		padding: 15px 30px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.button {
+		font-size: $font-size-m;
+	}
+}
+
 @media only screen and (min-width: 1200px) {
-	button {
-		font-size: $fontSize-1200px-smaller;
+	.button {
+		font-size: $font-size-xs;
 	}
 }

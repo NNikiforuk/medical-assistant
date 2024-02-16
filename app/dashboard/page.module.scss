@@ -1,0 +1,56 @@
+@import "../../styles/variables.scss";
+
+.dashboard .header {
+	background-color: $background-color-dark;
+	padding: 30px;
+	color: $text-blue-color-light;
+
+	&__date {
+		padding: 5px 0 10px 0;
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.dashboard .header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		&__date {
+			font-size: $font-size-s;
+			margin-bottom: 40px;
+		}
+
+		&__btn {
+			margin-top: 0;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.dashboard .header {
+		padding: 50px;
+
+		&__date {
+			font-size: $font-size-s;
+		}
+
+		&__btn {
+			margin-top: 0;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.dashboard .header {
+		&__date {
+			font-size: $font-size-xs;
+		}
+	}
+}

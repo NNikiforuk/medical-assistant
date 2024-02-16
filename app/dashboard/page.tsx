@@ -1,11 +1,31 @@
+import styles from "./page.module.scss";
+import Layout from "@/components/dashboard/Layout";
+import { cookies } from "next/headers";
+import { fetchUserById } from "@/database/fetch";
+import Button from "@/components/common/Button/Button";
 import Card from "@/components/dashboard/Card/Card";
 import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
 
-const Dashboard = () => {
+const Dashboard = async () => {
+	const cookieStore = cookies();
+	const cookieSession = cookieStore.get("session");
+	const user = await fetchUserById(cookieSession?.value ?? "");
+
 	return (
-		<div>
-			<header></header>
-			<main>
+		<div className={styles.dashboard}>
+			<header className={styles.header}>
+				<div className={styles.header__title}>
+					<h1>Welcome {user.name}!</h1>
+					<div className={styles.header__date}>
+						{new Date().toDateString()}
+					</div>
+				</div>
+				<div className={styles.header__btn}>
+					<Button type="button" variant="secondary" label="Add medicine" />
+				</div>
+			</header>
+			<Layout>
+      <main>
 				<CarouselWrapper>
 					<Card hour="08:00" name="Ketonal" dosage="120mg" />
 					<Card hour="10:00" name="Apap" dosage="30mg" />
@@ -25,6 +45,7 @@ const Dashboard = () => {
 					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
 				</CarouselWrapper>
 			</main>
+      </Layout>
 		</div>
 	);
 };

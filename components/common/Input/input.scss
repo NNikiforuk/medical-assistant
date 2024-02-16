@@ -3,54 +3,66 @@
 .input__wrapper {
 	color: $text-color;
 
-	.input__email,
-	.input__password {
+	.input {
 		padding: 10px 20px;
 		display: flex;
 		margin: 10px 0;
 		border-radius: 15px;
 		border: $input-border-color 0.5px solid;
 		background-color: $input-background-color;
-
 	}
-	.input__error {
+	.input--error {
 		border: 1px solid $input-error-color;
 	}
 
 	.input__message {
 		color: $input-error-color;
-		font-size: $fontSize-280px-smaller;
+		font-size: $font-size-xs;
 		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.input__wrapper {
+		.input,
+		.input--error,
+		.label {
+			font-size: $font-size-s;
+		}
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.input__wrapper {
-		.input__email,
-		.input__password,
-		.input__error {
-			font-size: $fontSize-1024px;
-			margin-top: 20px;
-			padding: 20px 40px;
+		.input,
+		.input--error,
+		.label {
+			font-size: $font-size-m;
+			margin: 25px 0;
 		}
 
-		.input__message{
-			font-size: $fontSize-1024px-smaller;
+		.input {
+			padding: 20px;
+		}
+
+		.input__message {
+			font-size: $font-size-m;
 		}
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.input__wrapper {
-		.input__email,
-		.input__password,
-		.input__error {
-			font-size: $fontSize-1200px;
-			padding: 10px 20px;
+		.input,
+		.input--error,
+		.label,
+		.input__message {
+			font-size: $font-size-xs;
 		}
 
-		.input__message {
-			font-size: $fontSize-1200px-smaller;
+		.input {
+			padding: 10px 20px;
+			margin-top: 15px;
 		}
 	}
 }

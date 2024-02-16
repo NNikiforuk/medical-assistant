@@ -30,6 +30,7 @@
 		"@storybook/nextjs": "^7.6.7",
 		"@storybook/react": "^7.6.7",
 		"@storybook/test": "^7.6.7",
+		"@types/cookie": "^0.6.0",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
