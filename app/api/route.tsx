@@ -1,34 +1,29 @@
 import { fetchUsers } from "@/database/fetch";
 import { NextRequest, NextResponse } from "next/server";
+import { serialize } from "cookie";
 
-export async function GET(request: NextRequest, response: NextResponse) {
-	try {
-		const users = await fetchUsers();
-		return Response.json(users);
-	} catch (error) {
-		console.error("Error in GET users request:", error);
-	}
-}
-
+//User authentication (login)
 export async function POST(request: NextRequest, response: NextResponse) {
 	try {
 		const users = await fetchUsers();
 		const data = await request.json();
 		const { email, password } = data;
-		const doesUserExists = users.find(
-			(user) => user.email === email && user.password === password
-		);
-		const existingEmail = users.find((user) => user.email === email);
-		const existingPassword = users.find((user) => user.password === password);
+		const user = users.find((user) => user.email === email);
 
-		if (existingEmail && existingPassword) {
-			return Response.json("success");
-		} else if (existingEmail && !existingPassword) {
-			return Response.json("Invalid password");
-		} else if (!existingEmail && existingPassword) {
+		if (!user) {
 			return Response.json("Invalid email");
 		}
-		return Response.json("Invalid email and password");
+
+		const passwordExists = user.password === password;
+
+		if (!passwordExists) {
+			return Response.json("Invalid password");
+		}
+		const cookie = serialize("session", user.id);
+
+		return Response.json("success", {
+			headers: [["Set-Cookie", cookie]],
+		});
 	} catch (error) {
 		console.error("Error in POST request:", error);
 	}

@@ -1,6 +1,6 @@
 @import "../../../styles/variables.scss";
 
-.home__logo {
+.logo {
 	font-weight: bold;
 	display: flex;
 	justify-content: center;
@@ -9,20 +9,21 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.home__logo {
+	.logo {
 		margin-top: 200px;
+		font-size: $font-size-s;
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.home__logo {
-		font-size: 36px;
+	.logo {
+		font-size: $font-size-m;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
-	.home__logo {
-		font-size: 24px;
+	.logo {
+		font-size: $font-size-s;
 		margin-top: 0;
 		justify-content: flex-start;
 		padding: 20px;

@@ -12,12 +12,12 @@
 @media only screen and (min-width: 1024px) {
 	.home__form {
 		margin-top: 100px;
-		font-size: $fontSize-1024px;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.home__form {
-		font-size: $fontSize-1200px;
+		font-size: $font-size-xs;
+		margin-top: 70px;
 	}
 }

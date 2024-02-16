@@ -9,7 +9,9 @@ async function seedDatabase(client) {
 		const createTable = await client.sql`CREATE TABLE IF NOT EXISTS users (
             id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
             email TEXT NOT NULL UNIQUE,
-            password TEXT NOT NULL
+            password TEXT NOT NULL,
+			name TEXT NOT NULL,
+			surname TEXT NOT NULL
         );
         `;
 
@@ -18,7 +20,7 @@ async function seedDatabase(client) {
 		const insertedUsers = await Promise.all(
 			users.map(async (user) => {
 				return client.sql`
-                    INSERT INTO users (id, email, password) VALUES (${user.id}, ${user.email}, ${user.password})
+                    INSERT INTO users (id, email, password, name, surname) VALUES (${user.id}, ${user.email}, ${user.password}, ${user.name}, ${user.surname})
                     ON CONFLICT (id) DO NOTHING;
                     `;
 			})
