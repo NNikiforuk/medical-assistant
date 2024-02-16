@@ -16,36 +16,30 @@ const Dashboard = async () => {
 			<header className={styles.header}>
 				<div className={styles.header__title}>
 					<h1>Welcome {user.name}!</h1>
-					<div className={styles.header__date}>
-						{new Date().toDateString()}
-					</div>
+					<div className={styles.header__date}>{new Date().toDateString()}</div>
 				</div>
 				<div className={styles.header__btn}>
 					<Button type="button" variant="secondary" label="Add medicine" />
 				</div>
 			</header>
 			<Layout>
-      <main>
-				<CarouselWrapper>
-					<Card hour="08:00" name="Ketonal" dosage="120mg" />
-					<Card hour="10:00" name="Apap" dosage="30mg" />
-					<Card hour="12:00" name="Antibiotic" dosage="5mg" />
-					<Card
-						hour="16:00"
-						name="Paracetamol"
-						dosage="120mg"
-					/>
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
-				</CarouselWrapper>
-			</main>
-      </Layout>
+				<main>
+					<CarouselWrapper>
+						<Card hour="08:00" name="Ketonal" dosage="120mg" />
+						<Card hour="10:00" name="Apap" dosage="30mg" />
+						<Card hour="12:00" name="Antibiotic" dosage="5mg" />
+						<Card hour="16:00" name="Paracetamol" dosage="120mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+						<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					</CarouselWrapper>
+				</main>
+			</Layout>
 		</div>
 	);
 };
