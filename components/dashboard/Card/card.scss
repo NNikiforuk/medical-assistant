@@ -1,0 +1,60 @@
+@import "../../../styles/variables.scss";
+
+.card {
+	background-color: $background-color-white;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	max-width: 200px;
+	height: 180px;
+	margin: 5px;
+	border-radius: 20px;
+	color: $text-gray-color;
+	font-size: $fontSize-280px-smaller;
+
+	.header {
+		background-color: $background-color-yellow;
+		width: 100%;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.main {
+		padding: 10px;
+		font-weight: bold;
+
+		&__name,
+		&__dosage {
+			padding: 2px;
+			text-align: center;
+		}
+
+		&__btn {
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+
+			&--checked svg {
+				display: flex;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.card {
+		max-width: 160px;
+		height: 150px;
+		font-size: $fontSize-1200px-smaller;
+
+		.main {
+			padding: 8px;
+		}
+	}
+}

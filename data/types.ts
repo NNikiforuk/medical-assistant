@@ -5,3 +5,9 @@ export type UserType = {
 	name: string;
 	surname: string;
 };
+
+export type CardProps = {
+	hour: string;
+	name: string;
+	dosage: string;
+};

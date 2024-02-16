@@ -3,6 +3,8 @@ import Layout from "@/components/dashboard/Layout";
 import { cookies } from "next/headers";
 import { fetchUserById } from "@/database/fetch";
 import Button from "@/components/common/Button/Button";
+import Card from "@/components/dashboard/Card/Card";
+import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
 
 const Dashboard = async () => {
 	const cookieStore = cookies();
@@ -22,7 +24,28 @@ const Dashboard = async () => {
 					<Button type="button" variant="secondary" label="Add medicine" />
 				</div>
 			</header>
-			<Layout>main</Layout>
+			<Layout>
+      <main>
+				<CarouselWrapper>
+					<Card hour="08:00" name="Ketonal" dosage="120mg" />
+					<Card hour="10:00" name="Apap" dosage="30mg" />
+					<Card hour="12:00" name="Antibiotic" dosage="5mg" />
+					<Card
+						hour="16:00"
+						name="Paracetamol"
+						dosage="120mg"
+					/>
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+					<Card hour="22:00" name="Ibuprom" dosage="3mg" />
+				</CarouselWrapper>
+			</main>
+      </Layout>
 		</div>
 	);
 };
