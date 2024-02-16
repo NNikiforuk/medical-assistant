@@ -14,9 +14,17 @@ h1 {
 	font-size: $font-size-xs-h1;
 }
 
+h2 {
+	font-size: $font-size-xs-h2;
+}
+
 @media only screen and (min-width: 768px) {
 	h1 {
 		font-size: $font-size-s-h1;
+	}
+
+	h2 {
+		font-size: $font-size-s-h2;
 	}
 }
 
@@ -24,10 +32,18 @@ h1 {
 	h1 {
 		font-size: $font-size-m-h1;
 	}
+
+	h2 {
+		font-size: $font-size-m-h2;
+	}
 }
 
 @media only screen and (min-width: 1200px) {
 	h1 {
-		font-size: $font-size-s;
+		font-size: $font-size-s-h1;
+	}
+
+	h2 {
+		font-size: $font-size-xs-h2;
 	}
 }

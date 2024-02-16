@@ -1,9 +1,15 @@
 @import "../../styles/variables.scss";
 
+.dashboard {
+	background-color: rgb(231, 234, 238);
+	height: 100vh;
+}
+
 .dashboard .header {
-	background-color: $background-color-dark;
+	// background-color: $background-color-dark;
 	padding: 30px;
-	color: $text-blue-color-light;
+	// color: $text-blue-color-light;
+	color: $text-blue-color-dark;
 
 	&__date {
 		padding: 5px 0 10px 0;
@@ -14,6 +20,10 @@
 		justify-content: center;
 		margin-top: 20px;
 	}
+}
+
+.dashboard .main {
+	color: $text-color;
 }
 
 @media only screen and (min-width: 768px) {
@@ -49,6 +59,8 @@
 
 @media only screen and (min-width: 1200px) {
 	.dashboard .header {
+		padding: 20px;
+
 		&__date {
 			font-size: $font-size-xs;
 		}

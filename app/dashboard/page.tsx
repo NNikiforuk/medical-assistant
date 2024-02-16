@@ -23,7 +23,8 @@ const Dashboard = async () => {
 				</div>
 			</header>
 			<Layout>
-				<main>
+				<main className={styles.main}>
+					<h2>Your medicines</h2>
 					<CarouselWrapper>
 						<Card hour="08:00" name="Ketonal" dosage="120mg" />
 						<Card hour="10:00" name="Apap" dosage="30mg" />
