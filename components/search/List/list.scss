@@ -1,0 +1,10 @@
+@import "../../../styles/variables.scss";
+
+.list {
+    background-color: $background-color-light;
+    width: 100%;
+    max-width: 360px;
+    margin-top: 15px;
+    border-radius: 15px;
+    color: $text-color;
+}

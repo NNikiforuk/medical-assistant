@@ -6,6 +6,7 @@ import { RxCross1 } from "react-icons/rx";
 import Layout from "@/components/common/Layout/Layout";
 import { getData } from "../lib/getData";
 import { useEffect, useState } from "react";
+import List from "../../components/search/List/List";
 
 const Search = () => {
 	const [pills, setPills] = useState<any>([]);
@@ -22,7 +23,6 @@ const Search = () => {
 
 		fetchData();
 	}, []);
-	console.log(pills);
 
 	return (
 		<div className={styles.search}>
@@ -36,27 +36,18 @@ const Search = () => {
 				<main className={styles.main}>
 					<section className={styles.main__medicines}>
 						<h2>All medicines</h2>
-						<ul>
-							{pills?.map((el: any, index: any) => {
-								return (
-									<li key={index}>
-										<div>Name: {el.openfda.brand_name[0]}</div>
-										<div>
-											Dosage:
-											{el.dosage_and_administration[0]}
-										</div>
-										<div>
-											Usage:
-											{el.indications_and_usage[0]}
-										</div>
-										<div>
-											Purpose:
-											{el.purpose[0]}
-										</div>
-									</li>
-								);
-							})}
-						</ul>
+
+						{pills?.map((el: any) => {
+							return (
+								<List
+									key={el.id}
+									brandName={el.openfda.brand_name[0]}
+									dosage={el.dosage_and_administration[0]}
+									usage={el.indications_and_usage[0]}
+									purpose={el.purpose[0]}
+								/>
+							);
+						})}
 					</section>
 				</main>
 			</Layout>
