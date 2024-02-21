@@ -1,5 +1,5 @@
 import styles from "./page.module.scss";
-import Layout from "@/components/dashboard/Layout";
+import Layout from "@/components/common/Layout/Layout";
 import { cookies } from "next/headers";
 import { fetchUserById } from "@/database/fetch";
 import Button from "@/components/common/Button/Button";
@@ -15,7 +15,8 @@ const Dashboard = async () => {
 		<div className={styles.dashboard}>
 			<header className={styles.header}>
 				<div className={styles.header__title}>
-					<h1>Welcome {user.name}!</h1>
+					{/* <h1>Welcome {user.name}!</h1> */}
+					<h1>Welcome!</h1>
 					<div className={styles.header__date}>{new Date().toDateString()}</div>
 				</div>
 				<div className={styles.header__btn}>
