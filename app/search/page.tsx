@@ -34,20 +34,20 @@ const Search = () => {
 			</header>
 			<Layout>
 				<main className={styles.main}>
-					<section className={styles.main__medicines}>
+					<section>
 						<h2>All medicines</h2>
-
-						{pills?.map((el: any) => {
-							return (
-								<List
-									key={el.id}
-									brandName={el.openfda.brand_name[0]}
-									dosage={el.dosage_and_administration[0]}
-									usage={el.indications_and_usage[0]}
-									purpose={el.purpose[0]}
-								/>
-							);
-						})}
+						<ul className={styles.main__list}>
+							{pills?.map((el: any) => {
+								return (
+									<List
+										key={el.id}
+										brandName={el.openfda.brand_name[0]}
+										usage={el.indications_and_usage[0]}
+										purpose={el.purpose[0]}
+									/>
+								);
+							})}
+						</ul>
 					</section>
 				</main>
 			</Layout>
