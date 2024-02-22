@@ -1,11 +1,11 @@
 @import "../../../styles/variables.scss";
 
 .list {
-	background-color: rgba($background-color-light, 0.6);
+	background-color: $background-color-light-rgba;
+	color: $text-color;
 	width: 100%;
 	max-width: 360px;
 	border-radius: 15px;
-	color: $text-color;
 	margin-top: 20px;
 
 	&__desc {

@@ -7,6 +7,7 @@ import Layout from "@/components/common/Layout/Layout";
 import { getData } from "../lib/getData";
 import { useEffect, useState } from "react";
 import List from "../../components/search/List/List";
+import Searchbar from "@/components/search/Searchbar/Searchbar";
 
 const Search = () => {
 	const [pills, setPills] = useState<any>([]);
@@ -34,6 +35,10 @@ const Search = () => {
 			</header>
 			<Layout>
 				<main className={styles.main}>
+					<section className="searchbar">
+						<h2>Search for medicines</h2>
+						<Searchbar />
+					</section>
 					<section>
 						<h2>All medicines</h2>
 						<ul className={styles.main__list}>

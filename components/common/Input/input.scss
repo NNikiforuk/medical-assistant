@@ -11,6 +11,13 @@
 		border: $input-border-color 0.5px solid;
 		background-color: $input-background-color;
 	}
+	.input__placeholder {
+		background-color: $background-color-light-rgba;
+		color: $text-color;
+		width: 100%;
+		max-width: 360px;
+		border-radius: 15px;
+	}
 	.input--error {
 		border: 1px solid $input-error-color;
 	}
@@ -28,6 +35,9 @@
 		.input--error,
 		.label {
 			font-size: $font-size-s;
+		}
+		.input__placeholder {
+			margin: 15px auto;
 		}
 	}
 }
