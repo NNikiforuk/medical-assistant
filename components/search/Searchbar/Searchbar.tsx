@@ -1,6 +1,5 @@
 import Input from "@/components/common/Input/Input";
 import { ChangeEvent, useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
 
 const Searchbar = () => {
 	const [value, setValue] = useState<string>("");
