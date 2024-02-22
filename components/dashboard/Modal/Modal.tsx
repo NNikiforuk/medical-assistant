@@ -8,9 +8,9 @@ import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
 
 const Modal = () => {
-	const [hour, setHour] = useState<string>("");
-	const [name, setName] = useState<string>("");
-	const [dosage, setDosage] = useState<string>("");
+	const [hour, setHour] = useState("");
+	const [name, setName] = useState("");
+	const [dosage, setDosage] = useState("");
 
 	const handleAdding = () => {};
 
