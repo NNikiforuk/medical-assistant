@@ -4,32 +4,23 @@ import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
 import { FormEvent, useState } from "react";
 import "../LoginRegistrationForm/loginRegistrationForm.scss";
+import { fetchRegistration } from "./fetchRegistration";
 import { useRouter } from "next/navigation";
 
 const RegistrationForm = () => {
-	const [email, setEmail] = useState<string>("");
-	const [password, setPassword] = useState<string>("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const router = useRouter();
 
 	const handleRegistration = async (e: FormEvent) => {
 		e.preventDefault();
 
-		try {
-			const response = await fetch("/api/auth/register", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ email, password }),
-			});
+		const isSuccess = await fetchRegistration({ email, password });
 
-			if (!response.ok) {
-				throw new Error("Network response was not ok");
-			} else {
-				router.push("/dashboard");
-			}
-		} catch (error: any) {
-			console.error("Registration Failed:", error);
+		if (isSuccess) {
+			router.push("/dashboard");
+		} else {
+			console.error("Registration failed");
 		}
 	};
 
