@@ -1,14 +1,12 @@
 import Input from "@/components/common/Input/Input";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 
-const Searchbar = () => {
-	const [value, setValue] = useState<string>("");
+type SearchbarProps = {
+	value: string;
+	handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+};
 
-	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const inputValue = e.target.value;
-		setValue(inputValue);
-	};
-
+const Searchbar = ({ value, handleChange }: SearchbarProps) => {
 	return (
 		<Input
 			type="search"

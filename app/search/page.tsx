@@ -5,12 +5,13 @@ import styles from "./page.module.scss";
 import { RxCross1 } from "react-icons/rx";
 import Layout from "@/components/common/Layout/Layout";
 import { getData } from "../lib/getData";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import List from "../../components/search/List/List";
 import Searchbar from "@/components/search/Searchbar/Searchbar";
 
 const Search = () => {
 	const [pills, setPills] = useState<any>([]);
+	const [value, setValue] = useState<string>("");
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -25,6 +26,17 @@ const Search = () => {
 		fetchData();
 	}, []);
 
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const inputValue = e.target.value;
+		setValue(inputValue);
+	};
+
+	const searchedPills = pills.filter((pill: any) => {
+		return pill.openfda.brand_name[0]
+			.toLowerCase()
+			.includes(value.toLowerCase());
+	});
+
 	return (
 		<div className={styles.search}>
 			<header className={styles.header}>
@@ -37,18 +49,18 @@ const Search = () => {
 				<main className={styles.main}>
 					<section className="searchbar">
 						<h2>Search for medicines</h2>
-						<Searchbar />
+						<Searchbar value={value} handleChange={handleChange} />
 					</section>
 					<section>
 						<h2>All medicines</h2>
 						<ul className={styles.main__list}>
-							{pills?.map((el: any) => {
+							{searchedPills?.map((el: any) => {
 								return (
 									<List
 										key={el.id}
-										brandName={el.openfda.brand_name[0]}
-										usage={el.indications_and_usage[0]}
-										purpose={el.purpose[0]}
+										brandName={el.openfda?.brand_name?.[0]}
+										usage={el.indications_and_usage?.[0]}
+										purpose={el.purpose?.[0]}
 									/>
 								);
 							})}
