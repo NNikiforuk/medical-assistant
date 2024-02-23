@@ -1,0 +1,30 @@
+@import "../../../styles/variables.scss";
+
+.list {
+	background-color: $background-color-light-rgba;
+	color: $text-color;
+	width: 100%;
+	max-width: 360px;
+	border-radius: 15px;
+	margin-top: 20px;
+
+	&__desc {
+		padding: 10px 20px;
+
+		span {
+			font-size: $font-size-xxs;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.list {
+		margin: 15px auto;
+
+		&__desc {
+			span {
+				font-size: $font-size-xs;
+			}
+		}
+	}
+}

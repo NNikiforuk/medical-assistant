@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+
+.search {
+	height: 100vh;
+	width: 100vw;
+
+	.header {
+		padding: 30px;
+		color: $text-blue-color-dark;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.main {
+		color: $text-color;
+	}
+}
+

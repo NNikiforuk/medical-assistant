@@ -1,6 +1,7 @@
 //Colors
 $background-color: #c6dcf9;
 $background-color-light: #e7ecfa;
+$background-color-light-rgba: rgba($background-color-light, 0.6);
 $background-color-white: #eaebef;
 $background-color-dark: #4279c0;
 $background-color-yellow: #ddddac;
@@ -14,6 +15,7 @@ $green-color: #4ba55d;;
 $gray-color: #ccc5c5;
 
 //Font size
+$font-size-xxs: 12px;
 $font-size-xs: 14px;
 $font-size-s: 24px;
 $font-size-m: 28px;
