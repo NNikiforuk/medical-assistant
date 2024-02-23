@@ -2,17 +2,42 @@
 
 import Input from "@/components/common/Input/Input";
 import "./add.scss";
-import { useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
+import { fetchAdding } from "@/components/dashboard/Adding/fetchAdding";
+import { useSession } from "next-auth/react";
 
 const Add = () => {
 	const [hour, setHour] = useState("");
 	const [name, setName] = useState("");
 	const [dosage, setDosage] = useState("");
+	const [loggedUserEmail, setLoggedUserEmail] = useState("");
+	const { data: session, status } = useSession();
 
-    const handleAdding = () => {};
+	useEffect(() => {
+		if (status === "authenticated" && session?.user?.email) {
+			setLoggedUserEmail(session.user.email);
+		}
+	}, [status, session]);
+
+	const handleAdding = async (e: FormEvent) => {
+		e.preventDefault();
+
+		const isSuccess = await fetchAdding({
+			hour,
+			name,
+			dosage,
+			loggedUserEmail,
+		});
+
+		if (isSuccess) {
+			console.log("Medicine added");
+		} else {
+			console.error("Adding medicine failed");
+		}
+	};
 
 	return (
 		<section className="add">
@@ -28,6 +53,7 @@ const Add = () => {
 					type="time"
 					label="Time"
 					isError={false}
+					placeholder=""
 				/>
 				<Input
 					value={name}
@@ -35,6 +61,7 @@ const Add = () => {
 					type="text"
 					label="Name"
 					isError={false}
+					placeholder=""
 				/>
 				<Input
 					value={dosage}
@@ -42,6 +69,7 @@ const Add = () => {
 					type="text"
 					label="Dosage"
 					isError={false}
+					placeholder=""
 				/>
 
 				<Button type="submit" variant="primary" label="Add" />

@@ -1,17 +1,20 @@
-export const fetchRegistration = async ({
-	email,
-	password,
+export const fetchAdding = async ({
+	hour,
+	name,
+	dosage,
 }: {
-	email: string;
-	password: string;
+	hour: any;
+	name: string;
+	dosage: string;
+	loggedUserEmail: string
 }) => {
 	try {
-		const response = await fetch("/api/auth/register", {
-			method: "POST",
+		const response = await fetch("/api/auth/add", {
+			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ email, password }),
+			body: JSON.stringify({ hour, name, dosage }),
 		});
 
 		if (!response.ok) {

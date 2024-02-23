@@ -5,7 +5,7 @@ import Card from "@/components/dashboard/Card/Card";
 import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
 import Link from "next/link";
 
-const Dashboard = async () => {
+const Dashboard = () => {
 
 	return (
 		<div className={styles.dashboard}>

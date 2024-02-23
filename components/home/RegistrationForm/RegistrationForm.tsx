@@ -31,16 +31,14 @@ const RegistrationForm = () => {
 				onChange={(e) => setEmail(e.target.value)}
 				type="email"
 				label="Email"
-				isError={false}
-			/>
+				isError={false} placeholder=""			/>
 
 			<Input
 				value={password}
 				onChange={(e) => setPassword(e.target.value)}
 				type="password"
 				label="Password"
-				isError={false}
-			/>
+				isError={false} placeholder=""			/>
 
 			<Button type="submit" variant="primary" label="Sign up" />
 		</form>
