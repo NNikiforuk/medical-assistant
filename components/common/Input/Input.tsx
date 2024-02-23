@@ -4,10 +4,11 @@ import { ChangeEvent, useEffect, useState } from "react";
 import "./input.scss";
 
 type InputProps = {
-	type: "password" | "email" | "time" | "text";
+	type: "password" | "email" | "search" | "time" | "text";
 	isError: boolean;
 	label: string;
 	value: string;
+	placeholder: string;
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -17,6 +18,7 @@ const Input = ({
 	label,
 	value,
 	onChange,
+	placeholder,
 }: InputProps) => {
 	const [mounted, setMounted] = useState(false);
 
@@ -39,8 +41,11 @@ const Input = ({
 				name={type}
 				value={value}
 				onChange={onChange}
-				className={`input ${isError && "input--error"}`}
+				className={`input ${isError && "input--error"} ${
+					placeholder && "input__placeholder"
+				}`}
 				type={type}
+				placeholder={placeholder}
 			/>
 
 			{isError && (

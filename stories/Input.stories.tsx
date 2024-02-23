@@ -41,3 +41,11 @@ export const ErrorPassword: Story = {
 		isError: true,
 	},
 };
+
+export const Search: Story = {
+	args: {
+		type: "search",
+		label: "Search...",
+		isError: false,
+	},
+};

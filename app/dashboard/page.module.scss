@@ -1,14 +1,12 @@
 @import "../../styles/variables.scss";
 
 .dashboard {
-	background-color: rgb(231, 234, 238);
+	background-color: $background-color-light;
 	height: 100vh;
 }
 
 .dashboard .header {
-	// background-color: $background-color-dark;
 	padding: 30px;
-	// color: $text-blue-color-light;
 	color: $text-blue-color-dark;
 
 	&__date {

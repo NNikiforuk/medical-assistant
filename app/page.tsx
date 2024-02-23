@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import LoginForm from "@/components/home/LoginForm/LoginForm";
 import RegistrationForm from "@/components/home/RegistrationForm/RegistrationForm";
 import Link from "next/link";
+import { SessionProvider } from "next-auth/react";
 
 export default function Home() {
 	const searchParams = useSearchParams();
@@ -16,7 +17,9 @@ export default function Home() {
 		<main className={styles.home}>
 			<Logo />
 			<Header isRegistrationPage={isRegistrationPage} />
-			{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
+			<SessionProvider>
+				{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
+			</SessionProvider>
 			<div className={styles.home__additional__info}>
 				<div className={styles.additional__info__text}>
 					{isRegistrationPage

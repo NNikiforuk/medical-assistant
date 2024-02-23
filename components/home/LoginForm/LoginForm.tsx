@@ -5,6 +5,7 @@ import Input from "@/components/common/Input/Input";
 import { FormEvent, useState } from "react";
 import "../LoginRegistrationForm/loginRegistrationForm.scss";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 const LoginForm = () => {
 	const router = useRouter();
@@ -16,31 +17,18 @@ const LoginForm = () => {
 	const handleLogin = async (e: FormEvent) => {
 		e.preventDefault();
 
-		const data = {
-			email: email,
-			password: password,
-		};
-
-		const response = await fetch("/api", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
+		const result = await signIn("credentials", {
+			redirect: false,
+			email,
+			password,
 		});
-		const responseData = await response.json();
 
-		if (responseData === "success") {
-			setInvalidEmail(false);
-			setInvalidPassword(false);
-			router.push("/dashboard")
-		} else if (responseData === "Invalid password") {
-			setInvalidPassword(true);
-		} else if (responseData === "Invalid email") {
+		if (result?.error) {
+			console.log(result.error);
 			setInvalidEmail(true);
+			setInvalidPassword(true);
 		} else {
-			setInvalidEmail(true);
-			setInvalidPassword(true);
+			router.push("/dashboard");
 		}
 	};
 
