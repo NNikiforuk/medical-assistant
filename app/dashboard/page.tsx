@@ -1,5 +1,7 @@
 import styles from "./page.module.scss";
-import Layout from "@/components/dashboard/Layout";
+import Layout from "@/components/common/Layout/Layout";
+import { cookies } from "next/headers";
+import { fetchUserById } from "@/database/fetch";
 import Button from "@/components/common/Button/Button";
 import Card from "@/components/dashboard/Card/Card";
 import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
