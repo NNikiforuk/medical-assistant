@@ -1,33 +1,22 @@
 import styles from "./page.module.scss";
 import Layout from "@/components/dashboard/Layout";
-import { cookies } from "next/headers";
-import { fetchUserById } from "@/database/fetch";
 import Button from "@/components/common/Button/Button";
 import Card from "@/components/dashboard/Card/Card";
 import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
 import Link from "next/link";
-import Modal from "@/components/dashboard/Modal/Modal";
-import { useState } from "react";
 
-type SearchParamProps = {
-	searchParams: Record<string, string> | null | undefined;
-};
-
-const Dashboard = async ({ searchParams }: SearchParamProps) => {
-	const cookieStore = cookies();
-	const cookieSession = cookieStore.get("session");
-	const user = await fetchUserById(cookieSession?.value ?? "");
-	const add = searchParams?.add;
+const Dashboard = async () => {
 
 	return (
 		<div className={styles.dashboard}>
 			<header className={styles.header}>
 				<div className={styles.header__title}>
-					<h1>Welcome {user.name}!</h1>
+					{/* <h1>Welcome {user.name}!</h1> */}
+					<h1>Welcome!</h1>
 					<div className={styles.header__date}>{new Date().toDateString()}</div>
 				</div>
 				<div className={styles.header__btn}>
-					<Link href="/dashboard/?add=true">
+					<Link href="/dashboard/add">
 						<Button
 							type="button"
 							variant="secondary"
@@ -38,7 +27,6 @@ const Dashboard = async ({ searchParams }: SearchParamProps) => {
 			</header>
 			<Layout>
 				<main className={styles.main}>
-					{add && <Modal />}
 					<h2>Your medicines</h2>
 					<CarouselWrapper>
 						<Card hour="08:00" name="Ketonal" dosage="120mg" />

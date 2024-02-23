@@ -1,27 +1,27 @@
 "use client";
 
 import Input from "@/components/common/Input/Input";
-import "./modal.scss";
+import "./add.scss";
 import { useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
 
-const Modal = () => {
+const Add = () => {
 	const [hour, setHour] = useState("");
 	const [name, setName] = useState("");
 	const [dosage, setDosage] = useState("");
 
-	const handleAdding = () => {};
+    const handleAdding = () => {};
 
 	return (
-		<section className="modal">
-			<div className="modal__btn">
+		<section className="add">
+			<div className="add__btn">
 				<Link href="/dashboard">
 					<RxCross1 />
 				</Link>
 			</div>
-			<form className="modal__form" onSubmit={handleAdding}>
+			<form className="add__form" onSubmit={handleAdding}>
 				<Input
 					value={hour}
 					onChange={(e) => setHour(e.target.value)}
@@ -50,4 +50,4 @@ const Modal = () => {
 	);
 };
 
-export default Modal;
+export default Add;
