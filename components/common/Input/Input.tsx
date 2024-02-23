@@ -45,7 +45,7 @@ const Input = ({
 					placeholder && "input__placeholder"
 				}`}
 				type={type}
-				{...(placeholder ? { placeholder } : {})}
+				placeholder={placeholder}
 			/>
 
 			{isError && (
