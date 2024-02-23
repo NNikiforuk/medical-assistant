@@ -18,6 +18,10 @@ h2 {
 	font-size: $font-size-xs-h2;
 }
 
+a {
+	text-decoration: none;
+}
+
 @media only screen and (min-width: 768px) {
 	h1 {
 		font-size: $font-size-s-h1;

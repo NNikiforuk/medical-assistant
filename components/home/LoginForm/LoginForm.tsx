@@ -9,10 +9,10 @@ import { signIn } from "next-auth/react";
 
 const LoginForm = () => {
 	const router = useRouter();
-	const [email, setEmail] = useState<string>("");
-	const [invalidEmail, setInvalidEmail] = useState<boolean>(false);
-	const [password, setPassword] = useState<string>("");
-	const [invalidPassword, setInvalidPassword] = useState<boolean>(false);
+	const [email, setEmail] = useState("");
+	const [invalidEmail, setInvalidEmail] = useState(false);
+	const [password, setPassword] = useState("");
+	const [invalidPassword, setInvalidPassword] = useState(false);
 
 	const handleLogin = async (e: FormEvent) => {
 		e.preventDefault();

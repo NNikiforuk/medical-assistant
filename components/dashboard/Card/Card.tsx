@@ -11,7 +11,7 @@ import { CardProps } from "@/data/types";
 import { morning, noon, evening } from "@/data/consts";
 
 const Card = ({ hour, name, dosage }: CardProps) => {
-	const [taken, setTaken] = useState<boolean>(false);
+	const [taken, setTaken] = useState(false);
 
 	const handleClick = () => {
 		setTaken(!taken);

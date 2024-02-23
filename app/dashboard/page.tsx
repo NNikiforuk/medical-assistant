@@ -1,10 +1,9 @@
 import styles from "./page.module.scss";
 import Layout from "@/components/common/Layout/Layout";
-import { cookies } from "next/headers";
-import { fetchUserById } from "@/database/fetch";
 import Button from "@/components/common/Button/Button";
 import Card from "@/components/dashboard/Card/Card";
 import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
+import Link from "next/link";
 
 const Dashboard = async () => {
 
@@ -16,7 +15,13 @@ const Dashboard = async () => {
 					<div className={styles.header__date}>{new Date().toDateString()}</div>
 				</div>
 				<div className={styles.header__btn}>
-					<Button type="button" variant="secondary" label="Add medicine" />
+					<Link href="/dashboard/add">
+						<Button
+							type="button"
+							variant="secondary"
+							label="Add medicine"
+						></Button>
+					</Link>
 				</div>
 			</header>
 			<Layout>

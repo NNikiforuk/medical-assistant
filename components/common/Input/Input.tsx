@@ -4,7 +4,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import "./input.scss";
 
 type InputProps = {
-	type: "password" | "email" | "search";
+	type: "password" | "email" | "search" | "time" | "text";
 	isError: boolean;
 	label: string;
 	value: string;
