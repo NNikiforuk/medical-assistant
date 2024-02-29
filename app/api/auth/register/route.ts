@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import { hash } from "bcrypt";
 import { sql } from "@vercel/postgres";
 
-export async function POST(request: Request) {
+export async function POST(request: Request, response: Response) {
 	try {
 		const { email, password } = await request.json();
 		const hashedPassword = await hash(password, 10);
-		const response =
+		const result =
 			await sql`INSERT INTO users (email, password) VALUES (${email}, ${hashedPassword})`;
 	} catch (e) {
 		console.log({ e });

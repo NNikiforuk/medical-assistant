@@ -6,7 +6,7 @@ import { FormEvent, useEffect, useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
-import { fetchAdding } from "@/components/dashboard/Adding/fetchAdding";
+import { fetchAdding } from "@/app/lib/fetchAdding";
 import { useSession } from "next-auth/react";
 
 const Add = () => {
@@ -15,6 +15,7 @@ const Add = () => {
 	const [dosage, setDosage] = useState("");
 	const [loggedUserEmail, setLoggedUserEmail] = useState("");
 	const { data: session, status } = useSession();
+	const [medicines, setMedicines] = useState([]);
 
 	useEffect(() => {
 		if (status === "authenticated" && session?.user?.email) {

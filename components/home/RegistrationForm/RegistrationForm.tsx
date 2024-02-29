@@ -4,7 +4,7 @@ import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
 import { FormEvent, useState } from "react";
 import "../LoginRegistrationForm/loginRegistrationForm.scss";
-import { fetchRegistration } from "./fetchRegistration";
+import { fetchRegistration } from "../../../app/lib/fetchRegistration";
 import { useRouter } from "next/navigation";
 
 const RegistrationForm = () => {

@@ -2,19 +2,20 @@ export const fetchAdding = async ({
 	hour,
 	name,
 	dosage,
+	loggedUserEmail,
 }: {
 	hour: any;
 	name: string;
 	dosage: string;
-	loggedUserEmail: string
+	loggedUserEmail: string;
 }) => {
 	try {
-		const response = await fetch("/api/auth/add", {
-			method: "PATCH",
+		const response = await fetch("/api/add", {
+			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ hour, name, dosage }),
+			body: JSON.stringify({ hour, name, dosage, email: loggedUserEmail }),
 		});
 
 		if (!response.ok) {
@@ -23,7 +24,7 @@ export const fetchAdding = async ({
 			return true;
 		}
 	} catch (error: any) {
-		console.error("Registration failed:", error);
+		console.error("Adding failed:", error);
 		return false;
 	}
 };
