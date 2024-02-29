@@ -4,7 +4,7 @@ import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
 import { FormEvent, useState } from "react";
 import "../LoginRegistrationForm/loginRegistrationForm.scss";
-import { fetchRegistration } from "../../../app/lib/fetchRegistration";
+import { fetchRegistration } from "../../../lib/fetchRegistration";
 import { useRouter } from "next/navigation";
 
 const RegistrationForm = () => {
@@ -31,14 +31,18 @@ const RegistrationForm = () => {
 				onChange={(e) => setEmail(e.target.value)}
 				type="email"
 				label="Email"
-				isError={false} placeholder=""			/>
+				isError={false}
+				placeholder=""
+			/>
 
 			<Input
 				value={password}
 				onChange={(e) => setPassword(e.target.value)}
 				type="password"
 				label="Password"
-				isError={false} placeholder=""			/>
+				isError={false}
+				placeholder=""
+			/>
 
 			<Button type="submit" variant="primary" label="Sign up" />
 		</form>

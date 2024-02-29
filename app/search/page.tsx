@@ -4,7 +4,7 @@ import Button from "@/components/common/Button/Button";
 import styles from "./page.module.scss";
 import { RxCross1 } from "react-icons/rx";
 import Layout from "@/components/common/Layout/Layout";
-import { getData } from "../lib/getData";
+import { getData } from "../../lib/getData";
 import { ChangeEvent, useEffect, useState } from "react";
 import List from "../../components/search/List/List";
 import Searchbar from "@/components/search/Searchbar/Searchbar";

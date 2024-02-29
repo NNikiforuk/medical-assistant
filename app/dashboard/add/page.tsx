@@ -6,7 +6,7 @@ import { FormEvent, useEffect, useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
-import { fetchAdding } from "@/app/lib/fetchAdding";
+import { fetchAdding } from "@/lib/fetchAdding";
 import { useSession } from "next-auth/react";
 
 const Add = () => {
