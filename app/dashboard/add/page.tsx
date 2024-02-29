@@ -8,6 +8,7 @@ import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
 import { fetchAdding } from "@/lib/fetchAdding";
 import { useSession } from "next-auth/react";
+import { getUserMedicines } from "@/lib/getUserMedicines";
 
 const Add = () => {
 	const [hour, setHour] = useState("");
@@ -15,7 +16,7 @@ const Add = () => {
 	const [dosage, setDosage] = useState("");
 	const [loggedUserEmail, setLoggedUserEmail] = useState("");
 	const { data: session, status } = useSession();
-	const [medicines, setMedicines] = useState([]);
+	const [medicines, setMedicines] = useState();
 
 	useEffect(() => {
 		if (status === "authenticated" && session?.user?.email) {
@@ -35,6 +36,10 @@ const Add = () => {
 
 		if (isSuccess) {
 			console.log("Medicine added");
+
+			const userMedicines = await getUserMedicines(loggedUserEmail);
+			setMedicines(userMedicines);
+			console.log(medicines);
 		} else {
 			console.error("Adding medicine failed");
 		}

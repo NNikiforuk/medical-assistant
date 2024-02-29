@@ -1,4 +1,4 @@
-export async function getData() {
+export async function getAPIMedicines() {
 	//First 500 results
 	try {
 		const res = await fetch(

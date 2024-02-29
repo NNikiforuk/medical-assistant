@@ -1,7 +1,7 @@
-import { db } from "@vercel/postgres";
-import { NextResponse } from "next/server";
+import { db, sql } from "@vercel/postgres";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
 	const client = await db.connect();
 
 	try {
@@ -9,18 +9,26 @@ export async function POST(request: Request) {
 
 		await client.sql`BEGIN`;
 		await client.sql`
-			INSERT INTO pills (name, hour, dosage)
-			VALUES (${name}, ${hour}, ${dosage})
+			INSERT INTO pills (name, hour, dosage, owner_email)
+			VALUES (${name}, ${hour}, ${dosage}, ${email})
 		`;
 		await client.sql`
 			INSERT INTO owners (owner_email, pill_name)
 			VALUES (${email}, ${name})
 		`;
 		await client.sql`COMMIT`;
-	} catch (e) {
-		console.log({ e });
-		await client.sql`ROLLBACK`;
-	}
 
-	return NextResponse.json({ message: "success" });
+		return NextResponse.json({ message: "success" });
+	} catch (e) {
+		await client.sql`ROLLBACK`;
+		return new NextResponse(
+			JSON.stringify({ error: "Failed to add medicine" }),
+			{
+				status: 500,
+				headers: { "Content-Type": "application/json" },
+			}
+		);
+	} finally {
+		client.release();
+	}
 }
