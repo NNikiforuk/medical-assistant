@@ -9,6 +9,7 @@ import Link from "next/link";
 import { fetchAdding } from "@/lib/fetchAdding";
 import { useSession } from "next-auth/react";
 import { getUserMedicines } from "@/lib/getUserMedicines";
+import { useRouter } from "next/navigation";
 
 const Add = () => {
 	const [hour, setHour] = useState("");
@@ -16,7 +17,7 @@ const Add = () => {
 	const [dosage, setDosage] = useState("");
 	const [loggedUserEmail, setLoggedUserEmail] = useState("");
 	const { data: session, status } = useSession();
-	const [medicines, setMedicines] = useState();
+	const router = useRouter();
 
 	useEffect(() => {
 		if (status === "authenticated" && session?.user?.email) {
@@ -37,9 +38,8 @@ const Add = () => {
 		if (isSuccess) {
 			console.log("Medicine added");
 
-			const userMedicines = await getUserMedicines(loggedUserEmail);
-			setMedicines(userMedicines);
-			console.log(medicines);
+			router.replace("/dashboard");
+			router.refresh();
 		} else {
 			console.error("Adding medicine failed");
 		}
