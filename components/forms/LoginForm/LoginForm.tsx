@@ -39,15 +39,13 @@ const LoginForm = () => {
 				onChange={(e) => setEmail(e.target.value)}
 				type="email"
 				label="Email"
-				isError={invalidEmail ? true : false}
-			/>
+				isError={invalidEmail ? true : false} placeholder={""}			/>
 			<Input
 				value={password}
 				onChange={(e) => setPassword(e.target.value)}
 				type="password"
 				label="Password"
-				isError={invalidPassword ? true : false}
-			/>
+				isError={invalidPassword ? true : false} placeholder={""}			/>
 
 			<Button type="submit" variant="primary" label="Sign in" />
 		</form>

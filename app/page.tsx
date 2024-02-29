@@ -2,10 +2,10 @@
 
 import styles from "./page.module.scss";
 import Logo from "@/components/common/Logo/Logo";
-import Header from "@/components/home/Header/Header";
+import Header from "@/components/header/Header";
 import { useSearchParams } from "next/navigation";
-import LoginForm from "@/components/home/LoginForm/LoginForm";
-import RegistrationForm from "@/components/home/RegistrationForm/RegistrationForm";
+import LoginForm from "@/components/forms/LoginForm/LoginForm";
+import RegistrationForm from "@/components/forms/RegistrationForm/RegistrationForm";
 import Link from "next/link";
 
 export default function Home() {
