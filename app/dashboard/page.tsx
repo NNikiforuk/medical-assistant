@@ -9,11 +9,9 @@ import { getServerSession } from "next-auth";
 
 const Dashboard = async () => {
 	const session = await getServerSession();
-	console.log(session);
 	const pills =
 		await sql`SELECT name, hour, dosage, id FROM pills WHERE owner_email = ${session?.user?.email}`;
 
-	console.log(pills);
 	return (
 		<div className={styles.dashboard}>
 			<header className={styles.header}>
@@ -35,7 +33,6 @@ const Dashboard = async () => {
 				<main className={styles.main}>
 					<h2>Your medicines</h2>
 					<CarouselWrapper>
-						<Card hour="08:00" name="Ketonal" dosage="120mg" />
 						{pills.rows.map((pill) => {
 							return (
 								<Card

@@ -8,7 +8,6 @@ import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
 import { fetchAdding } from "@/lib/fetchAdding";
 import { useSession } from "next-auth/react";
-import { getUserMedicines } from "@/lib/getUserMedicines";
 import { useRouter } from "next/navigation";
 
 const Add = () => {
@@ -36,8 +35,6 @@ const Add = () => {
 		});
 
 		if (isSuccess) {
-			console.log("Medicine added");
-
 			router.replace("/dashboard");
 			router.refresh();
 		} else {
