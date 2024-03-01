@@ -23,7 +23,7 @@ const Dashboard = async () => {
 					<Link href="/dashboard/add">
 						<Button
 							type="button"
-							variant="secondary"
+							variant="primary"
 							label="Add medicine"
 						></Button>
 					</Link>
