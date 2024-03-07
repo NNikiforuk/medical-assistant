@@ -46,7 +46,6 @@ const LoginForm = () => {
 				onChange={(e) => setPassword(e.target.value)}
 				type="password"
 				label="Password"
-						/>
 				isError={invalidPassword}
 			/>
 

@@ -30,3 +30,10 @@ export const Disabled: Story = {
 		isDisabled: true,
 	},
 };
+
+export const Icon: Story = {
+	args: {
+		label: "Button",
+		isDisabled: false,
+	},
+};

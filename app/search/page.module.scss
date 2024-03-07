@@ -6,10 +6,16 @@
 
 	.header {
 		padding: 30px;
-		color: $text-blue-color-dark;
+		color: $text-blue-color-light;
+		background-color: $background-color-dark;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+
+		&__btn {
+			margin-top: 20px;
+		}
 	}
 
 	.main {
@@ -17,3 +23,14 @@
 	}
 }
 
+@media only screen and (min-width: 768px) {
+	.search .header {
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-direction: row;
+
+		&__btn {
+			margin-top: 0;
+		}
+	}
+}

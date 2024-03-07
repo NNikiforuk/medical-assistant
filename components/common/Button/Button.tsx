@@ -19,8 +19,8 @@ const Button = ({
 		<button
 			onClick={onClick}
 			type={type}
-			className={`button button${
-				variant === "primary" ? "--primary" : "--secondary"
+			className={`button ${
+				variant === "primary" ? "button--primary" : "button--secondary"
 			} ${isDisabled && "button--disabled"}`}
 		>
 			{label}

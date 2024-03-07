@@ -2,29 +2,30 @@
 
 import Button from "@/components/common/Button/Button";
 import styles from "./page.module.scss";
-import { RxCross1 } from "react-icons/rx";
 import Layout from "@/components/common/Layout/Layout";
 import { getAPIMedicines } from "../../lib/getAPIMedicines";
+import { IoArrowBackOutline } from "react-icons/io5";
 import { ChangeEvent, useEffect, useState } from "react";
 import List from "../../components/search/List/List";
 import Searchbar from "@/components/search/Searchbar/Searchbar";
+import Link from "next/link";
 
 const Search = () => {
 	const [pills, setPills] = useState<any>([]);
 	const [value, setValue] = useState<string>("");
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const data = await getAPIMedicines();
-				setPills(data.results);
-			} catch (error) {
-				console.error("Error");
-			}
-		};
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		try {
+	// 			const data = await getAPIMedicines();
+	// 			setPills(data.results);
+	// 		} catch (error) {
+	// 			console.error("Error");
+	// 		}
+	// 	};
 
-		fetchData();
-	}, []);
+	// 	fetchData();
+	// }, []);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const inputValue = e.target.value;
@@ -42,7 +43,18 @@ const Search = () => {
 			<header className={styles.header}>
 				<h1>Medicine finder</h1>
 				<div className={styles.header__btn}>
-					<Button type="button" variant="secondary" label={<RxCross1 />} />
+					<Link href="/dashboard">
+						<Button
+							variant="primary"
+							label={
+								<>
+									<IoArrowBackOutline />
+									Go back to dashboard
+								</>
+							}
+							type={"button"}
+						/>
+					</Link>
 				</div>
 			</header>
 			<Layout>

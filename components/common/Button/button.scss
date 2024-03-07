@@ -9,6 +9,13 @@
 	border: 1px solid $gray-color;
 	display: flex;
 
+	svg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: $font-size-xs;
+	}
+
 	&--primary {
 		background-color: $button-primary-background-color;
 		color: $button-text-color;
