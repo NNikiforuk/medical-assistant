@@ -2,12 +2,11 @@
 
 import styles from "./page.module.scss";
 import Logo from "@/components/common/Logo/Logo";
-import Header from "@/components/home/Header/Header";
+import Header from "@/components/header/Header";
 import { useSearchParams } from "next/navigation";
-import LoginForm from "@/components/home/LoginForm/LoginForm";
-import RegistrationForm from "@/components/home/RegistrationForm/RegistrationForm";
+import LoginForm from "@/components/forms/LoginForm/LoginForm";
+import RegistrationForm from "@/components/forms/RegistrationForm/RegistrationForm";
 import Link from "next/link";
-import { SessionProvider } from "next-auth/react";
 
 export default function Home() {
 	const searchParams = useSearchParams();
@@ -17,9 +16,7 @@ export default function Home() {
 		<main className={styles.home}>
 			<Logo />
 			<Header isRegistrationPage={isRegistrationPage} />
-			<SessionProvider>
-				{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
-			</SessionProvider>
+			{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
 			<div className={styles.home__additional__info}>
 				<div className={styles.additional__info__text}>
 					{isRegistrationPage

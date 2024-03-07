@@ -20,7 +20,7 @@ export const fetchRegistration = async ({
 			return true;
 		}
 	} catch (error: any) {
-		console.error("Registration Failed:", error);
+		console.error("Registration failed:", error);
 		return false;
 	}
 };

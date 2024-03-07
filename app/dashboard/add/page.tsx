@@ -2,17 +2,45 @@
 
 import Input from "@/components/common/Input/Input";
 import "./add.scss";
-import { useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
+import { fetchAdding } from "@/lib/fetchAdding";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Add = () => {
 	const [hour, setHour] = useState("");
 	const [name, setName] = useState("");
 	const [dosage, setDosage] = useState("");
+	const [loggedUserEmail, setLoggedUserEmail] = useState("");
+	const { data: session, status } = useSession();
+	const router = useRouter();
 
-    const handleAdding = () => {};
+	useEffect(() => {
+		if (status === "authenticated" && session?.user?.email) {
+			setLoggedUserEmail(session.user.email);
+		}
+	}, [status, session]);
+
+	const handleAdding = async (e: FormEvent) => {
+		e.preventDefault();
+
+		const isSuccess = await fetchAdding({
+			hour,
+			name,
+			dosage,
+			loggedUserEmail,
+		});
+
+		if (isSuccess) {
+			router.replace("/dashboard");
+			router.refresh();
+		} else {
+			console.error("Adding medicine failed");
+		}
+	};
 
 	return (
 		<section className="add">

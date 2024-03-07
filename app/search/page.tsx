@@ -4,7 +4,7 @@ import Button from "@/components/common/Button/Button";
 import styles from "./page.module.scss";
 import { RxCross1 } from "react-icons/rx";
 import Layout from "@/components/common/Layout/Layout";
-import { getData } from "../lib/getData";
+import { getAPIMedicines } from "../../lib/getAPIMedicines";
 import { ChangeEvent, useEffect, useState } from "react";
 import List from "../../components/search/List/List";
 import Searchbar from "@/components/search/Searchbar/Searchbar";
@@ -16,7 +16,7 @@ const Search = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const data = await getData();
+				const data = await getAPIMedicines();
 				setPills(data.results);
 			} catch (error) {
 				console.error("Error");

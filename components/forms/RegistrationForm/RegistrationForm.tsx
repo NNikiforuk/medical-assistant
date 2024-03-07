@@ -4,7 +4,7 @@ import Button from "@/components/common/Button/Button";
 import Input from "@/components/common/Input/Input";
 import { FormEvent, useState } from "react";
 import "../LoginRegistrationForm/loginRegistrationForm.scss";
-import { fetchRegistration } from "./fetchRegistration";
+import { fetchRegistration } from "../../../lib/fetchRegistration";
 import { useRouter } from "next/navigation";
 
 const RegistrationForm = () => {
@@ -32,6 +32,7 @@ const RegistrationForm = () => {
 				type="email"
 				label="Email"
 				isError={false}
+				placeholder=""
 			/>
 
 			<Input
@@ -40,6 +41,7 @@ const RegistrationForm = () => {
 				type="password"
 				label="Password"
 				isError={false}
+				placeholder=""
 			/>
 
 			<Button type="submit" variant="primary" label="Sign up" />
