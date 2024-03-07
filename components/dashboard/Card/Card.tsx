@@ -7,6 +7,8 @@ import { IoPartlySunnyOutline } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
 import { MdOutlineNightsStay } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
+import { MdCheck } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
 import { CardProps } from "@/data/types";
 import { morning, noon, evening } from "@/data/consts";
 
@@ -39,18 +41,18 @@ const Card = ({ hour, name, dosage }: CardProps) => {
 				<div className="main__btn main__btn--checked" onClick={handleClick}>
 					<Button
 						variant="secondary"
-						label={<FaCheck />}
 						type="button"
 						onClick={handleClick}
+						label={<MdCheck />}
 					/>
 				</div>
 			) : (
 				<div className="main__btn">
 					<Button
-						variant="secondary"
-						label="Mark as taken"
+						variant="icon"
 						type="button"
 						onClick={handleClick}
+						label={<RxCross2 />}
 					/>
 				</div>
 			)}
