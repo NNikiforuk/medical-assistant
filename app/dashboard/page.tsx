@@ -19,12 +19,19 @@ const Dashboard = async () => {
 					<h1>Welcome!</h1>
 					<div className={styles.header__date}>{new Date().toDateString()}</div>
 				</div>
-				<div className={styles.header__btn}>
+				<div className={styles.header__btns}>
 					<Link href="/dashboard/add">
 						<Button
 							type="button"
 							variant="primary"
 							label="Add medicine"
+						></Button>
+					</Link>
+					<Link href="/search">
+						<Button
+							type="button"
+							variant="primary"
+							label="Search pills"
 						></Button>
 					</Link>
 				</div>
