@@ -56,6 +56,7 @@ const Add = () => {
 					type="time"
 					label="Time"
 					isError={false}
+					placeholder=""
 				/>
 				<Input
 					value={name}
@@ -63,6 +64,7 @@ const Add = () => {
 					type="text"
 					label="Name"
 					isError={false}
+					placeholder=""
 				/>
 				<Input
 					value={dosage}
@@ -70,6 +72,7 @@ const Add = () => {
 					type="text"
 					label="Dosage"
 					isError={false}
+					placeholder=""
 				/>
 
 				<Button type="submit" variant="primary" label="Add" />

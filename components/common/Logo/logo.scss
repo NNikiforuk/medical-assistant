@@ -3,15 +3,28 @@
 .logo {
 	font-weight: bold;
 	display: flex;
-	justify-content: center;
+	flex-direction: row-reverse;
+	justify-content: space-between;
 	align-items: center;
-	margin-top: 50px;
+	margin: 30px 0;
+
+	&__header {
+		color: $text-green-dark;
+	}
+	&__img {
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 768px) {
 	.logo {
-		margin-top: 200px;
+		margin: 100px 0;
 		font-size: $font-size-s;
+		flex-direction: column-reverse;
+
+		&__img {
+			display: flex;
+		}
 	}
 }
 
@@ -24,8 +37,10 @@
 @media only screen and (min-width: 1200px) {
 	.logo {
 		font-size: $font-size-s;
-		margin-top: 0;
-		justify-content: flex-start;
+		margin: 0 0 40px 0;
 		padding: 20px;
+		flex-direction: row-reverse;
+		width: 100vw;
+		justify-content: start;
 	}
 }
