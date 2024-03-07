@@ -33,13 +33,13 @@ const Dashboard = async () => {
 				<main className={styles.main}>
 					<h2>Your medicines</h2>
 					<CarouselWrapper>
-						{pills.rows.map((pill) => {
+						{pills.rows.map(({id, name, hour, dosage}) => {
 							return (
 								<Card
-									key={pill.id}
-									name={pill.name}
-									hour={pill.hour}
-									dosage={pill.dosage}
+									key={id}
+									name={name}
+									hour={hour}
+									dosage={dosage}
 								/>
 							);
 						})}
