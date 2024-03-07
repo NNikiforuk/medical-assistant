@@ -1,0 +1,44 @@
+@import "../../../styles/variables.scss";
+
+.icon {
+	padding: 8px 10px;
+	font-weight: bold;
+	cursor: pointer;
+	display: flex;
+	border-radius: 25px;
+
+	&--green {
+		color: $green-color;
+		border: 1px solid $green-color;
+	}
+
+	&--red {
+		color: $red-color;
+		border: 1px solid $red-color;
+	}
+
+	svg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: $font-size-xs;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.icon {
+		font-size: $font-size-xs;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.icon {
+		padding: 15px 30px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.icon {
+		padding: 5px 10px;
+	}
+}
