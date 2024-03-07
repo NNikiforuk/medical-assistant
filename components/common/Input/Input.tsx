@@ -8,7 +8,7 @@ type InputProps = {
 	isError: boolean;
 	label: string;
 	value: string;
-	placeholder: string;
+	placeholder?: string;
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -18,17 +18,13 @@ const Input = ({
 	label,
 	value,
 	onChange,
-	placeholder,
+	placeholder = "",
 }: InputProps) => {
 	const [mounted, setMounted] = useState(false);
 
 	//Hydration error with lastPass
 	useEffect(() => setMounted(true), []);
 	if (!mounted) return null;
-
-	// <button type="{type}" classname="{`button" button${="" variant="==" "primary"="" ?="" "--primary"="" :="" "--secondary"="" }="" ${isdisabled="" &&="" "button--disabled"}`}="">
-	// 		{label}
-	// 	</button>
 
 	return (
 		<div className="input__wrapper">
