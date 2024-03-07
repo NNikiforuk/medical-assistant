@@ -34,19 +34,19 @@
 			padding: 2px;
 			text-align: center;
 		}
+	}
 
-		&__btn {
-			padding: 10px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: 100%;
+	.btns {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+}
 
-			&--checked svg {
-				display: flex;
-			}
-		}
+@media only screen and (min-width: 768px) {
+	.card .btns {
+		margin-top: 20px;
+		flex-direction: row;
 	}
 }
 
