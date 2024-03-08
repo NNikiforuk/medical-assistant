@@ -17,11 +17,12 @@ const Dashboard = async () => {
 	// };
 	const handleDelete = async (id: any) => {
 		"use server";
-		try {
-			await sql`DELETE FROM pills WHERE id = ${id}`;
-		} catch (error) {
-			console.log('error tutaj', error);
-		}
+		// try {
+		// 	await sql`DELETE FROM pills WHERE id = ${id}`;
+		// } catch (error) {
+		// 	console.log('error tutaj', error);
+		// }
+		return;
 	};
 
 
