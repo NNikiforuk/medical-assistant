@@ -12,7 +12,7 @@ import { morning, noon, evening } from "@/data/consts";
 import Icon from "@/components/common/Icon/Icon";
 import Button from "@/components/common/Button/Button";
 
-const Card = ({ hour, name, dosage, handleEdit }: CardProps) => {
+const Card = ({ hour, name, dosage, handleEdit, handleDelete }: CardProps) => {
 	const [taken, setTaken] = useState(false);
 
 	const handleClick = () => {
@@ -45,7 +45,7 @@ const Card = ({ hour, name, dosage, handleEdit }: CardProps) => {
 					type="button"
 				/>
 				<Button
-					// onClick={handleDelete}
+					onClick={handleDelete}
 					variant="gray"
 					label="Delete"
 					type="button"

@@ -12,9 +12,20 @@ const Dashboard = async () => {
 	const pills =
 		await sql`SELECT name, hour, dosage, id FROM pills WHERE owner_email = ${session?.user?.email}`;
 
-	const handleEdit = (pill: any) => {};
-	// const handleDelete = (pill) => {};
+	// const handleEdit = async (id: any) => {
+	// 	"use server";
+	// };
+	const handleDelete = async (id: any) => {
+		"use server";
+		try {
+			await sql`DELETE FROM pills WHERE id = ${id}`;
+		} catch (error) {
+			console.log('error tutaj', error);
+		}
+	};
 
+
+	//Reason for use server below (error): Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server"
 	return (
 		<div className={styles.dashboard}>
 			<header className={styles.header}>
@@ -52,10 +63,12 @@ const Dashboard = async () => {
 									dosage={pill.dosage}
 									handleEdit={async () => {
 										"use server";
-
-										await handleEdit(pill);
+										// await handleEdit(pill.id);
 									}}
-									// handleDelete={() => handleDelete(pill)}
+									handleDelete={async () => {
+										"use server";
+										await handleDelete(pill.id);
+									}}
 								/>
 							);
 						})}

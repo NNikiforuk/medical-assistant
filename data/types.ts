@@ -11,4 +11,5 @@ export type CardProps = {
 	name: string;
 	dosage: string;
 	handleEdit: () => void;
+	handleDelete: () => void;
 };
