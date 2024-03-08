@@ -7,7 +7,6 @@
 	font-weight: bold;
 	cursor: pointer;
 	border: 1px solid $gray-color;
-	display: flex;
 
 	svg {
 		display: flex;
@@ -24,6 +23,11 @@
 	&--secondary {
 		color: $button-secondary-text-color;
 		background-color: transparent;
+	}
+
+	&--gray {
+		color: $text-gray-color;
+		font-weight: 400;
 	}
 
 	&--disabled {

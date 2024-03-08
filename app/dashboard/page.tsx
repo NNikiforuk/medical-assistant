@@ -12,6 +12,9 @@ const Dashboard = async () => {
 	const pills =
 		await sql`SELECT name, hour, dosage, id FROM pills WHERE owner_email = ${session?.user?.email}`;
 
+	const handleEdit = (pill: any) => {};
+	// const handleDelete = (pill) => {};
+
 	return (
 		<div className={styles.dashboard}>
 			<header className={styles.header}>
@@ -40,13 +43,19 @@ const Dashboard = async () => {
 				<main className={styles.main}>
 					<h2>Your medicines</h2>
 					<CarouselWrapper>
-						{pills.rows.map(({id, name, hour, dosage}) => {
+						{pills.rows.map((pill) => {
 							return (
 								<Card
-									key={id}
-									name={name}
-									hour={hour}
-									dosage={dosage}
+									key={pill.id}
+									name={pill.name}
+									hour={pill.hour}
+									dosage={pill.dosage}
+									handleEdit={async () => {
+										"use server";
+
+										await handleEdit(pill);
+									}}
+									// handleDelete={() => handleDelete(pill)}
 								/>
 							);
 						})}

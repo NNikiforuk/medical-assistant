@@ -10,9 +10,9 @@ import { RxCross2 } from "react-icons/rx";
 import { CardProps } from "@/data/types";
 import { morning, noon, evening } from "@/data/consts";
 import Icon from "@/components/common/Icon/Icon";
-import { LiaEdit } from "react-icons/lia";
+import Button from "@/components/common/Button/Button";
 
-const Card = ({ hour, name, dosage }: CardProps) => {
+const Card = ({ hour, name, dosage, handleEdit }: CardProps) => {
 	const [taken, setTaken] = useState(false);
 
 	const handleClick = () => {
@@ -38,7 +38,19 @@ const Card = ({ hour, name, dosage }: CardProps) => {
 				<div className="main__dosage">{dosage}</div>
 			</div>
 			<div className="btns">
-				<Icon variant="gray" label={<LiaEdit />} />
+				<Button
+					onClick={handleEdit}
+					variant="gray"
+					label="Edit"
+					type="button"
+				/>
+				<Button
+					// onClick={handleDelete}
+					variant="gray"
+					label="Delete"
+					type="button"
+				/>
+
 				{taken ? (
 					<div className="btns__icon" onClick={handleClick}>
 						<Icon variant="green" label={<MdCheck />} onClick={handleClick} />
