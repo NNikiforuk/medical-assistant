@@ -11,59 +11,27 @@
 		border: $input-border-color 0.5px solid;
 		background-color: $input-background-color;
 		padding: 10px 40px;
+		text-align: center;
 	}
 }
 
 @media only screen and (min-width: 768px) {
-	.input__wrapper {
-		.input,
-		.input--error,
-		.label {
-			font-size: $font-size-s;
-		}
-		.input__placeholder {
-			margin: 15px auto;
-			max-width: 500px;
-			padding: 15px 30px;
-		}
+	.select .list {
+		font-size: $font-size-s;
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.input__wrapper {
-		.input,
-		.input--error,
-		.label {
-			font-size: $font-size-m;
-			margin: 25px 0;
-		}
-
-		.input {
-			padding: 20px;
-		}
-
-		.input__message {
-			font-size: $font-size-m;
-		}
-
-		.input__placeholder {
-			margin: 50px auto;
-		}
+	.select .list, label {
+		font-size: $font-size-m;
+		padding: 20px 40px;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
-	.input__wrapper {
-		.input,
-		.input--error,
-		.label,
-		.input__message {
-			font-size: $font-size-xs;
-		}
-
-		.input {
-			padding: 10px 20px;
-			margin-top: 15px;
-		}
+	.select .list, label {
+		font-size: $font-size-xs;
+		padding: 10px 20px;
+		margin-top: 15px;
 	}
 }
