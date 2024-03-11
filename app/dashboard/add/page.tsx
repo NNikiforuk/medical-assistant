@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import Select from "@/components/common/Select/Select";
 
 const Add = () => {
-	const [hour, setHour] = useState("");
+	const [hour, setHour] = useState("morning");
 	const [name, setName] = useState("");
 	const [dosage, setDosage] = useState("");
 	const [loggedUserEmail, setLoggedUserEmail] = useState("");

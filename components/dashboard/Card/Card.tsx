@@ -8,7 +8,6 @@ import { MdOutlineNightsStay } from "react-icons/md";
 import { MdCheck } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { CardProps } from "@/data/types";
-import { morning, noon, evening } from "@/data/consts";
 import Icon from "@/components/common/Icon/Icon";
 import Button from "@/components/common/Button/Button";
 import { useRouter } from "next/navigation";
@@ -40,9 +39,9 @@ const Card = ({ hour, name, dosage, id }: CardProps) => {
 			<header className="header">
 				<div className="header__hour">{hour}</div>
 				<div className="header__icon">
-					{hour >= morning && hour < noon ? (
+					{hour === "morning" ? (
 						<IoPartlySunnyOutline />
-					) : hour >= noon && hour < evening ? (
+					) : hour === "dinner" ? (
 						<IoSunnyOutline />
 					) : (
 						<MdOutlineNightsStay />
