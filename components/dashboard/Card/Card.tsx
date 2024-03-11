@@ -11,12 +11,28 @@ import { CardProps } from "@/data/types";
 import { morning, noon, evening } from "@/data/consts";
 import Icon from "@/components/common/Icon/Icon";
 import Button from "@/components/common/Button/Button";
+import { useRouter } from "next/navigation";
 
-const Card = ({ hour, name, dosage, handleEdit, handleDelete }: CardProps) => {
+const Card = ({ hour, name, dosage, id }: CardProps) => {
+	const router = useRouter();
 	const [taken, setTaken] = useState(false);
 
 	const handleClick = () => {
 		setTaken(!taken);
+	};
+
+	const handleDelete = async (id: number) => {
+		try {
+			const response = await fetch(`/api/delete/${id}`, {
+				method: "DELETE",
+			});
+
+			if (response.ok) {
+				router.refresh();
+			}
+		} catch (error) {
+			console.error("Error during deleting pill", error);
+		}
 	};
 
 	return (
@@ -38,14 +54,9 @@ const Card = ({ hour, name, dosage, handleEdit, handleDelete }: CardProps) => {
 				<div className="main__dosage">{dosage}</div>
 			</div>
 			<div className="btns">
+				<Button onClick={() => {}} variant="gray" label="Edit" type="button" />
 				<Button
-					onClick={handleEdit}
-					variant="gray"
-					label="Edit"
-					type="button"
-				/>
-				<Button
-					onClick={handleDelete}
+					onClick={() => handleDelete(id)}
 					variant="gray"
 					label="Delete"
 					type="button"
