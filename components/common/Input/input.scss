@@ -2,6 +2,7 @@
 
 .input__wrapper {
 	color: $text-color;
+	text-align: center;
 
 	.input {
 		padding: 10px 20px;
@@ -33,6 +34,8 @@
 
 @media only screen and (min-width: 768px) {
 	.input__wrapper {
+		margin-bottom: 20px;
+
 		.input,
 		.input--error,
 		.label {
@@ -76,6 +79,7 @@
 		.label,
 		.input__message {
 			font-size: $font-size-xs;
+			margin-bottom: 0;
 		}
 
 		.input {
