@@ -1,19 +1,27 @@
 import "./icon.scss";
 
 type IconProps = {
-	variant: "green" | "red" | "gray";
+	variant: "green" | "red" | "logout";
 	label: React.ReactNode;
 	onClick?: () => void;
 };
 
 const Icon = ({ variant, label, onClick }: IconProps) => {
 	return (
-		<button
-			onClick={onClick}
-			className={`icon icon${variant === "green" ? "--green" : variant === "red" ? "--red" : "--gray"}`}
-		>
-			{label}
-		</button>
+		<form>
+			<button
+				onClick={onClick}
+				className={`icon icon${
+					variant === "green"
+						? "--green"
+						: variant === "red"
+							? "--red"
+							: "--logout"
+				}`}
+			>
+				{label}
+			</button>
+		</form>
 	);
 };
 

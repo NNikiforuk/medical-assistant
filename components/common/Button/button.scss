@@ -30,6 +30,18 @@
 		font-weight: 400;
 	}
 
+	&--grayicon {
+		color: $button-text-color;
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		border: 1px solid $gray-color;
+
+		svg {
+			font-size: $font-size-m;
+		}
+	}
+
 	&--disabled {
 		background-color: $button-disabled-background-color;
 		color: $button-disabled-text-color;
@@ -45,7 +57,7 @@
 @media only screen and (min-width: 1024px) {
 	.button {
 		padding: 15px 30px;
-		font-size: $font-size-s;
+		font-size: $font-size-m;
 	}
 }
 

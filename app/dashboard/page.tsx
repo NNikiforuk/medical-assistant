@@ -6,7 +6,6 @@ import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
 import Link from "next/link";
 import { sql } from "@vercel/postgres";
 import { getServerSession } from "next-auth";
-import Icon from "@/components/common/Icon/Icon";
 import { GiExitDoor } from "react-icons/gi";
 
 const Dashboard = async () => {
@@ -36,7 +35,7 @@ const Dashboard = async () => {
 							label="Search pills"
 						></Button>
 					</Link>
-					<Icon variant="gray" label={<GiExitDoor />} />
+					<Button type="button" variant="grayicon" label={<GiExitDoor />} />
 				</div>
 			</header>
 			<Layout>

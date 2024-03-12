@@ -23,18 +23,6 @@
 		color: $red-color;
 		border: 1px solid $red-color;
 	}
-
-	&--gray {
-		color: $button-text-color;
-		background-color: transparent;
-		display: flex;
-		align-items: center;
-		border: 1px solid $gray-color;
-
-		svg {
-			font-size: $font-size-m;
-		}
-	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -47,7 +35,7 @@
 	.icon {
 		padding: 15px;
 
-		&--gray {
+		&--logout {
 			svg {
 				font-size: $font-size-m;
 			}
