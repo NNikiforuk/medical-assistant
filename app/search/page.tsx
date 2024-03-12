@@ -4,7 +4,6 @@ import Button from "@/components/common/Button/Button";
 import styles from "./page.module.scss";
 import Layout from "@/components/common/Layout/Layout";
 import { getAPIMedicines } from "../../lib/getAPIMedicines";
-import { IoArrowBackOutline } from "react-icons/io5";
 import { ChangeEvent, useEffect, useState } from "react";
 import List from "../../components/search/List/List";
 import Searchbar from "@/components/search/Searchbar/Searchbar";
@@ -14,18 +13,18 @@ const Search = () => {
 	const [pills, setPills] = useState<any>([]);
 	const [value, setValue] = useState<string>("");
 
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		try {
-	// 			const data = await getAPIMedicines();
-	// 			setPills(data.results);
-	// 		} catch (error) {
-	// 			console.error("Error");
-	// 		}
-	// 	};
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const data = await getAPIMedicines();
+				setPills(data.results);
+			} catch (error) {
+				console.error("Error");
+			}
+		};
 
-	// 	fetchData();
-	// }, []);
+		fetchData();
+	}, []);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const inputValue = e.target.value;
@@ -46,30 +45,27 @@ const Search = () => {
 					<Link href="/dashboard">
 						<Button
 							variant="primary"
-							label={
-								<>
-									<IoArrowBackOutline />
-									Go back to dashboard
-								</>
-							}
-							type={"button"}
+							label="Go back to dashboard"
+							type="button"
 						/>
 					</Link>
 				</div>
 			</header>
 			<Layout>
 				<main className={styles.main}>
-					<section className="searchbar">
-						<h2>Search for medicines</h2>
+					<section className={styles.searchbar}>
+						<h2 className={styles.searchbar__header}>Search for medicines</h2>
 						<Searchbar value={value} handleChange={handleChange} />
 					</section>
 					<section>
-						<h2>All medicines</h2>
+						<h2 className={styles.medicines__header}>All medicines</h2>
 						<ul className={styles.main__list}>
-							{searchedPills?.map((el: any) => {
+							{searchedPills?.map((el: any, idx: number) => {
+								console.log("el.id:", el.id);
 								return (
 									<List
 										key={el.id}
+										id={el.id}
 										brandName={el.openfda?.brand_name?.[0]}
 										usage={el.indications_and_usage?.[0]}
 										purpose={el.purpose?.[0]}

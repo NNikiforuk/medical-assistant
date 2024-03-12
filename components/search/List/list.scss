@@ -1,6 +1,6 @@
 @import "../../../styles/variables.scss";
 
-.list {
+.item {
 	background-color: $background-color-light-rgba;
 	color: $text-color;
 	width: 100%;
@@ -18,7 +18,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.list {
+	.item {
 		margin: 15px auto;
 
 		&__desc {
