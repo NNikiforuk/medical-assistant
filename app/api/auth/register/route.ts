@@ -6,8 +6,8 @@ export async function POST(request: Request, response: Response) {
 	try {
 		const { email, password } = await request.json();
 		const hashedPassword = await hash(password, 10);
-		const result =
-			await sql`INSERT INTO users (email, password) VALUES (${email}, ${hashedPassword})`;
+
+		await sql`INSERT INTO users (email, password) VALUES (${email}, ${hashedPassword})`;
 	} catch (e) {
 		console.log({ e });
 	}

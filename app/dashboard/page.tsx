@@ -40,13 +40,14 @@ const Dashboard = async () => {
 				<main className={styles.main}>
 					<h2>Your medicines</h2>
 					<CarouselWrapper>
-						{pills.rows.map(({id, name, hour, dosage}) => {
+						{pills.rows.map((pill) => {
 							return (
 								<Card
-									key={id}
-									name={name}
-									hour={hour}
-									dosage={dosage}
+									key={pill.id}
+									name={pill.name}
+									hour={pill.hour}
+									dosage={pill.dosage}
+									id={pill.id}
 								/>
 							);
 						})}

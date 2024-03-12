@@ -10,4 +10,5 @@ export type CardProps = {
 	hour: string;
 	name: string;
 	dosage: string;
+	id: number
 };

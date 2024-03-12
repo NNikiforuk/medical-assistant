@@ -1,7 +1,7 @@
 import "./button.scss";
 
 type ButtonProps = {
-	variant: "primary" | "secondary" | "icon";
+	variant: "primary" | "secondary" | "gray";
 	label: string | React.ReactNode;
 	isDisabled?: boolean;
 	type: "button" | "submit";
@@ -19,9 +19,7 @@ const Button = ({
 		<button
 			onClick={onClick}
 			type={type}
-			className={`button ${
-				variant === "primary" ? "button--primary" : "button--secondary"
-			} ${isDisabled && "button--disabled"}`}
+			className={`button button--${variant}`}
 		>
 			{label}
 		</button>

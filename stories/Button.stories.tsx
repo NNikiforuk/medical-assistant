@@ -31,9 +31,4 @@ export const Disabled: Story = {
 	},
 };
 
-export const Icon: Story = {
-	args: {
-		label: "Button",
-		isDisabled: false,
-	},
-};
+
