@@ -52,7 +52,6 @@ const Add = () => {
 			</div>
 			<form className="add__form" onSubmit={handleAdding}>
 				<Select onChange={(e) => setHour(e.target.value)} value={hour} />
-
 				<Input
 					value={name}
 					onChange={(e) => setName(e.target.value)}

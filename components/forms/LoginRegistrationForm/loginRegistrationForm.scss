@@ -12,6 +12,7 @@
 @media only screen and (min-width: 768px) {
 	.home__form {
 		margin-top: 50px;
+		gap: 40px;
 	}
 }
 
@@ -19,5 +20,6 @@
 	.home__form {
 		font-size: $font-size-xs;
 		margin-top: 70px;
+		gap: 20px;
 	}
 }
