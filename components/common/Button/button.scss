@@ -45,11 +45,13 @@
 @media only screen and (min-width: 1024px) {
 	.button {
 		padding: 15px 30px;
+		font-size: $font-size-s;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.button {
 		padding: 5px 10px;
+		font-size: $font-size-xs;
 	}
 }

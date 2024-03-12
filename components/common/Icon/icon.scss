@@ -7,6 +7,13 @@
 	display: flex;
 	border-radius: 25px;
 
+	svg {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: $font-size-xs;
+	}
+
 	&--green {
 		color: $green-color;
 		border: 1px solid $green-color;
@@ -18,15 +25,15 @@
 	}
 
 	&--gray {
-		color: $gray-color;
-		border: 1px solid $gray-color;
-	}
-
-	svg {
+		color: $button-text-color;
+		background-color: transparent;
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		font-size: $font-size-xs;
+		border: 1px solid $gray-color;
+
+		svg {
+			font-size: $font-size-m;
+		}
 	}
 }
 
@@ -39,6 +46,12 @@
 @media only screen and (min-width: 1024px) {
 	.icon {
 		padding: 15px;
+
+		&--gray {
+			svg {
+				font-size: $font-size-m;
+			}
+		}
 	}
 }
 

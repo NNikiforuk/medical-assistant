@@ -51,7 +51,7 @@ const Add = () => {
 				</Link>
 			</div>
 			<form className="add__form" onSubmit={handleAdding}>
-				<Select onChange={(e) => setHour(e.target.value)} />
+				<Select onChange={(e) => setHour(e.target.value)} value={hour} />
 
 				<Input
 					value={name}
