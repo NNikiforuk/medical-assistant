@@ -1,12 +1,18 @@
 import "./select.scss";
 
-const Select = ({ onChange }: { onChange: (e: any) => void }) => {
+const Select = ({ onChange, value }: { onChange: (e: any) => void, value: string }) => {
 	return (
-		<div className="select" onChange={onChange}>
+		<div className="select">
 			<label className="select__label" htmlFor="time">
 				Time
 			</label>
-			<select className="list" name="time" id="time">
+			<select
+				value={value}
+				onChange={onChange}
+				className="list"
+				name="time"
+				id="time"
+			>
 				<option className="list__option" value="morning">
 					morning
 				</option>

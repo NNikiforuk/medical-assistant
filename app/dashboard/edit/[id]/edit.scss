@@ -1,0 +1,45 @@
+@import "../../../../styles/variables.scss";
+
+.edit {
+	background-color: $background-color-light;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	height: 100vh;
+	width: 100vw;
+
+	&__btn {
+		display: flex;
+		justify-content: flex-end;
+		padding: 10px;
+		font-size: $font-size-s;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 100px;
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.edit {
+		&__btn {
+			font-size: $font-size-m;
+			padding: 50px;
+		}
+
+		&__form {
+			gap: 20px;
+			font-size: $font-size-s;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.edit .edit__form {
+		margin-top: 20px;
+	}
+}

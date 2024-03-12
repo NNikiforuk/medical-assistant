@@ -11,6 +11,7 @@ import { CardProps } from "@/data/types";
 import Icon from "@/components/common/Icon/Icon";
 import Button from "@/components/common/Button/Button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Card = ({ hour, name, dosage, id }: CardProps) => {
 	const router = useRouter();
@@ -53,7 +54,13 @@ const Card = ({ hour, name, dosage, id }: CardProps) => {
 				<div className="main__dosage">{dosage}</div>
 			</div>
 			<div className="btns">
-				<Button onClick={() => {}} variant="gray" label="Edit" type="button" />
+				<Link href={`/dashboard/edit/${id}`}>
+					<Button
+						variant="gray"
+						label="Edit"
+						type="button"
+					/>
+				</Link>
 				<Button
 					onClick={() => handleDelete(id)}
 					variant="gray"
