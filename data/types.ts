@@ -12,3 +12,11 @@ export type CardProps = {
 	dosage: string;
 	id: number
 };
+
+export type ButtonProps = {
+	variant: "primary" | "secondary" | "gray" | "grayicon";
+	label: string | React.ReactNode;
+	isDisabled?: boolean;
+	type: "button" | "submit";
+	onClick?: () => void;
+};

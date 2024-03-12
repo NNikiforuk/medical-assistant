@@ -7,6 +7,7 @@ import Link from "next/link";
 import { sql } from "@vercel/postgres";
 import { getServerSession } from "next-auth";
 import { GiExitDoor } from "react-icons/gi";
+import ButtonLogout from "@/components/common/Button/ButtonLogout";
 
 const Dashboard = async () => {
 	const session = await getServerSession();
@@ -35,7 +36,12 @@ const Dashboard = async () => {
 							label="Search pills"
 						></Button>
 					</Link>
-					<Button type="button" variant="grayicon" label={<GiExitDoor />} />
+					<ButtonLogout
+						type="button"
+						variant="grayicon"
+						label={<GiExitDoor />}
+					/>
+					{/* <Button type="button" variant="grayicon" label={<GiExitDoor />} /> */}
 				</div>
 			</header>
 			<Layout>

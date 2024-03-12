@@ -1,12 +1,5 @@
+import { ButtonProps } from "@/data/types";
 import "./button.scss";
-
-type ButtonProps = {
-	variant: "primary" | "secondary" | "gray" | "grayicon";
-	label: string | React.ReactNode;
-	isDisabled?: boolean;
-	type: "button" | "submit";
-	onClick?: () => void;
-};
 
 const Button = ({
 	variant,
