@@ -6,7 +6,6 @@ export async function DELETE(
 ) {
 	try {
 		const id = params.id;
-		console.log(id)
 		await deletePill(id);
 
 		return new Response("Pill deleted");

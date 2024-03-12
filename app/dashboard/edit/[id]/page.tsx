@@ -25,8 +25,6 @@ const Edit = () => {
 			const response = await fetch(`/api/pills/${pillID}`);
 			const data = await response.json();
 
-			console.log(data)
-
 			setPill({
 				hour: data.hour || "",
 				name: data.name || "",
@@ -36,6 +34,30 @@ const Edit = () => {
 		if (pillID) getPillDetails();
 	}, [pillID]);
 
+	const handleEditing = async (e: any) => {
+		e.preventDefault();
+
+		if (pillID) {
+			try {
+				const response = await fetch(`/api/edit/${pillID}`, {
+					method: "PATCH",
+					body: JSON.stringify({
+						hour: pill.hour,
+						name: pill.name,
+						dosage: pill.dosage,
+					}),
+				});
+
+				if (response.ok) {
+					router.push("/dashboard");
+					router.refresh();
+				}
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	};
+
 	return (
 		<section className="edit">
 			<div className="edit__btn">
@@ -43,9 +65,9 @@ const Edit = () => {
 					<RxCross1 />
 				</Link>
 			</div>
-			<form className="edit__form" onSubmit={() => {}}>
+			<form className="edit__form" onSubmit={handleEditing}>
 				<Select
-				value={pill.hour}
+					value={pill.hour}
 					onChange={(e) =>
 						setPill({
 							...pill,
