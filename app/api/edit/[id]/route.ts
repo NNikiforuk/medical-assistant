@@ -6,7 +6,6 @@ export const PATCH = async (
 ) => {
 	const { hour, name, dosage } = await request.json();
 
-	console.log(hour);
 	try {
 		const id = params.id;
 		await editePill(id, hour, name, dosage);
