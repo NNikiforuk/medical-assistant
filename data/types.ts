@@ -11,6 +11,7 @@ export type CardProps = {
 	name: string;
 	dosage: string;
 	id: number
+	isTaken: boolean
 };
 
 export type ButtonProps = {

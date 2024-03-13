@@ -11,7 +11,7 @@ import ButtonLogout from "@/components/common/Button/ButtonLogout";
 
 const Dashboard = async () => {
 	const session = await getServerSession();
-	const pills = await sql`SELECT name, hour, dosage, id
+	const pills = await sql`SELECT name, hour, dosage, id, CASE WHEN last_time_taken IS NULL THEN FALSE WHEN last_time_taken = CURRENT_DATE THEN TRUE ELSE FALSE END AS is_taken
 	FROM pills
 	WHERE owner_email = ${session?.user?.email}
 	ORDER BY CASE
@@ -58,6 +58,7 @@ const Dashboard = async () => {
 						{pills.rows.map((pill) => {
 							return (
 								<Card
+									isTaken={pill.is_taken}
 									key={pill.id}
 									name={pill.name}
 									hour={pill.hour}
@@ -72,6 +73,7 @@ const Dashboard = async () => {
 						{pills.rows.map((pill) => {
 							return (
 								<Card
+									isTaken={pill.is_taken}
 									key={pill.id}
 									name={pill.name}
 									hour={pill.hour}

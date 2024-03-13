@@ -11,13 +11,8 @@ import Button from "@/components/common/Button/Button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const Card = ({ hour, name, dosage, id }: CardProps) => {
+const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 	const router = useRouter();
-	const [taken, setTaken] = useState(false);
-
-	const handleClick = () => {
-		setTaken(!taken);
-	};
 
 	const handleDelete = async (id: number) => {
 		try {
@@ -30,6 +25,23 @@ const Card = ({ hour, name, dosage, id }: CardProps) => {
 			}
 		} catch (error) {
 			console.error("Error during deleting pill", error);
+		}
+	};
+
+	const handleTakenPill = async (id: number, set: boolean) => {
+		try {
+			const response = await fetch(`/api/edit/${id}/mark`, {
+				method: "PATCH",
+				body: JSON.stringify({
+					set,
+				}),
+			});
+
+			if (response.ok) {
+				router.refresh();
+			}
+		} catch (error) {
+			console.log(error);
 		}
 	};
 
@@ -62,22 +74,22 @@ const Card = ({ hour, name, dosage, id }: CardProps) => {
 					type="button"
 				/>
 
-				{taken ? (
+				{isTaken ? (
 					<div className="btns__icon">
 						<Button
-							onClick={handleClick}
 							variant="greenIcon"
 							label={<MdCheck />}
 							type="button"
+							onClick={() => handleTakenPill(id, false)}
 						/>
 					</div>
 				) : (
 					<div className="btns__icon">
 						<Button
-							onClick={handleClick}
 							variant="red"
 							label="to take"
 							type="button"
+							onClick={() => handleTakenPill(id, true)}
 						/>
 					</div>
 				)}
