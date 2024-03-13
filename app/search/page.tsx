@@ -8,21 +8,24 @@ import { ChangeEvent, useEffect, useState } from "react";
 import List from "../../components/search/List/List";
 import Searchbar from "@/components/search/Searchbar/Searchbar";
 import Link from "next/link";
+import Loader from "@/components/common/Loader/Loader";
 
 const Search = () => {
-	const [pills, setPills] = useState<any>([]);
-	const [value, setValue] = useState<string>("");
+	const [pills, setPills] = useState([]);
+	const [value, setValue] = useState("");
+	const [showLoader, setShowLoader] = useState(false);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const data = await getAPIMedicines();
 				setPills(data.results);
+				setShowLoader(false);
 			} catch (error) {
 				console.error("Error");
 			}
 		};
-
+		setShowLoader(true);
 		fetchData();
 	}, []);
 
@@ -59,20 +62,23 @@ const Search = () => {
 					</section>
 					<section>
 						<h2 className={styles.medicines__header}>All medicines</h2>
-						<ul className={styles.main__list}>
-							{searchedPills?.map((el: any, idx: number) => {
-								console.log("el.id:", el.id);
-								return (
-									<List
-										key={el.id}
-										id={el.id}
-										brandName={el.openfda?.brand_name?.[0]}
-										usage={el.indications_and_usage?.[0]}
-										purpose={el.purpose?.[0]}
-									/>
-								);
-							})}
-						</ul>
+						{showLoader ? (
+							<Loader />
+						) : (
+							<ul className={styles.main__list}>
+								{searchedPills?.map((el: any) => {
+									return (
+										<List
+											key={el.id}
+											id={el.id}
+											brandName={el.openfda?.brand_name?.[0]}
+											usage={el.indications_and_usage?.[0]}
+											purpose={el.purpose?.[0]}
+										/>
+									);
+								})}
+							</ul>
+						)}
 					</section>
 				</main>
 			</Layout>
