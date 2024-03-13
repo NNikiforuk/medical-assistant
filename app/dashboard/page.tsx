@@ -11,8 +11,15 @@ import ButtonLogout from "@/components/common/Button/ButtonLogout";
 
 const Dashboard = async () => {
 	const session = await getServerSession();
-	const pills =
-		await sql`SELECT name, hour, dosage, id FROM pills WHERE owner_email = ${session?.user?.email}`;
+	const pills = await sql`SELECT name, hour, dosage, id
+	FROM pills
+	WHERE owner_email = ${session?.user?.email}
+	ORDER BY CASE
+    WHEN hour = 'morning' THEN 1
+    WHEN hour = 'dinner' THEN 2
+    WHEN hour = 'night' THEN 3
+    ELSE 4
+	END;`;
 
 	return (
 		<div className={styles.dashboard}>
