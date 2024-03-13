@@ -10,12 +10,12 @@
 	a {
 		font-weight: bold;
 		text-decoration: none;
-		color: $text-gray-color;
+		color: $text-lighter;
 	}
 
 	.header__link--active {
-		color: $text-color;
-		border-bottom: 1px solid $text-color;
+		color: $text;
+		border-bottom: 1px solid $text;
 	}
 }
 

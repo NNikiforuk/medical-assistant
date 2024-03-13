@@ -6,8 +6,8 @@
 
 	.header {
 		padding: 30px;
-		color: $text-blue-color-light;
-		background-color: $background-color-dark;
+		color: $blue-lighter;
+		background-color: $blue-darker;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -19,7 +19,7 @@
 	}
 
 	.main {
-		color: $text-color;
+		color: $text;
 
 		.searchbar {
 			margin-bottom: 40px;

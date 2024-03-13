@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .input__wrapper {
-	color: $text-color;
+	color: $text;
 	text-align: center;
 
 	.input {
@@ -9,24 +9,24 @@
 		display: flex;
 		margin: 10px 0;
 		border-radius: 15px;
-		border: $input-border-color 0.5px solid;
-		background-color: $input-background-color;
+		border: $input-border 0.5px solid;
+		background-color: $input-background;
 		text-align: center;
 	}
 
 	.input__placeholder {
-		background-color: $background-color-light-rgba;
-		color: $text-color;
+		background-color: $blue-lightest-rgba;
+		color: $text;
 		width: 100%;
 		max-width: 360px;
 		border-radius: 15px;
 	}
 	.input--error {
-		border: 1px solid $input-error-color;
+		border: 1px solid $red;
 	}
 
 	.input__message {
-		color: $input-error-color;
+		color: $red;
 		font-size: $font-size-xs;
 		text-align: center;
 	}

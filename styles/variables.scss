@@ -1,45 +1,36 @@
 //Colors
-$background-color: #c6dcf9;
-$background-color-light: #e7ecfa;
-$background-color-light-rgba: rgba($background-color-light, 0.6);
-$background-color-white: #eaebef;
-$background-color-dark: #4279c0;
-$background-color-yellow: #e9dbc8;
-$text-color: #404049;
-$text-gray-color: #666668;
-$text-blue-color: #619de4;
-$text-blue-color-light: #c6dcf9;
-$text-blue-color-dark: #4279c0;
-$text-green-dark: rgb(69, 106, 101);
-$shadow-color: #ccc5c5;
-$green-color: rgb(148, 165, 151);;
-$gray-color: #ccc5c5;
-$red-color: rgb(147, 53, 53);
-$white-color: rgb(243, 237, 237);
+$text: #404049;
+$text-lighter: #666668;
+
+$blue-light: #619de4;
+$blue-darker: #4279c0;
+$blue-lighter: #c6dcf9;
+$blue-lightest: #e7ecfa;
+$blue-lightest-rgba: rgba($blue-lightest, 0.6);
+$green: #94a597;;
+$green-darker: #456a65;
+$gray: #ccc5c5;
+$red: #933535;
+$white: #f3eded;
+$yellow: #e9dbc8;
 
 //Font size
 $font-size-xxs: 12px;
 $font-size-xs: 14px;
 $font-size-s: 24px;
 $font-size-m: 28px;
-
 $font-size-xs-h1: 22px;
 $font-size-s-h1: 32px;
 $font-size-m-h1: 40px;
-
 $font-size-xs-h2: 18px;
 $font-size-s-h2: 26px;
 $font-size-m-h2: 36px;
 
 //Button
-$button-text-color: #ece6e6;
-$button-primary-background-color: #619de4;
-$button-disabled-background-color: #f4f0f0;
-$button-disabled-text-color: #30303e;
-$button-secondary-text-color: #619de4;
+$button-text-light: #ece6e6;
+$button-disabled-background: #f4f0f0;
+$button-disabled-text: #30303e;
 
 //Input
-$input-border-color: #808080;
-$input-border-error-color: #e53939;
-$input-error-color: #e53939;
-$input-background-color: #e9ecf2;
+$input-border: #808080;
+$input-background: #e9ecf2;

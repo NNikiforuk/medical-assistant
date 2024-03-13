@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .card {
-	background-color: $background-color-light;
+	background-color: $blue-lightest;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -9,12 +9,12 @@
 	height: min-content;
 	margin: 5px;
 	border-radius: 20px;
-	color: $text-gray-color;
+	color: $text-lighter;
 	padding-bottom: 15px;
 	font-size: $font-size-xs;
 
 	.header {
-		background-color: $background-color-yellow;
+		background-color: $yellow;
 		width: 100%;
 		padding: 10px;
 		display: flex;

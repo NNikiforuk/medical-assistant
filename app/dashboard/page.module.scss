@@ -6,8 +6,8 @@
 
 .dashboard .header {
 	padding: 30px;
-	color: $text-blue-color-light;
-	background-color: $background-color-dark;
+	color: $blue-lighter;
+	background-color: $blue-darker;
 
 	&__date {
 		padding: 5px 0 10px 0;
@@ -26,7 +26,7 @@
 }
 
 .dashboard .main {
-	color: $text-color;
+	color: $text;
 
 	.pillsList {
 		display: none;

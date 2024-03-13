@@ -1,12 +1,12 @@
 @import "../../../styles/variables.scss";
 
 .add {
-	background-color: $background-color-light;
+	background-color: $blue-lightest;
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
-    height: 100vh;
-    width: 100vw;
+	height: 100vh;
+	width: 100vw;
 
 	&__btn {
 		display: flex;
@@ -41,5 +41,6 @@
 @media only screen and (min-width: 1200px) {
 	.add .add__form {
 		margin-top: 20px;
+		gap: 0;
 	}
 }
