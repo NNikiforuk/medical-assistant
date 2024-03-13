@@ -25,9 +25,26 @@
 		background-color: transparent;
 	}
 
-	&--gray {
+	&--gray,
+	&--transparent {
 		color: $text-gray-color;
 		font-weight: 400;
+	}
+
+	&--transparent,
+	&--red {
+		background-color: transparent;
+	}
+
+	&--red {
+		color: $red-color;
+		border: 0.5px solid $red-color;
+	}
+
+	&--greenIcon {
+		color: $white-color;
+		background-color: $green-color;
+		border: none;
 	}
 
 	&--grayicon {
@@ -52,6 +69,10 @@
 	.button {
 		font-size: $font-size-s;
 		padding: 10px 20px;
+
+		&--greenIcon svg {
+			font-size: $font-size-m;
+		}
 	}
 }
 

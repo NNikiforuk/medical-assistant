@@ -1,11 +1,11 @@
 @import "../../../styles/variables.scss";
 
 .card {
-	background-color: $background-color-white;
+	background-color: $background-color-light;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	width: fit-content;
+	width: 100px;
 	height: min-content;
 	margin: 5px;
 	border-radius: 20px;
@@ -37,6 +37,7 @@
 	.btns {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 10px;
 
 		&__icon {
@@ -47,9 +48,30 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.card .btns {
-		margin-top: 20px;
-		flex-direction: row;
+	.card {
+		margin: 0 auto 15px auto;
+		width: 200px;
+
+		.header {
+			font-size: $font-size-s;
+		}
+
+		.main {
+			padding: 50px;
+			font-size: $font-size-s;
+		}
+
+		.btns {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 10px;
+
+			&__icon {
+				display: flex;
+				justify-content: center;
+			}
+		}
 	}
 }
 

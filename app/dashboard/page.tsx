@@ -41,12 +41,12 @@ const Dashboard = async () => {
 						variant="grayicon"
 						label={<GiExitDoor />}
 					/>
-					{/* <Button type="button" variant="grayicon" label={<GiExitDoor />} /> */}
 				</div>
 			</header>
 			<Layout>
 				<main className={styles.main}>
-					<h2>Your medicines</h2>
+					<h2 className={styles.main__header}>Your medicines</h2>
+					{/* Mobile */}
 					<CarouselWrapper>
 						{pills.rows.map((pill) => {
 							return (
@@ -60,6 +60,20 @@ const Dashboard = async () => {
 							);
 						})}
 					</CarouselWrapper>
+					{/* From 768px */}
+					<section className={styles.pillsList}>
+						{pills.rows.map((pill) => {
+							return (
+								<Card
+									key={pill.id}
+									name={pill.name}
+									hour={pill.hour}
+									dosage={pill.dosage}
+									id={pill.id}
+								/>
+							);
+						})}
+					</section>
 				</main>
 			</Layout>
 		</div>

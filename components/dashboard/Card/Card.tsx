@@ -6,9 +6,7 @@ import { IoPartlySunnyOutline } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
 import { MdOutlineNightsStay } from "react-icons/md";
 import { MdCheck } from "react-icons/md";
-import { RxCross2 } from "react-icons/rx";
 import { CardProps } from "@/data/types";
-import Icon from "@/components/common/Icon/Icon";
 import Button from "@/components/common/Button/Button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -55,26 +53,32 @@ const Card = ({ hour, name, dosage, id }: CardProps) => {
 			</div>
 			<div className="btns">
 				<Link href={`/dashboard/edit/${id}`}>
-					<Button
-						variant="gray"
-						label="Edit"
-						type="button"
-					/>
+					<Button variant="transparent" label="Edit" type="button" />
 				</Link>
 				<Button
 					onClick={() => handleDelete(id)}
-					variant="gray"
+					variant="transparent"
 					label="Delete"
 					type="button"
 				/>
 
 				{taken ? (
-					<div className="btns__icon" onClick={handleClick}>
-						<Icon variant="green" label={<MdCheck />} onClick={handleClick} />
+					<div className="btns__icon">
+						<Button
+							onClick={handleClick}
+							variant="greenIcon"
+							label={<MdCheck />}
+							type="button"
+						/>
 					</div>
 				) : (
 					<div className="btns__icon">
-						<Icon variant="red" label={<RxCross2 />} onClick={handleClick} />
+						<Button
+							onClick={handleClick}
+							variant="red"
+							label="to take"
+							type="button"
+						/>
 					</div>
 				)}
 			</div>

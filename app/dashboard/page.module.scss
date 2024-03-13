@@ -27,6 +27,10 @@
 
 .dashboard .main {
 	color: $text-color;
+
+	.pillsList {
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -43,6 +47,17 @@
 		&__btns {
 			margin-top: 0;
 			gap: 15px;
+		}
+	}
+
+	.dashboard .main {
+		&__header {
+			margin-bottom: 60px;
+		}
+
+		.pillsList {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
 		}
 	}
 }
