@@ -74,6 +74,10 @@
 			margin-top: 0;
 		}
 	}
+
+	.dashboard .main .pillsList {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 @media only screen and (min-width: 1200px) {
@@ -83,5 +87,10 @@
 		&__date {
 			font-size: $font-size-xs;
 		}
+	}
+
+	.dashboard .main .pillsList {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 15px;
 	}
 }

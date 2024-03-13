@@ -62,11 +62,6 @@
 		}
 
 		.btns {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 10px;
-
 			&__icon {
 				display: flex;
 				justify-content: center;
@@ -77,12 +72,29 @@
 
 @media only screen and (min-width: 1200px) {
 	.card {
-		max-width: 160px;
-		height: 160px;
+		width: 200px;
 		font-size: $font-size-xs;
 
+		.header {
+			font-size: $font-size-xs;
+		}
+
 		.main {
+			font-size: $font-size-xs;
 			padding: 8px;
+		}
+
+		.btns {
+			display: block;
+			margin-top: 10px;
+
+			a {
+				margin-right: 5px;
+			}
+
+			&__icon {
+				margin-top: 5px;
+			}
 		}
 	}
 }
