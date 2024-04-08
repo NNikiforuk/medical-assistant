@@ -15,7 +15,13 @@ export type CardProps = {
 };
 
 export type ButtonProps = {
-	variant: "primary" | "secondary" | "gray" | "grayicon" | "transparent" | "red" | "greenIcon"
+	variant:
+		| "primary"
+		| "secondary"
+		| "exit"
+		| "noBackground"
+		| "alert"
+		| "success";
 	label: string | React.ReactNode;
 	isDisabled?: boolean;
 	type: "button" | "submit";

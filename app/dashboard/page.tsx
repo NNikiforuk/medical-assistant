@@ -45,7 +45,7 @@ const Dashboard = async () => {
 					</Link>
 					<ButtonLogout
 						type="button"
-						variant="grayicon"
+						variant="exit"
 						label={<GiExitDoor />}
 					/>
 				</div>

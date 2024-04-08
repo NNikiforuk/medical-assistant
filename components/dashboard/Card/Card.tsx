@@ -65,11 +65,11 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 			</div>
 			<div className="btns">
 				<Link href={`/dashboard/edit/${id}`}>
-					<Button variant="transparent" label="Edit" type="button" />
+					<Button variant="noBackground" label="Edit" type="button" />
 				</Link>
 				<Button
 					onClick={() => handleDelete(id)}
-					variant="transparent"
+					variant="noBackground"
 					label="Delete"
 					type="button"
 				/>
@@ -77,7 +77,7 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 				{isTaken ? (
 					<div className="btns__icon">
 						<Button
-							variant="greenIcon"
+							variant="success"
 							label={<MdCheck />}
 							type="button"
 							onClick={() => handleTakenPill(id, false)}
@@ -86,7 +86,7 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 				) : (
 					<div className="btns__icon">
 						<Button
-							variant="red"
+							variant="alert"
 							label="to take"
 							type="button"
 							onClick={() => handleTakenPill(id, true)}
