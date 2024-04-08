@@ -1,12 +1,5 @@
+import { ButtonProps } from "@/data/types";
 import "./button.scss";
-
-type ButtonProps = {
-	variant: "primary" | "secondary" | "icon";
-	label: string | React.ReactNode;
-	isDisabled?: boolean;
-	type: "button" | "submit";
-	onClick?: () => void;
-};
 
 const Button = ({
 	variant,
@@ -19,9 +12,7 @@ const Button = ({
 		<button
 			onClick={onClick}
 			type={type}
-			className={`button ${
-				variant === "primary" ? "button--primary" : "button--secondary"
-			} ${isDisabled && "button--disabled"}`}
+			className={`button button--${variant}`}
 		>
 			{label}
 		</button>

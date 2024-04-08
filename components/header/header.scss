@@ -10,18 +10,19 @@
 	a {
 		font-weight: bold;
 		text-decoration: none;
-		color: $text-gray-color;
+		color: $text-lighter;
 	}
 
 	.header__link--active {
-		color: $text-color;
-		border-bottom: 1px solid $text-color;
+		color: $text;
+		border-bottom: 1px solid $text;
 	}
 }
 
 @media only screen and (min-width: 768px) {
 	.home__header {
 		font-size: $font-size-s;
+		margin-top: 0;
 	}
 }
 

@@ -9,9 +9,10 @@ import Link from "next/link";
 import { fetchAdding } from "@/lib/fetchAdding";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Select from "@/components/common/Select/Select";
 
 const Add = () => {
-	const [hour, setHour] = useState("");
+	const [hour, setHour] = useState("morning");
 	const [name, setName] = useState("");
 	const [dosage, setDosage] = useState("");
 	const [loggedUserEmail, setLoggedUserEmail] = useState("");
@@ -50,21 +51,13 @@ const Add = () => {
 				</Link>
 			</div>
 			<form className="add__form" onSubmit={handleAdding}>
-				<Input
-					value={hour}
-					onChange={(e) => setHour(e.target.value)}
-					type="time"
-					label="Time"
-					isError={false}
-					placeholder=""
-				/>
+				<Select onChange={(e) => setHour(e.target.value)} value={hour} />
 				<Input
 					value={name}
 					onChange={(e) => setName(e.target.value)}
 					type="text"
 					label="Name"
 					isError={false}
-					placeholder=""
 				/>
 				<Input
 					value={dosage}
@@ -72,7 +65,6 @@ const Add = () => {
 					type="text"
 					label="Dosage"
 					isError={false}
-					placeholder=""
 				/>
 
 				<Button type="submit" variant="primary" label="Add" />

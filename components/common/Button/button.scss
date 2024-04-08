@@ -6,8 +6,7 @@
 	border: none;
 	font-weight: bold;
 	cursor: pointer;
-	border: 1px solid $gray-color;
-	display: flex;
+	border: 1px solid $gray;
 
 	svg {
 		display: flex;
@@ -17,35 +16,79 @@
 	}
 
 	&--primary {
-		background-color: $button-primary-background-color;
-		color: $button-text-color;
+		background-color: $blue-light;
+		color: $button-text-light;
 	}
 
 	&--secondary {
-		color: $button-secondary-text-color;
+		color: $blue-light;
 		background-color: transparent;
 	}
 
+	&--noBackground {
+		color: $text-lighter;
+		font-weight: 400;
+	}
+
+	&--noBackground,
+	&--alert {
+		background-color: noBackground;
+	}
+
+	&--alert {
+		color: $red;
+		border: 0.5px solid $red;
+	}
+
+	&--success {
+		color: $white;
+		background-color: $green;
+		border: none;
+	}
+
+	&--exit {
+		color: $button-text-light;
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		border: 1px solid $gray;
+
+		svg {
+			font-size: $font-size-m;
+		}
+	}
+
 	&--disabled {
-		background-color: $button-disabled-background-color;
-		color: $button-disabled-text-color;
+		background-color: $button-disabled-background;
+		color: $button-disabled-text;
 	}
 }
 
 @media only screen and (min-width: 768px) {
 	.button {
-		font-size: $font-size-xs;
+		font-size: $font-size-s;
+		padding: 10px 20px;
+
+		&--success svg {
+			font-size: $font-size-m;
+		}
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.button {
 		padding: 15px 30px;
+		font-size: $font-size-m;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.button {
 		padding: 5px 10px;
+		font-size: $font-size-xs;
+
+		&--success svg {
+			font-size: $font-size-xs;
+		}
 	}
 }

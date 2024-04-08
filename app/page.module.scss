@@ -17,14 +17,14 @@
 
 		.additional__info {
 			&__text {
-				color: $text-gray-color;
+				color: $text-lighter;
 				margin-right: 5px;
 			}
 
 			&__link {
 				a {
 					text-decoration: none;
-					color: $text-blue-color;
+					color: $blue-light;
 					font-weight: bold;
 				}
 			}

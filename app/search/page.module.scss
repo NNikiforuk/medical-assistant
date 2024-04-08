@@ -6,8 +6,8 @@
 
 	.header {
 		padding: 30px;
-		color: $text-blue-color-light;
-		background-color: $background-color-dark;
+		color: $blue-lighter;
+		background-color: $blue-darker;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -19,7 +19,19 @@
 	}
 
 	.main {
-		color: $text-color;
+		color: $text;
+
+		.searchbar {
+			margin-bottom: 40px;
+
+			&__header {
+				margin-bottom: 20px;
+			}
+		}
+
+		.medicines__header {
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -32,5 +44,25 @@
 		&__btn {
 			margin-top: 0;
 		}
+	}
+
+	.search .main .medicines__header {
+		margin-bottom: 60px;
+	}
+
+	.search .main .searchbar{
+		margin-bottom: 60px;
+
+		&__header {
+			margin-bottom: 60px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.search .main__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: start;
 	}
 }

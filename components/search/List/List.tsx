@@ -16,22 +16,24 @@ type NestedListProps = {
 	brandName: string[];
 	usage: string[];
 	purpose: string[];
+	id: any;
 };
 
 export default function NestedList({
 	brandName,
 	usage,
 	purpose,
+	id
 }: NestedListProps) {
 	const [open, setOpen] = useState<boolean>(false);
 
-	const handleClick = () => {
+	const handleClick = (id: any) => {
 		setOpen(!open);
 	};
 
 	return (
-		<div className="list">
-			<ListItemButton onClick={handleClick}>
+		<div className="item">
+			<ListItemButton onClick={() => handleClick(id)}>
 				<ListItemIcon>
 					<MedicationIcon />
 				</ListItemIcon>
@@ -40,10 +42,10 @@ export default function NestedList({
 			</ListItemButton>
 			<Collapse in={open} timeout="auto" unmountOnExit>
 				<List component="div" disablePadding>
-					<ListItemButton className="list__desc">
+					<ListItemButton className="item__desc">
 						<ListItemText primary={usage} />
 					</ListItemButton>
-					<ListItemButton className="list__desc">
+					<ListItemButton className="item__desc">
 						<ListItemText primary={purpose} />
 					</ListItemButton>
 				</List>

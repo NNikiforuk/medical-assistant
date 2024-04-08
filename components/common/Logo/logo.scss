@@ -3,28 +3,15 @@
 .logo {
 	font-weight: bold;
 	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
 	align-items: center;
 	margin: 30px 0;
-
-	&__header {
-		color: $text-green-dark;
-	}
-	&__img {
-		display: none;
-	}
+	color: $green-darker;
 }
 
 @media only screen and (min-width: 768px) {
 	.logo {
 		margin: 100px 0;
 		font-size: $font-size-s;
-		flex-direction: column-reverse;
-
-		&__img {
-			display: flex;
-		}
 	}
 }
 

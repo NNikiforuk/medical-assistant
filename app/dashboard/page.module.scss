@@ -6,8 +6,8 @@
 
 .dashboard .header {
 	padding: 30px;
-	color: $text-blue-color-light;
-	background-color: $background-color-dark;
+	color: $blue-lighter;
+	background-color: $blue-darker;
 
 	&__date {
 		padding: 5px 0 10px 0;
@@ -17,11 +17,20 @@
 		display: flex;
 		justify-content: space-between;
 		margin-top: 20px;
+		gap: 5px;
+
+		a {
+			display: flex;
+		}
 	}
 }
 
 .dashboard .main {
-	color: $text-color;
+	color: $text;
+
+	.pillsList {
+		display: none;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -40,6 +49,17 @@
 			gap: 15px;
 		}
 	}
+
+	.dashboard .main {
+		&__header {
+			margin-bottom: 60px;
+		}
+
+		.pillsList {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -54,6 +74,10 @@
 			margin-top: 0;
 		}
 	}
+
+	.dashboard .main .pillsList {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 @media only screen and (min-width: 1200px) {
@@ -63,5 +87,10 @@
 		&__date {
 			font-size: $font-size-xs;
 		}
+	}
+
+	.dashboard .main .pillsList {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 15px;
 	}
 }

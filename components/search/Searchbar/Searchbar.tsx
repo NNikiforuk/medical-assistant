@@ -14,7 +14,7 @@ const Searchbar = ({ value, handleChange }: SearchbarProps) => {
 			label=""
 			value={value}
 			onChange={handleChange}
-			placeholder="Search..."
+			placeholder="Type something"
 		/>
 	);
 };
