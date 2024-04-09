@@ -6,17 +6,16 @@ import { FormEvent, useState } from "react";
 import "../LoginRegistrationForm/loginRegistrationForm.scss";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { handleEnter } from "@/lib/handleEnter";
 
 const LoginForm = () => {
 	const router = useRouter();
 	const [email, setEmail] = useState("");
-	const [invalidEmail, setInvalidEmail] = useState(false);
+	const [invalidEmail, setInvalidEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [invalidPassword, setInvalidPassword] = useState(false);
+	const [invalidPassword, setInvalidPassword] = useState("");
 
-	const handleLogin = async (e: FormEvent) => {
-		e.preventDefault();
-
+	const performLogin = async () => {
 		const result = await signIn("credentials", {
 			redirect: false,
 			email,
@@ -24,12 +23,16 @@ const LoginForm = () => {
 		});
 
 		if (result?.error) {
-			console.log(result.error);
-			setInvalidEmail(true);
-			setInvalidPassword(true);
+			setInvalidEmail("Invalid email");
+			setInvalidPassword("Invalid password");
 		} else {
 			router.push("/dashboard");
 		}
+	};
+
+	const handleLogin = async (e: FormEvent) => {
+		e.preventDefault();
+		await performLogin();
 	};
 
 	return (
@@ -40,6 +43,7 @@ const LoginForm = () => {
 				type="email"
 				label="Email"
 				isError={invalidEmail}
+				onKeyDown={(e) => handleEnter(e, performLogin)}
 			/>
 			<Input
 				value={password}
@@ -47,6 +51,7 @@ const LoginForm = () => {
 				type="password"
 				label="Password"
 				isError={invalidPassword}
+				onKeyDown={(e) => handleEnter(e, performLogin)}
 			/>
 
 			<Button type="submit" variant="primary" label="Sign in" />

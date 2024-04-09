@@ -1,15 +1,17 @@
 "use client";
 
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useEffect, useState } from "react";
 import "./input.scss";
 
 type InputProps = {
 	type: "password" | "email" | "search" | "time" | "text";
-	isError: boolean;
+	isError?: string;
 	label: string;
 	value: string;
 	placeholder?: string;
+	onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+	pattern?: string;
 };
 
 const Input = ({
@@ -19,6 +21,8 @@ const Input = ({
 	value,
 	onChange,
 	placeholder = "",
+	onKeyDown,
+	pattern,
 }: InputProps) => {
 	const [mounted, setMounted] = useState(false);
 
@@ -42,13 +46,11 @@ const Input = ({
 				}`}
 				type={type}
 				placeholder={placeholder}
+				onKeyDown={onKeyDown}
+				pattern={pattern}
 			/>
 
-			{isError && (
-				<div className="input__message">
-					{type === "email" ? "Invalid e-mail" : "Invalid password"}
-				</div>
-			)}
+			{isError && <div className="input__message">{isError}</div>}
 		</div>
 	);
 };

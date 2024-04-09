@@ -3,6 +3,10 @@
 .input__wrapper {
 	color: $text;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	.input {
 		padding: 10px 20px;
