@@ -61,3 +61,29 @@
 		}
 	}
 }
+
+@media only screen and (min-width: 1900px) {
+	.input__wrapper {
+		.input,
+		.input--error,
+		.label,
+		.input__message {
+			font-size: $font-size-s;
+		}
+
+		.input {
+			padding: 20px 30px;
+		}
+	}
+}
+
+@media only screen and (min-width: 3840px) {
+	.input__wrapper {
+		.input,
+		.input--error,
+		.label,
+		.input__message {
+			font-size: $font-size-l;
+		}
+	}
+}
