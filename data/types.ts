@@ -17,7 +17,6 @@ export type CardProps = {
 export type ButtonProps = {
 	variant:
 		| "primary"
-		| "secondary"
 		| "exit"
 		| "noBackground"
 		| "alert"

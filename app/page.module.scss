@@ -24,7 +24,7 @@
 			&__link {
 				a {
 					text-decoration: none;
-					color: $blue-light;
+					color: $purple-lighter;
 					font-weight: bold;
 				}
 			}
@@ -34,7 +34,6 @@
 
 @media only screen and (min-width: 768px) {
 	.home__additional__info {
-		font-size: $font-size-s;
 		margin-top: 30px;
 	}
 }

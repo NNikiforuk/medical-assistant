@@ -2,27 +2,6 @@
 
 .dashboard {
 	height: 100vh;
-
-	.header {
-		padding: 30px;
-		color: $blue-lighter;
-		background-color: $blue-darker;
-
-		&__date {
-			padding: 5px 0 10px 0;
-		}
-
-		&__btns {
-			display: flex;
-			justify-content: space-between;
-			margin-top: 20px;
-			gap: 5px;
-
-			a {
-				display: flex;
-			}
-		}
-	}
 }
 
 .dashboard .main {
@@ -34,22 +13,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.dashboard .header {
-		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-
-		&__date {
-			font-size: $font-size-s;
-			margin-bottom: 40px;
-		}
-
-		&__btns {
-			margin-top: 0;
-			gap: 15px;
-		}
-	}
-
 	.dashboard .main {
 		&__header {
 			margin-bottom: 60px;
@@ -63,32 +26,12 @@
 }
 
 @media only screen and (min-width: 1024px) {
-	.dashboard .header {
-		padding: 50px;
-
-		&__date {
-			font-size: $font-size-s;
-		}
-
-		&__btns {
-			margin-top: 0;
-		}
-	}
-
 	.dashboard .main .pillsList {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
 @media only screen and (min-width: 1200px) {
-	.dashboard .header {
-		padding: 20px;
-
-		&__date {
-			font-size: $font-size-xs;
-		}
-	}
-
 	.dashboard .main .pillsList {
 		grid-template-columns: repeat(4, 1fr);
 		gap: 15px;

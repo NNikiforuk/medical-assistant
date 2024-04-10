@@ -4,20 +4,6 @@
 	height: 100vh;
 	width: 100vw;
 
-	.header {
-		padding: 30px;
-		color: $blue-lighter;
-		background-color: $blue-darker;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-
-		&__btn {
-			margin-top: 20px;
-		}
-	}
-
 	.main {
 		color: $text;
 
@@ -36,21 +22,11 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.search .header {
-		align-items: center;
-		justify-content: space-between;
-		flex-direction: row;
-
-		&__btn {
-			margin-top: 0;
-		}
-	}
-
 	.search .main .medicines__header {
 		margin-bottom: 60px;
 	}
 
-	.search .main .searchbar{
+	.search .main .searchbar {
 		margin-bottom: 60px;
 
 		&__header {

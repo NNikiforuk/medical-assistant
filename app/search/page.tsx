@@ -1,14 +1,13 @@
 "use client";
 
-import Button from "@/components/common/Button/Button";
 import styles from "./page.module.scss";
 import Layout from "@/components/common/Layout/Layout";
 import { getAPIMedicines } from "../../lib/getAPIMedicines";
 import { ChangeEvent, useEffect, useState } from "react";
 import List from "../../components/search/List/List";
 import Searchbar from "@/components/search/Searchbar/Searchbar";
-import Link from "next/link";
 import Loader from "@/components/common/Loader/Loader";
+import Navbar from "@/components/common/Navbar/Navbar";
 
 const Search = () => {
 	const [pills, setPills] = useState([]);
@@ -42,18 +41,7 @@ const Search = () => {
 
 	return (
 		<div className={styles.search}>
-			<header className={styles.header}>
-				<h1>Medicine finder</h1>
-				<div className={styles.header__btn}>
-					<Link href="/dashboard">
-						<Button
-							variant="primary"
-							label="Go back to dashboard"
-							type="button"
-						/>
-					</Link>
-				</div>
-			</header>
+			<Navbar />
 			<Layout>
 				<main className={styles.main}>
 					<section className={styles.searchbar}>

@@ -6,6 +6,10 @@
 	align-items: center;
 	gap: 40px;
 	margin-top: 30px;
+	background-color: $purple;
+	padding: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 
 	a {
 		font-weight: bold;
@@ -14,21 +18,17 @@
 	}
 
 	.header__link--active {
-		color: $text;
-		border-bottom: 1px solid $text;
+		color: $green;
+		border-bottom: 1px solid $green;
 	}
 }
 
 @media only screen and (min-width: 768px) {
 	.home__header {
-		font-size: $font-size-s;
 		margin-top: 0;
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-	.home__header {
-		font-size: $font-size-m;
+		padding: 20px 40px;
+		border-top-right-radius: 15px;
+		border-top-left-radius: 15px;
 	}
 }
 

@@ -17,13 +17,6 @@ export const Primary: Story = {
 	},
 };
 
-export const Secondary: Story = {
-	args: {
-		variant: "secondary",
-		label: "Button",
-	},
-};
-
 export const Disabled: Story = {
 	args: {
 		label: "Button",

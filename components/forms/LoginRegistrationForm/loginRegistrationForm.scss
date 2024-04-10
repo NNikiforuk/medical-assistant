@@ -5,21 +5,27 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	margin-top: 40px;
+	padding: 40px 0;
 	gap: 10px;
+	width: 100vw;
+	background-color: $purple;
+}
+
+@media only screen and (min-width: 390px) {
+	.home__form {
+		padding-bottom: 50px;
+	}
 }
 
 @media only screen and (min-width: 768px) {
 	.home__form {
-		margin-top: 50px;
-		gap: 40px;
+		gap: 20px;
 	}
 }
 
 @media only screen and (min-width: 1200px) {
 	.home__form {
 		font-size: $font-size-xs;
-		margin-top: 70px;
 		gap: 20px;
 	}
 }

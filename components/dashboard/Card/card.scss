@@ -12,7 +12,7 @@
 	color: $text-lighter;
 	padding-bottom: 15px;
 	font-size: $font-size-xs;
-	transition: transform .5s;
+	transition: transform 0.5s;
 
 	.header {
 		background-color: $yellow;
@@ -22,10 +22,11 @@
 		justify-content: center;
 		align-items: center;
 		gap: 10px;
+		color: $text-lighter;
 	}
 
 	.header--taken {
-		background-color: $green;
+		background-color: $green-lighter;
 		color: $white;
 	}
 

@@ -1,13 +1,10 @@
 import styles from "./page.module.scss";
 import Layout from "@/components/common/Layout/Layout";
-import Button from "@/components/common/Button/Button";
 import Card from "@/components/dashboard/Card/Card";
 import CarouselWrapper from "@/components/dashboard/Carousel/CarouselWrapper";
-import Link from "next/link";
 import { sql } from "@vercel/postgres";
 import { getServerSession } from "next-auth";
-import { GiExitDoor } from "react-icons/gi";
-import ButtonLogout from "@/components/common/Button/ButtonLogout";
+import Navbar from "@/components/common/Navbar/Navbar";
 
 const Dashboard = async () => {
 	const session = await getServerSession();
@@ -23,33 +20,7 @@ const Dashboard = async () => {
 
 	return (
 		<div className={styles.dashboard}>
-			<header className={styles.header}>
-				<div className={styles.header__title}>
-					<h1>Welcome!</h1>
-					<div className={styles.header__date}>{new Date().toDateString()}</div>
-				</div>
-				<div className={styles.header__btns}>
-					<Link href="/dashboard/add">
-						<Button
-							type="button"
-							variant="primary"
-							label="Add medicine"
-						></Button>
-					</Link>
-					<Link href="/search">
-						<Button
-							type="button"
-							variant="primary"
-							label="Search pills"
-						></Button>
-					</Link>
-					<ButtonLogout
-						type="button"
-						variant="exit"
-						label={<GiExitDoor />}
-					/>
-				</div>
-			</header>
+			<Navbar />
 			<Layout>
 				<main className={styles.main}>
 					<h2 className={styles.main__header}>Your medicines</h2>

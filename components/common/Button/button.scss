@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .button {
-	padding: 8px 10px;
+	padding: 10px 20px;
 	border-radius: 25px;
 	border: none;
 	font-weight: bold;
@@ -16,13 +16,8 @@
 	}
 
 	&--primary {
-		background-color: $blue-light;
-		color: $button-text-light;
-	}
-
-	&--secondary {
-		color: $blue-light;
-		background-color: transparent;
+		background-color: $green;
+		color: $white;
 	}
 
 	&--noBackground {
@@ -42,16 +37,16 @@
 
 	&--success {
 		color: $white;
-		background-color: $green;
+		background-color: $green-lighter;
 		border: none;
 	}
 
 	&--exit {
-		color: $button-text-light;
+		color: $green;
 		background-color: transparent;
 		display: flex;
 		align-items: center;
-		border: 1px solid $gray;
+		border: 0.5px solid $green;
 
 		svg {
 			font-size: $font-size-m;
@@ -66,8 +61,7 @@
 
 @media only screen and (min-width: 768px) {
 	.button {
-		font-size: $font-size-s;
-		padding: 10px 20px;
+		padding: 15px 30px;
 
 		&--success svg {
 			font-size: $font-size-m;
@@ -75,16 +69,9 @@
 	}
 }
 
-@media only screen and (min-width: 1024px) {
-	.button {
-		padding: 15px 30px;
-		font-size: $font-size-m;
-	}
-}
-
 @media only screen and (min-width: 1200px) {
 	.button {
-		padding: 5px 10px;
+		padding: 10px 20px;
 		font-size: $font-size-xs;
 
 		&--success svg {
