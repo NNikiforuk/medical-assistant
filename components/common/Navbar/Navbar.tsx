@@ -15,7 +15,6 @@ const Navbar = () => {
 		<header className="header">
 			<div className="header__title">
 				{isCurrentPageDashboard ? <h1>Welcome!</h1> : <h1>Medicine finder</h1>}
-
 				<div className="header__date">{new Date().toDateString()}</div>
 			</div>
 			<div className="header__btns">

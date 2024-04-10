@@ -11,9 +11,11 @@
 
 	&__btns {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		margin-top: 20px;
-		gap: 5px;
+		gap: 10px;
 
 		a {
 			display: flex;
@@ -30,6 +32,10 @@
 		&__date {
 			font-size: $font-size-s;
 			margin-bottom: 40px;
+		}
+
+		&__btns {
+			flex-direction: row;
 		}
 	}
 }
@@ -54,6 +60,27 @@
 
 		&__date {
 			font-size: $font-size-xs;
+		}
+
+		&__btns {
+			flex-direction: row;
+		}
+	}
+}
+
+@media only screen and (min-width: 1920px) {
+	.header .header__date {
+		font-size: $font-size-s;
+		margin-top: 5px;
+	}
+}
+
+@media only screen and (min-width: 3840px) {
+	.header {
+		padding: 50px;
+
+		&__title .header__date {
+			font-size: $font-size-l;
 		}
 	}
 }
