@@ -2,25 +2,25 @@
 
 .dashboard {
 	height: 100vh;
-}
 
-.dashboard .header {
-	padding: 30px;
-	color: $blue-lighter;
-	background-color: $blue-darker;
+	.header {
+		padding: 30px;
+		color: $blue-lighter;
+		background-color: $blue-darker;
 
-	&__date {
-		padding: 5px 0 10px 0;
-	}
+		&__date {
+			padding: 5px 0 10px 0;
+		}
 
-	&__btns {
-		display: flex;
-		justify-content: space-between;
-		margin-top: 20px;
-		gap: 5px;
-
-		a {
+		&__btns {
 			display: flex;
+			justify-content: space-between;
+			margin-top: 20px;
+			gap: 5px;
+
+			a {
+				display: flex;
+			}
 		}
 	}
 }

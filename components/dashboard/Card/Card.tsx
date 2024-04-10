@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import "./card.scss";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
@@ -47,7 +46,7 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 
 	return (
 		<section className="card">
-			<header className="header">
+			<header className={`header ${isTaken && "header--taken"}`}>
 				<div className="header__hour">{hour}</div>
 				<div className="header__icon">
 					{hour === "morning" ? (
@@ -78,7 +77,7 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 					<div className="btns__icon">
 						<Button
 							variant="success"
-							label={<MdCheck />}
+							label="taken"
 							type="button"
 							onClick={() => handleTakenPill(id, false)}
 						/>
