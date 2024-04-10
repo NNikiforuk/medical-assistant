@@ -28,3 +28,25 @@
 		}
 	}
 }
+
+@media only screen and (min-width: 1280px) {
+	.item:nth-child(odd) {
+		margin-right: 25px;
+	}
+}
+
+@media only screen and (min-width: 1920px) {
+	.item {
+		.MuiTypography-root {
+			font-size: $font-size-s;
+		}
+	}
+}
+
+@media only screen and (min-width: 3840px) {
+	.item {
+		.MuiTypography-root {
+			font-size: $font-size-l;
+		}
+	}
+}
