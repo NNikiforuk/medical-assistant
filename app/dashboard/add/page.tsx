@@ -12,7 +12,10 @@ import { useRouter } from "next/navigation";
 import MySelect from "@/components/common/Select/Select";
 
 const Add = () => {
-	const [hour, setHour] = useState("morning");
+	const [hour, setHour] = useState<{
+		value: string;
+		label: string;
+	} | null>(null);
 	const [name, setName] = useState("");
 	const [dosage, setDosage] = useState("");
 	const [loggedUserEmail, setLoggedUserEmail] = useState("");
@@ -52,7 +55,8 @@ const Add = () => {
 			</div>
 			<form className="add__form" onSubmit={handleAdding}>
 				{/* <Select onChange={(e) => setHour(e.target.value)} value={hour} /> */}
-				<MySelect />
+				<MySelect onChange={setHour} value={hour} />
+				{/* <MySelect onChange={(e: any) => setHour(e.target.value)} value={hour} /> */}
 				<Input
 					value={name}
 					onChange={(e) => setName(e.target.value)}

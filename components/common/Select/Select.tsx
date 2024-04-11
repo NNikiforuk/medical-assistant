@@ -1,5 +1,4 @@
-import Select, { components } from "react-select";
-import { useId } from "react";
+import "./select.scss";
 
 // const Select = ({ onChange, value }: { onChange: (e: any) => void, value: string }) => {
 // 	return (
@@ -41,19 +40,28 @@ const options: OptionsProps[] = [
 	{ value: "night", label: "night" },
 ];
 
-const MySelect = () => {
+import Select, { components } from "react-select";
+
+const MySelect = ({ ...props }) => {
 	return (
-		<Select
-			components={{
-				Input: (props) => (
-					<components.Input {...props} aria-activedescendant={undefined} />
-				),
-			}}
-			instanceId={useId()}
-			options={options}
-			className="project-edition-select-container"
-			classNamePrefix="project-edition-select"
-		/>
+		<div className="select__wrapper">
+			<label className="label" htmlFor="time">
+				Time
+			</label>
+			<Select
+				{...props}
+				components={{
+					Input: (props) => (
+						<components.Input {...props} aria-activedescendant={undefined} />
+					),
+				}}
+				instanceId={"wsad123wqwe"}
+				className="select"
+				classNamePrefix="select"
+				name="time"
+				options={options}
+			/>
+		</div>
 	);
 };
 
