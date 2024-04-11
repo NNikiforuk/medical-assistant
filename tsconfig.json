@@ -32,8 +32,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "data/consts.js"  ],
+    ".next/types/**/*.ts",
+    "data/consts.js",
+    "data/data.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

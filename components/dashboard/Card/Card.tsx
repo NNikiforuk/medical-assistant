@@ -4,11 +4,17 @@ import "./card.scss";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
 import { MdOutlineNightsStay } from "react-icons/md";
-import { MdCheck } from "react-icons/md";
-import { CardProps } from "@/data/types";
 import Button from "@/components/common/Button/Button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+
+type CardProps = {
+	hour: string;
+	name: string;
+	dosage: string;
+	id: number;
+	isTaken: boolean;
+};
 
 const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 	const router = useRouter();
