@@ -1,8 +1,8 @@
 export async function getAPIMedicines() {
-	//First 500 results
+	//First 50 results
 	try {
 		const res = await fetch(
-			`https://api.fda.gov/drug/label.json?api_key=KLxGjiRrhbj1eKfcew93j85eAMhz8aquCkxvBX9A&search=effective_time:[20110601+TO+20231231]&limit=500`
+			`https://api.fda.gov/drug/label.json?api_key=KLxGjiRrhbj1eKfcew93j85eAMhz8aquCkxvBX9A&search=effective_time:[20110601+TO+20231231]&limit=50`
 		);
 
 		if (res.ok) {

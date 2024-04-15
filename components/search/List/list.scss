@@ -29,14 +29,12 @@
 	}
 }
 
-@media only screen and (min-width: 1280px) {
-	.item:nth-child(odd) {
-		margin-right: 25px;
-	}
-}
-
 @media only screen and (min-width: 1920px) {
 	.item {
+		svg {
+			font-size: $font-size-l;
+		}
+
 		.MuiTypography-root {
 			font-size: $font-size-s;
 		}
