@@ -41,11 +41,16 @@
 @media only screen and (min-width: 1900px) {
 	.home__header {
 		font-size: $font-size-s;
+		border-top-right-radius: 25px;
+		border-top-left-radius: 25px;
 	}
 }
 
 @media only screen and (min-width: 3840px) {
 	.home__header {
 		font-size: $font-size-l;
+		padding: 50px 80px;
+		border-top-right-radius: 45px;
+		border-top-left-radius: 45px;
 	}
 }

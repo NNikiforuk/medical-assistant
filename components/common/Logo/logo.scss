@@ -19,7 +19,7 @@
 	.logo {
 		font-size: $font-size-s;
 		margin: 0 0 40px 0;
-		padding: 20px;
+		padding: 20px 40px;
 		flex-direction: row-reverse;
 		width: 100vw;
 		justify-content: start;
@@ -35,5 +35,6 @@
 @media only screen and (min-width: 3840px) {
 	.logo {
 		font-size: $font-size-xl;
+		padding: 50px;
 	}
 }
