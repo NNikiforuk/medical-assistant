@@ -1,7 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .edit {
-	background-color: $blue-lightest;
+	background-color: $purple;
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
@@ -13,6 +13,10 @@
 		justify-content: flex-end;
 		padding: 10px;
 		font-size: $font-size-s;
+
+		svg {
+			color: $green;
+		}
 	}
 
 	&__form {
@@ -41,6 +45,39 @@
 @media only screen and (min-width: 1200px) {
 	.edit .edit__form {
 		margin-top: 20px;
-		gap: 5px;
+		gap: 0;
+	}
+}
+
+@media only screen and (min-width: 1920px) {
+	.edit .edit__form {
+		margin-top: 100px;
+		gap: 30px;
+	}
+
+	.edit .edit__btn {
+		font-size: $font-size-xl;
+	}
+}
+
+@media only screen and (min-width: 2560px) {
+	.edit .edit__form {
+		margin-top: 150px;
+	}
+
+	.edit .edit__btn {
+		font-size: $font-size-xxl;
+	}
+}
+
+@media only screen and (min-width: 3840px) {
+	.edit .edit__form {
+		margin-top: 250px;
+		gap: 50px;
+	}
+
+	.edit .edit__btn {
+		font-size: $font-size-xxxl;
+		padding: 70px;
 	}
 }
