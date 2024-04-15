@@ -10,7 +10,6 @@ const Searchbar = ({ value, handleChange }: SearchbarProps) => {
 	return (
 		<Input
 			type="search"
-			isError={false}
 			label=""
 			value={value}
 			onChange={handleChange}

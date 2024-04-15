@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import { NextAuthProvider } from "@/components/common/SessionProvider/NextAuthProvider";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<NextAuthProvider>
-				<body className={inter.className}>{children}</body>
+				<Suspense>
+					<body className={inter.className}>{children}</body>
+				</Suspense>
 			</NextAuthProvider>
 		</html>
 	);

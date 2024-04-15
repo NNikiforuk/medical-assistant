@@ -14,7 +14,6 @@ export const Email: Story = {
 	args: {
 		type: "email",
 		label: "Email",
-		isError: false,
 	},
 };
 
@@ -22,7 +21,7 @@ export const ErrorEmail: Story = {
 	args: {
 		type: "email",
 		label: "Email",
-		isError: true,
+		isError: "Invalid email",
 	},
 };
 
@@ -30,7 +29,6 @@ export const Password: Story = {
 	args: {
 		type: "password",
 		label: "Password",
-		isError: false,
 	},
 };
 
@@ -38,7 +36,7 @@ export const ErrorPassword: Story = {
 	args: {
 		type: "password",
 		label: "Password",
-		isError: true,
+		isError: "Invalid password",
 	},
 };
 
@@ -46,6 +44,5 @@ export const Search: Story = {
 	args: {
 		type: "search",
 		label: "Search...",
-		isError: false,
 	},
 };

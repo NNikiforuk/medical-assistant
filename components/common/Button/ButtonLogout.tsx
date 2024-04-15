@@ -1,9 +1,14 @@
 "use client";
 
-// import ".button.scss";
-import { ButtonProps } from "@/data/types";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { ReactNode } from "react";
+
+type ButtonProps = {
+	variant: string;
+	label: string | ReactNode;
+	type: "submit" | "reset" | "button" | undefined;
+};
 
 const ButtonLogout = ({ variant, label, type }: ButtonProps) => {
 	const router = useRouter();
