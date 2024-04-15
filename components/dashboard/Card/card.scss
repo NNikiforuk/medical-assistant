@@ -123,6 +123,7 @@
 @media only screen and (min-width: 3840px) {
 	.card {
 		width: 500px;
+		border-radius: 45px;
 
 		.header {
 			font-size: $font-size-l;
@@ -132,6 +133,11 @@
 		.main {
 			font-size: $font-size-l;
 			padding: 60px;
+
+		}
+
+		.btns {
+			padding-bottom: 50px;
 		}
 	}
 }
