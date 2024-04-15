@@ -1,7 +1,7 @@
 "use client";
 
 import Input from "@/components/common/Input/Input";
-import "./add.scss";
+import "../../../styles/edit-add.scss";
 import { FormEvent, useEffect, useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
@@ -75,6 +75,7 @@ const Add = () => {
 					onChange={(e) => setName(e.target.value)}
 					type="text"
 					label="Name"
+					maxLength={8}
 				/>
 				<Input
 					value={dosage}

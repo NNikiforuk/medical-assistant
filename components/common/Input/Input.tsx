@@ -12,6 +12,7 @@ type InputProps = {
 	onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 	pattern?: string;
+	maxLength?: number;
 };
 
 const Input = ({
@@ -23,6 +24,7 @@ const Input = ({
 	placeholder = "",
 	onKeyDown,
 	pattern,
+	maxLength
 }: InputProps) => {
 	const [mounted, setMounted] = useState(false);
 
@@ -48,6 +50,7 @@ const Input = ({
 				placeholder={placeholder}
 				onKeyDown={onKeyDown}
 				pattern={pattern}
+				maxLength={maxLength}
 			/>
 
 			{isError && <div className="input__message">{isError}</div>}

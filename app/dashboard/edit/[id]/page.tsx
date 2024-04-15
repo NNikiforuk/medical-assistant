@@ -1,7 +1,7 @@
 "use client";
 
 import Input from "@/components/common/Input/Input";
-import "./edit.scss";
+import "../../../../styles/edit-add.scss";
 import { useEffect, useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
@@ -85,7 +85,6 @@ const Edit = () => {
 					}
 					type="text"
 					label="Name"
-					isError={false}
 				/>
 				<Input
 					value={pill.dosage}
@@ -97,7 +96,6 @@ const Edit = () => {
 					}
 					type="text"
 					label="Dosage"
-					isError={false}
 				/>
 				<Button type="submit" variant="primary" label="Edit" />
 			</form>
