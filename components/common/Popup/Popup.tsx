@@ -1,14 +1,38 @@
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
 import "./popup.scss";
 
-type Popup = {
-	togglePopup: (event: React.MouseEvent<HTMLElement>) => void;
-};
-export const Popup = ({ togglePopup }: Popup) => (
-	<div className="popup">
-		<div className="popup__card">
-			<button className="btn" onClick={togglePopup}>
-				Close
-			</button>
-		</div>
-	</div>
-);
+export default function Popup({
+	text,
+	popup,
+	handleClose,
+}: {
+	text: string;
+	handleClose: (e: any) => void;
+	popup: boolean;
+}) {
+	return (
+		<>
+			<Dialog
+				open={popup}
+				onClose={handleClose}
+				aria-labelledby="alert-dialog-title"
+				aria-describedby="alert-dialog-description"
+			>
+				<DialogContent className="dialog">
+					<DialogContentText id="alert-dialog-description">
+						{text}
+					</DialogContentText>
+				</DialogContent>
+				<DialogActions className="dialog">
+					<Button onClick={handleClose} autoFocus>
+						Close
+					</Button>
+				</DialogActions>
+			</Dialog>
+		</>
+	);
+}

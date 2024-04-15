@@ -29,7 +29,7 @@ import "./select.scss";
 
 // export default Select;
 
-type OptionsProps = {
+export type OptionsProps = {
 	value: string;
 	label: string;
 };
@@ -42,13 +42,24 @@ const options: OptionsProps[] = [
 
 import Select, { components } from "react-select";
 
-const MySelect = ({ ...props }) => {
+const MySelect = ({
+	onChange,
+	value,
+	...props
+}: {
+	onChange: (e: any) => void;
+	value: string;
+}) => {
 	return (
 		<div className="select__wrapper">
 			<label className="label" htmlFor="time">
 				Time
 			</label>
 			<Select
+				onChange={onChange}
+				value={options.filter(function (option) {
+					return option.value === value;
+				})}
 				{...props}
 				components={{
 					Input: (props) => (

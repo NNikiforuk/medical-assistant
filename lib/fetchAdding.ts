@@ -1,4 +1,3 @@
-
 export const fetchAdding = async ({
 	hour,
 	name,
@@ -25,7 +24,6 @@ export const fetchAdding = async ({
 			return true;
 		}
 	} catch (error: any) {
-		console.error("Adding failed:", error);
 		return false;
 	}
 };

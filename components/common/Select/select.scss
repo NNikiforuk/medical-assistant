@@ -76,6 +76,7 @@
 	.select [class$="-control"] {
 		font-size: $font-size-l;
 		padding: 30px 50px;
+		border-radius: 45px;
 	}
 
 	.select [class$="-indicators"] {
