@@ -5,15 +5,21 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import "./popup.scss";
 
+type PopupProps = {
+	text: string;
+	handleClose: (e: any) => void;
+	handleConfirmation?: (e: any) => void;
+	popup: boolean;
+	twoBtns?: boolean;
+};
+
 export default function Popup({
 	text,
 	popup,
 	handleClose,
-}: {
-	text: string;
-	handleClose: (e: any) => void;
-	popup: boolean;
-}) {
+	handleConfirmation,
+	twoBtns,
+}: PopupProps) {
 	return (
 		<>
 			<Dialog
@@ -31,6 +37,11 @@ export default function Popup({
 					<Button onClick={handleClose} autoFocus>
 						Close
 					</Button>
+					{twoBtns && (
+						<Button onClick={handleConfirmation} autoFocus>
+							Delete
+						</Button>
+					)}
 				</DialogActions>
 			</Dialog>
 		</>

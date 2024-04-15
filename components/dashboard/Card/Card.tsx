@@ -7,6 +7,8 @@ import { MdOutlineNightsStay } from "react-icons/md";
 import Button from "@/components/common/Button/Button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
+import Popup from "@/components/common/Popup/Popup";
 
 type CardProps = {
 	hour: string;
@@ -17,6 +19,7 @@ type CardProps = {
 };
 
 const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
+	const [ifWantToDelete, setIfWantToDelete] = useState(false);
 	const router = useRouter();
 
 	const handleDelete = async (id: number) => {
@@ -31,6 +34,7 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 		} catch (error) {
 			console.error("Error during deleting pill", error);
 		}
+		setIfWantToDelete(false);
 	};
 
 	const handleTakenPill = async (id: number, set: boolean) => {
@@ -50,8 +54,22 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 		}
 	};
 
+	const handleClosePopup = () => {
+		setIfWantToDelete(false);
+	};
+
+
 	return (
 		<section className="card">
+			{ifWantToDelete && (
+				<Popup
+					handleClose={handleClosePopup}
+					handleConfirmation={() => handleDelete(id)}
+					text="Do you really want to delete?"
+					popup={ifWantToDelete}
+					twoBtns={true}
+				/>
+			)}
 			<header className={`header ${isTaken && "header--taken"}`}>
 				<div className="header__hour">{hour}</div>
 				<div className="header__icon">
@@ -73,7 +91,7 @@ const Card = ({ hour, name, dosage, id, isTaken }: CardProps) => {
 					<Button variant="noBackground" label="Edit" type="button" />
 				</Link>
 				<Button
-					onClick={() => handleDelete(id)}
+					onClick={() => setIfWantToDelete(true)}
 					variant="noBackground"
 					label="Delete"
 					type="button"
