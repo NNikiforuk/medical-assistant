@@ -10,6 +10,7 @@ const handler = NextAuth({
 	pages: {
 		signIn: "/",
 	},
+	secret: process.env.NEXTAUTH_SECRET,
 	providers: [
 		CredentialsProvider({
 			credentials: {
