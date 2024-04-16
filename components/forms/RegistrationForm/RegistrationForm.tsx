@@ -7,12 +7,14 @@ import "../LoginRegistrationForm/loginRegistrationForm.scss";
 import { fetchRegistration } from "../../../lib/fetchRegistration";
 import { useRouter } from "next/navigation";
 import { handleEnter } from "@/lib/handleEnter";
+import Popup from "@/components/common/Popup/Popup";
 
 const RegistrationForm = () => {
 	const [email, setEmail] = useState("");
 	const [emailAlert, setEmailAlert] = useState("");
 	const [password, setPassword] = useState("");
 	const [passwordAlert, setPasswordAlert] = useState("");
+	const [popup, setPopup] = useState(false);
 	const router = useRouter();
 
 	function validateEmail(email: string) {
@@ -47,7 +49,7 @@ const RegistrationForm = () => {
 			if (isSuccess) {
 				router.push("/dashboard");
 			} else {
-				console.error("Registration failed");
+				setPopup(true);
 			}
 		}
 	};
@@ -59,6 +61,13 @@ const RegistrationForm = () => {
 
 	return (
 		<form className="home__form" onSubmit={handleRegistration}>
+			{popup && (
+				<Popup
+					text="Email already registered"
+					handleClose={() => setPopup(false)}
+					popup={popup}
+				/>
+			)}
 			<Input
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}

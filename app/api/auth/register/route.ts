@@ -1,13 +1,23 @@
 import { NextResponse } from "next/server";
 import { hash } from "bcrypt";
-import { sql } from "@vercel/postgres";
+import { db } from "@vercel/postgres";
 
 export async function POST(request: Request, response: Response) {
+	const client = await db.connect();
+
 	try {
 		const { email, password } = await request.json();
-		const hashedPassword = await hash(password, 10);
 
-		await sql`INSERT INTO users (email, password) VALUES (${email}, ${hashedPassword})`;
+		const userAlreadyRegistered =
+			await client.sql`SELECT * FROM users WHERE email = ${email}`;
+
+		if (userAlreadyRegistered.rowCount > 0) {
+			return false;
+		} else {
+			const hashedPassword = await hash(password, 10);
+
+			await client.sql`INSERT INTO users (email, password) VALUES (${email}, ${hashedPassword})`;
+		}
 	} catch (e) {
 		console.log({ e });
 	}

@@ -14,11 +14,7 @@ export const fetchRegistration = async ({
 			body: JSON.stringify({ email, password }),
 		});
 
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		} else {
-			return true;
-		}
+		if (response.ok) return true;
 	} catch (error: any) {
 		console.error("Registration failed:", error);
 		return false;
