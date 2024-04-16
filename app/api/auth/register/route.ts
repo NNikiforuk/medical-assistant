@@ -12,7 +12,7 @@ export async function POST(request: Request, response: Response) {
 			await client.sql`SELECT * FROM users WHERE email = ${email}`;
 
 		if (userAlreadyRegistered.rowCount > 0) {
-			return false;
+			return NextResponse.json({ message: "fail" });
 		} else {
 			const hashedPassword = await hash(password, 10);
 
