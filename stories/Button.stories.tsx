@@ -20,7 +20,6 @@ export const Primary: Story = {
 export const Disabled: Story = {
 	args: {
 		label: "Button",
-		isDisabled: true,
 	},
 };
 
