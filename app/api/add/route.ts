@@ -9,12 +9,8 @@ export async function POST(request: NextRequest) {
 
 		await client.sql`BEGIN`;
 		await client.sql`
-			INSERT INTO pills (name, hour, dosage, owner_email)
+			INSERT INTO pills (name, time_of_day, dosage, owner_email)
 			VALUES (${name}, ${hour}, ${dosage}, ${email})
-		`;
-		await client.sql`
-			INSERT INTO owners (owner_email, pill_name)
-			VALUES (${email}, ${name})
 		`;
 		await client.sql`COMMIT`;
 

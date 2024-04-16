@@ -8,7 +8,7 @@ export async function editePill(
 ) {
 	try {
 		await sql`UPDATE pills
-        SET hour = ${hour}, dosage = ${dosage},
+        SET time_of_day = ${hour}, dosage = ${dosage},
         name = ${name}
         WHERE id = ${id}`;
 	} catch (error) {

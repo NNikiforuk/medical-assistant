@@ -9,10 +9,10 @@ export const GET = async (
 	try {
 		const id = params.id;
 		const result =
-			await sql`SELECT name, hour, dosage FROM pills WHERE id = ${id}`;
+			await sql`SELECT name, time_of_day, dosage FROM pills WHERE id = ${id}`;
 		const resultRows = result.rows[0];
 		const name = resultRows.name;
-		const hour = resultRows.hour;
+		const hour = resultRows.time_of_day;
 		const dosage = resultRows.dosage;
 
 		return new Response(

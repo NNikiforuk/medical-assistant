@@ -3,14 +3,17 @@
 import styles from "./page.module.scss";
 import Logo from "@/components/common/Logo/Logo";
 import Header from "@/components/header/Header";
-import { useSearchParams } from "next/navigation";
 import LoginForm from "@/components/forms/LoginForm/LoginForm";
 import RegistrationForm from "@/components/forms/RegistrationForm/RegistrationForm";
 import Link from "next/link";
 
-export default function Home() {
-	const searchParams = useSearchParams();
-	const isRegistrationPage = searchParams.get("signup") !== null;
+export default function Home({
+	searchParams,
+}: {
+	searchParams: { [key: string]: string | string[] | undefined };
+}) {
+	// const searchParams = useSearchParams();
+	const isRegistrationPage = searchParams["signup"] !== null;
 
 	return (
 		<main className={styles.home}>

@@ -8,13 +8,14 @@ import Navbar from "@/components/common/Navbar/Navbar";
 
 const Dashboard = async () => {
 	const session = await getServerSession();
-	const pills = await sql`SELECT name, hour, dosage, id, CASE WHEN last_time_taken IS NULL THEN FALSE WHEN last_time_taken = CURRENT_DATE THEN TRUE ELSE FALSE END AS is_taken
+	const pills =
+		await sql`SELECT name, time_of_day, dosage, id, CASE WHEN last_time_taken IS NULL THEN FALSE WHEN last_time_taken = CURRENT_DATE THEN TRUE ELSE FALSE END AS is_taken
 	FROM pills
 	WHERE owner_email = ${session?.user?.email}
 	ORDER BY CASE
-    WHEN hour = 'morning' THEN 1
-    WHEN hour = 'dinner' THEN 2
-    WHEN hour = 'night' THEN 3
+    WHEN time_of_day = 'morning' THEN 1
+    WHEN time_of_day = 'dinner' THEN 2
+    WHEN time_of_day = 'night' THEN 3
     ELSE 4
 	END;`;
 
@@ -32,7 +33,7 @@ const Dashboard = async () => {
 									isTaken={pill.is_taken}
 									key={pill.id}
 									name={pill.name}
-									hour={pill.hour}
+									hour={pill.time_of_day}
 									dosage={pill.dosage}
 									id={pill.id}
 								/>
@@ -47,7 +48,7 @@ const Dashboard = async () => {
 									isTaken={pill.is_taken}
 									key={pill.id}
 									name={pill.name}
-									hour={pill.hour}
+									hour={pill.time_of_day}
 									dosage={pill.dosage}
 									id={pill.id}
 								/>

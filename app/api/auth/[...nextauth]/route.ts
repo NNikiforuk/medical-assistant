@@ -21,8 +21,6 @@ const handler = NextAuth({
 					await sql`SELECT * FROM users WHERE email=${credentials?.email}`;
 				const user = response.rows[0];
 
-				
-
 				if (!user) {
 					throw new Error("No user found with the email");
 				}
