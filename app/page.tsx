@@ -14,6 +14,8 @@ export default function Home({
 }) {
 	const isRegistrationPage = "signup" in searchParams;
 
+	console.log('message:', isRegistrationPage)
+
 	return (
 		<main className={styles.home}>
 			<Logo />
