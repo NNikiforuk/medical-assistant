@@ -1,6 +1,6 @@
 import { sql } from "@vercel/postgres";
 
-export async function editePill(
+export async function editPill(
 	id: number,
 	hour: string,
 	name: string,

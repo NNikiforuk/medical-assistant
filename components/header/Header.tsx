@@ -6,6 +6,7 @@ type HeaderProps = {
 };
 
 const Header = ({ isRegistrationPage }: HeaderProps) => {
+
 	return (
 		<header className="home__header">
 			<Link

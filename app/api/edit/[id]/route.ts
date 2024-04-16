@@ -1,4 +1,4 @@
-import { editePill } from "@/lib/editePill";
+import { editPill } from "@/lib/editPill";
 
 export const PATCH = async (
 	request: Request,
@@ -8,7 +8,7 @@ export const PATCH = async (
 
 	try {
 		const id = params.id;
-		await editePill(id, hour, name, dosage);
+		await editPill(id, hour, name, dosage);
 
 		return new Response("Pill edited");
 	} catch (error) {

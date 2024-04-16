@@ -15,9 +15,7 @@ export const GET = async (
 		const hour = resultRows.time_of_day;
 		const dosage = resultRows.dosage;
 
-		return new Response(
-			JSON.stringify({hour, name, dosage})
-		);
+		return new Response(JSON.stringify({ hour, name, dosage }));
 	} catch (error) {
 		return new Response("Failed to fetch the pill", {
 			status: 500,

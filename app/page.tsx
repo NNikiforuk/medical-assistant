@@ -12,8 +12,7 @@ export default function Home({
 }: {
 	searchParams: { [key: string]: string | string[] | undefined };
 }) {
-	// const searchParams = useSearchParams();
-	const isRegistrationPage = searchParams["signup"] !== null;
+	const isRegistrationPage = "signup" in searchParams;
 
 	return (
 		<main className={styles.home}>
