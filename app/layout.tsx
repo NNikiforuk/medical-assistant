@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 	title: "Medical Assistant",
 	description: "Get your pills together",
 	icons: {
-		icon: "icon.ico",
+		icon: "favicon.ico",
 	},
 };
 
