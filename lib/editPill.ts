@@ -12,7 +12,7 @@ export async function editPill(
         name = ${name}
         WHERE id = ${id}`;
 	} catch (error) {
-		console.error("Database error (delete)", error);
-		throw new Error("Failed to delete");
+		console.error("Database error (edit)", error);
+		throw new Error("Failed to edit");
 	}
 }

@@ -19,7 +19,7 @@ export const fetchAdding = async ({
 		});
 
 		if (!response.ok) {
-			throw new Error("Network response was not ok");
+			throw new Error("Network response was not ok during adding");
 		} else {
 			return true;
 		}

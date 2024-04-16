@@ -41,23 +41,15 @@ const Add = () => {
 			router.replace("/dashboard");
 			router.refresh();
 		} else {
-			handleOpenPopup();
+			setPopup(true);
 		}
-	};
-
-	const handleClosePopup = () => {
-		setPopup(false);
-	};
-
-	const handleOpenPopup = () => {
-		setPopup(true);
 	};
 
 	return (
 		<section className="add">
 			{popup && (
 				<Popup
-					handleClose={handleClosePopup}
+					handleClose={() => setPopup(false)}
 					popup={popup}
 					text="This medicine is already added"
 				/>
