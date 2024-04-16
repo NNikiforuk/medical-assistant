@@ -6,33 +6,60 @@ import Header from "@/components/header/Header";
 import LoginForm from "@/components/forms/LoginForm/LoginForm";
 import RegistrationForm from "@/components/forms/RegistrationForm/RegistrationForm";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
-export default function Home({
-	searchParams,
-}: {
-	searchParams: { [key: string]: string | string[] | undefined };
-}) {
-	const isRegistrationPage = "signup" in searchParams;
+export const dynamic = "force-dynamic";
 
-	console.log('message:', isRegistrationPage)
+
+export default function Home({}) {
+	const searchParams = useSearchParams();
+	const search = searchParams.get("signup");
+	console.log(search)
 
 	return (
 		<main className={styles.home}>
 			<Logo />
-			<Header isRegistrationPage={isRegistrationPage} />
-			{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
+			{/* <Header isRegistrationPage={isRegistrationPage} /> */}
+			{/* {isRegistrationPage ? <RegistrationForm /> : <LoginForm />} */}
 			<div className={styles.home__additional__info}>
 				<div className={styles.additional__info__text}>
-					{isRegistrationPage
+					{/* {isRegistrationPage
 						? "I already have an account"
-						: "You don't have an account?"}
+						: "You don't have an account?"} */}
 				</div>
 				<div className={styles.additional__info__link}>
-					<Link href={isRegistrationPage ? "/" : "/?signup"}>
-						{isRegistrationPage ? "Sign in" : "Sign up"}
-					</Link>
+					{/* <Link href={isRegistrationPage ? "/" : "/?signup"}> */}
+						{/* {isRegistrationPage ? "Sign in" : "Sign up"} */}
+					{/* </Link> */}
 				</div>
 			</div>
 		</main>
 	);
 }
+// export default function Home({
+// 	searchParams,
+// }: {
+// 	searchParams: { [key: string]: string | string[] | undefined };
+// }) {
+// 	const isRegistrationPage = "signup" in searchParams;
+
+// 	return (
+// 		<main className={styles.home}>
+// 			<Logo />
+// 			<Header isRegistrationPage={isRegistrationPage} />
+// 			{isRegistrationPage ? <RegistrationForm /> : <LoginForm />}
+// 			<div className={styles.home__additional__info}>
+// 				<div className={styles.additional__info__text}>
+// 					{isRegistrationPage
+// 						? "I already have an account"
+// 						: "You don't have an account?"}
+// 				</div>
+// 				<div className={styles.additional__info__link}>
+// 					<Link href={isRegistrationPage ? "/" : "/?signup"}>
+// 						{isRegistrationPage ? "Sign in" : "Sign up"}
+// 					</Link>
+// 				</div>
+// 			</div>
+// 		</main>
+// 	);
+// }
