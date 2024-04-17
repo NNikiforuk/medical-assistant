@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./page.module.scss";
 import Logo from "@/components/common/Logo/Logo";
 import Header from "@/components/header/Header";
@@ -12,11 +10,11 @@ export default function Home({
 }: {
 	searchParams: { [key: string]: string | string[] | undefined };
 }) {
-	console.log("Home");
-	console.log("searchParams: ", searchParams);
+	// console.log("Home");
+	// console.log("searchParams: ", searchParams);
 
 	const isRegistrationPage = "signup" in searchParams;
-	console.log("isRegistrationPage: ", isRegistrationPage);
+	// console.log("isRegistrationPage: ", isRegistrationPage);
 
 	return (
 		<main className={styles.home}>
