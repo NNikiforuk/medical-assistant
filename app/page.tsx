@@ -13,8 +13,10 @@ export default function Home({
 	searchParams: { [key: string]: string | string[] | undefined };
 }) {
 	console.log("Home");
+	console.log("searchParams: ", searchParams);
 
 	const isRegistrationPage = "signup" in searchParams;
+	console.log("isRegistrationPage: ", isRegistrationPage);
 
 	return (
 		<main className={styles.home}>
