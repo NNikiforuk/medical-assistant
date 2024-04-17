@@ -7,6 +7,8 @@ import LoginForm from "@/components/forms/LoginForm/LoginForm";
 import RegistrationForm from "@/components/forms/RegistrationForm/RegistrationForm";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function Home({
 	searchParams,
 }: {
