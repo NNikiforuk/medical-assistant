@@ -7,13 +7,13 @@ import LoginForm from "@/components/forms/LoginForm/LoginForm";
 import RegistrationForm from "@/components/forms/RegistrationForm/RegistrationForm";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
-
 export default function Home({
 	searchParams,
 }: {
 	searchParams: { [key: string]: string | string[] | undefined };
 }) {
+	console.log("Home");
+
 	const isRegistrationPage = "signup" in searchParams;
 
 	return (

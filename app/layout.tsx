@@ -18,6 +18,8 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	console.log("dupa");
+
 	return (
 		<html lang="en">
 			<NextAuthProvider>
