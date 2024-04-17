@@ -5,16 +5,14 @@ import LoginForm from "@/components/forms/LoginForm/LoginForm";
 import RegistrationForm from "@/components/forms/RegistrationForm/RegistrationForm";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function Home({
 	searchParams,
 }: {
 	searchParams: { [key: string]: string | string[] | undefined };
 }) {
-	console.log("Home");
-	console.log("searchParams: ", searchParams);
-
 	const isRegistrationPage = "signup" in searchParams;
-	console.log("isRegistrationPage: ", isRegistrationPage);
 
 	return (
 		<main className={styles.home}>
