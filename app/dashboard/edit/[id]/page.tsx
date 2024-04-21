@@ -49,6 +49,8 @@ const Edit = () => {
 					}),
 				});
 
+				console.log("response", response)
+
 				if (response.ok) {
 					router.push("/dashboard");
 					router.refresh();
