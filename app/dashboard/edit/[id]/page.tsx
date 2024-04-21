@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import Button from "@/components/common/Button/Button";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
-import Select from "@/components/common/Select/Select";
 import { usePathname, useRouter } from "next/navigation";
+import MySelect from "@/components/common/Select/Select";
 
 const Edit = () => {
 	const router = useRouter();
@@ -67,7 +67,16 @@ const Edit = () => {
 				</Link>
 			</div>
 			<form className="edit__form" onSubmit={handleEditing}>
-				<Select
+				{/* <Select
+					value={pill.hour}
+					onChange={(e) =>
+						setPill({
+							...pill,
+							hour: e.target.value,
+						})
+					}
+				/> */}
+				<MySelect
 					value={pill.hour}
 					onChange={(e) =>
 						setPill({

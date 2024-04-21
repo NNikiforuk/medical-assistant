@@ -12,9 +12,6 @@ export const GET = async (
 			await sql`SELECT name, time_of_day, dosage FROM pills WHERE id = ${id}`;
 
 		const resultRows = result.rows[0];
-		console.log("result", result)
-		console.log("resultrows", resultRows)
-		console.log("resultrows0", resultRows[0]);
 		const name = resultRows.name;
 		const hour = resultRows.time_of_day;
 		const dosage = resultRows.dosage;
