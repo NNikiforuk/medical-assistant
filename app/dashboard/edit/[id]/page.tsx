@@ -8,6 +8,7 @@ import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
 import Select from "@/components/common/Select/Select";
 import { usePathname, useRouter } from "next/navigation";
+import { LuGalleryHorizontal } from "react-icons/lu";
 
 const Edit = () => {
 	const router = useRouter();
@@ -25,17 +26,25 @@ const Edit = () => {
 			const response = await fetch(`/api/pills/${pillID}`);
 			const data = await response.json();
 
+			console.log("data", data);
+
 			setPill({
 				hour: data.hour || "",
 				name: data.name || "",
 				dosage: data.dosage || "",
 			});
+
+			console.log("setPill", pill)
 		};
+
+		console.log("pillID1", pillID)
 		if (pillID) getPillDetails();
 	}, [pillID]);
 
 	const handleEditing = async (e: any) => {
 		e.preventDefault();
+
+		console.log("pillID2", pillID);
 
 		if (pillID) {
 			try {
@@ -47,6 +56,8 @@ const Edit = () => {
 						dosage: pill.dosage,
 					}),
 				});
+
+				console.log("response", response)
 
 				if (response.ok) {
 					router.push("/dashboard");
