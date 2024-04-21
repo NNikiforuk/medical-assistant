@@ -11,14 +11,13 @@ export const GET = async (
 		const result =
 			await sql`SELECT name, time_of_day, dosage FROM pills WHERE id = ${id}`;
 
-			console.log("result", result)
 		const resultRows = result.rows[0];
-		console.log("resultrows0", resultRows[0])
+		console.log("result", result)
+		console.log("resultrows", resultRows)
+		console.log("resultrows0", resultRows[0]);
 		const name = resultRows.name;
 		const hour = resultRows.time_of_day;
 		const dosage = resultRows.dosage;
-
-		console.log("name, hour, dosage", name, hour, dosage)
 
 		return new Response(JSON.stringify({ hour, name, dosage }));
 	} catch (error) {
