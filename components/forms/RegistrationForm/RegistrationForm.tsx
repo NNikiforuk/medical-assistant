@@ -33,9 +33,6 @@ const RegistrationForm = () => {
 		const isEmailValidated = validateEmail(email);
 		const isPasswordValidated = validatePassword(password);
 
-		console.log(isEmailValidated)
-		console.log(isPasswordValidated)
-
 		if (!isEmailValidated) {
 			setEmailAlert("Invalid email");
 		}
