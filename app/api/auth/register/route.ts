@@ -12,10 +12,12 @@ export async function POST(request: Request, response: Response) {
 			await client.sql`SELECT * FROM users WHERE email = ${email}`;
 
 		if (userAlreadyRegistered.rowCount > 0) {
-			return NextResponse.json({ message: "fail" });
+			return NextResponse.json(
+				{ error: "User already exists" },
+				{ status: 500 }
+			);
 		} else {
 			const hashedPassword = await hash(password, 10);
-
 			await client.sql`INSERT INTO users (email, password) VALUES (${email}, ${hashedPassword})`;
 		}
 	} catch (e) {
