@@ -23,6 +23,11 @@ const Edit = () => {
 	useEffect(() => {
 		const getPillDetails = async () => {
 			const response = await fetch(`/api/pills/${pillID}`);
+
+			if (!response.ok) {
+				console.error("Failed to fetch pill details");
+				return;
+			}
 			const data = await response.json();
 
 			setPill({
@@ -51,7 +56,7 @@ const Edit = () => {
 
 				if (response.ok) {
 					router.push("/dashboard");
-					router.refresh();
+					window.location.reload();
 				}
 			} catch (error) {
 				console.log(error);
