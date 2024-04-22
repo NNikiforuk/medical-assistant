@@ -11,8 +11,6 @@ export async function editPill(
         SET time_of_day = ${hour}, dosage = ${dosage},
         name = ${name}
         WHERE id = ${id}`;
-
-		return { id, hour, name, dosage };
 	} catch (error) {
 		console.error("Database error (edit)", error);
 		throw new Error("Failed to edit");
