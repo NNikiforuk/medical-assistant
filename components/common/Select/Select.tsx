@@ -1,6 +1,12 @@
-import "./select.scss";
+// import "./select.scss";
 
-// const Select = ({ onChange, value }: { onChange: (e: any) => void, value: string }) => {
+// const Select = ({
+// 	onChange,
+// 	value,
+// }: {
+// 	onChange: (e: any) => void;
+// 	value: string;
+// }) => {
 // 	return (
 // 		<div className="select">
 // 			<label className="select__label" htmlFor="time">
@@ -47,7 +53,7 @@ const MySelect = ({
 	value,
 	...props
 }: {
-	onChange: (e: any) => void;
+	onChange: (value: string) => void;
 	value: string;
 }) => {
 	return (
@@ -56,10 +62,8 @@ const MySelect = ({
 				Time
 			</label>
 			<Select
-				onChange={onChange}
-				value={options.filter(function (option) {
-					return option.value === value;
-				})}
+				onChange={(option) => onChange(option ? option.value : "")}
+				value={options.find((option) => option.value === value)}
 				{...props}
 				components={{
 					Input: (props) => (

@@ -74,10 +74,10 @@ const Edit = () => {
 			<form className="edit__form" onSubmit={handleEditing}>
 				<MySelect
 					value={pill.hour}
-					onChange={(e) =>
+					onChange={(newHour) =>
 						setPill({
 							...pill,
-							hour: e.target.value,
+							hour: newHour,
 						})
 					}
 				/>
