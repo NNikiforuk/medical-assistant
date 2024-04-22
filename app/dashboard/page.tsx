@@ -19,6 +19,9 @@ const Dashboard = async () => {
     ELSE 4
 	END;`;
 
+	console.log(pills)
+	console.log("session", session)
+
 	return (
 		<div className={styles.dashboard}>
 			<Navbar />
