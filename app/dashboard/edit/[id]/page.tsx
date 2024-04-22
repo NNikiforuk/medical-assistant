@@ -33,7 +33,7 @@ const Edit = () => {
 		};
 
 		if (pillID) getPillDetails();
-	}, []);
+	}, [pillID]);
 
 	const handleEditing = async (e: any) => {
 		e.preventDefault();
