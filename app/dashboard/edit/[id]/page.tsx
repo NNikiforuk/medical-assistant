@@ -25,6 +25,8 @@ const Edit = () => {
 			const response = await fetch(`/api/pills/${pillID}`);
 			const data = await response.json();
 
+			console.log("Pobrane dane:", data); 
+
 			setPill({
 				hour: data.hour || "",
 				name: data.name || "",

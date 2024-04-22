@@ -8,25 +8,10 @@ export const PATCH = async (
 
 	try {
 		const id = params.id;
-		const result = await editPill(id, hour, name, dosage);
+		await editPill(id, hour, name, dosage);
 
-		return new Response(JSON.stringify(result), {
-			headers: {
-				"Content-Type": "application/json",
-				"Cache-Control": "no-cache, no-store, must-revalidate",
-				Pragma: "no-cache",
-				Expires: "0",
-			},
-			status: 200,
-		});
+		return new Response("Pill edited");
 	} catch (error) {
-		return new Response("Failed to update the pill", {
-			status: 500,
-			headers: {
-				"Cache-Control": "no-cache, no-store, must-revalidate",
-				Pragma: "no-cache",
-				Expires: "0",
-			},
-		});
+		return new Response("Failed to update the pill", { status: 500 });
 	}
 };
