@@ -20,6 +20,8 @@ const Edit = () => {
 		dosage: "",
 	});
 
+	console.log('pill name', pill.name);
+
 	useEffect(() => {
 		const getPillDetails = async () => {
 			const response = await fetch(`/api/pills/${pillID}`);
@@ -29,6 +31,7 @@ const Edit = () => {
 				return;
 			}
 			const data = await response.json();
+			console.log("data", data);
 
 			setPill({
 				hour: data.hour || "",
