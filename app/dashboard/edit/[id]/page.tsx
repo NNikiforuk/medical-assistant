@@ -20,8 +20,6 @@ const Edit = () => {
 		dosage: "",
 	});
 
-	console.log('pill name', pill.name);
-
 	useEffect(() => {
 		const getPillDetails = async () => {
 			const response = await fetch(`/api/pills/${pillID}`);
@@ -31,7 +29,6 @@ const Edit = () => {
 				return;
 			}
 			const data = await response.json();
-			console.log("data", data);
 
 			setPill({
 				hour: data.hour || "",
@@ -59,7 +56,7 @@ const Edit = () => {
 
 				if (response.ok) {
 					router.push("/dashboard");
-					window.location.reload();
+					router.refresh();
 				}
 			} catch (error) {
 				console.log(error);
@@ -75,15 +72,6 @@ const Edit = () => {
 				</Link>
 			</div>
 			<form className="edit__form" onSubmit={handleEditing}>
-				{/* <Select
-					value={pill.hour}
-					onChange={(e) =>
-						setPill({
-							...pill,
-							hour: e.target.value,
-						})
-					}
-				/> */}
 				<MySelect
 					value={pill.hour}
 					onChange={(e) =>
